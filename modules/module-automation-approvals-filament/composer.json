@@ -1,12 +1,12 @@
 {
-  "name": "liberusoftware/module-automation-approvals-filament",
+  "name": "liberusoftware/automation-approvals-filament",
   "description": "Filament 5 adapter for module-automation-approvals.",
   "type": "liberu-module",
   "license": "MIT",
   "require": {
     "php": "^8.5",
     "filament/filament": "^5.1",
-    "liberusoftware/module-automation-approvals": "^1.0"
+    "liberusoftware/automation-approvals": "^1.0"
   },
   "autoload": {
     "psr-4": {

@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-ai-gateway",
+  "name": "liberusoftware/automation-ai-gateway",
   "description": "Provider-neutral ai-gateway domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

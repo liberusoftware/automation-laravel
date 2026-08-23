@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-connectors",
+  "name": "liberusoftware/automation-connectors",
   "description": "Provider-neutral connectors domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

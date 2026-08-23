@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-automation-core",
+  "name": "liberusoftware/automation-automation-core",
   "description": "Provider-neutral automation-core domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

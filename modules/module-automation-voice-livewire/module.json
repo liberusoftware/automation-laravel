@@ -10,7 +10,7 @@
     "php": "^8.5",
     "laravel": "^13.0",
     "packages": {
-      "liberusoftware/module-automation-voice": "^1.0"
+      "liberusoftware/automation-voice": "^1.0"
     }
   },
   "capabilities": [

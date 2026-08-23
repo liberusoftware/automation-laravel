@@ -1,12 +1,12 @@
 {
-  "name": "liberusoftware/module-automation-connectors-filament",
+  "name": "liberusoftware/automation-connectors-filament",
   "description": "Filament 5 adapter for module-automation-connectors.",
   "type": "liberu-module",
   "license": "MIT",
   "require": {
     "php": "^8.5",
     "filament/filament": "^5.1",
-    "liberusoftware/module-automation-connectors": "^1.0"
+    "liberusoftware/automation-connectors": "^1.0"
   },
   "autoload": {
     "psr-4": {

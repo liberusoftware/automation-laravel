@@ -17,7 +17,7 @@ it('keeps the automation core and presentation packages one-to-one', function ()
             $composer = json_decode(file_get_contents($directory.'/composer.json'), true, flags: JSON_THROW_ON_ERROR);
             $manifest = json_decode(file_get_contents($directory.'/module.json'), true, flags: JSON_THROW_ON_ERROR);
 
-            expect($composer['name'])->toBe('liberusoftware/module-automation-'.$slug.$suffix)
+            expect($composer['name'])->toBe('liberusoftware/automation-'.$slug.$suffix)
                 ->and($manifest['name'])->toBe('module-automation-'.$slug.$suffix)
                 ->and($composer['type'])->toBe('liberu-module')
                 ->and($manifest['requires']['php'])->toBe('^8.5');

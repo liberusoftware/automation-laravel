@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-data-processing",
+  "name": "liberusoftware/automation-data-processing",
   "description": "Provider-neutral data-processing domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

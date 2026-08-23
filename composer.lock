@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2821d2ad6e8cb7d4bb3e51401bf492e",
+    "content-hash": "0fd89b2cd7d7d1ced4ac3b287fd7b85b",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5494,6 +5494,1601 @@
             "time": "2026-08-07T14:25:10+00:00"
         },
         {
+            "name": "liberusoftware/automation-ai-gateway",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-ai-gateway",
+                "reference": "f9c13b3014eea42a6123b2fdd1029a586defb945"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-ai-gateway"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\AiGateway\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral ai-gateway domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-ai-gateway-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-ai-gateway-api",
+                "reference": "5bcab28529e5565aa53581d5b8451371394debcd"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-ai-gateway": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-ai-gateway-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\AiGateway\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-ai-gateway.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-ai-gateway-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-ai-gateway-filament",
+                "reference": "c4accf20bdf55ee669b5d3c596b305a89d801c8e"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-ai-gateway": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-ai-gateway-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\AiGateway\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-ai-gateway.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-ai-gateway-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-ai-gateway-livewire",
+                "reference": "7e67f486cf353b3223f9ed7247d7feb68c65edb3"
+            },
+            "require": {
+                "liberusoftware/automation-ai-gateway": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-ai-gateway-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\AiGateway\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-ai-gateway.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-approvals",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-approvals",
+                "reference": "9b44b13cd9194c8c08eb59c033936cb67bea4995"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-approvals"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Approvals\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral approvals domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-approvals-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-approvals-api",
+                "reference": "1f032799bfaa3cc42ad1ad7a062d8386339fed1c"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-approvals": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-approvals-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Approvals\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-approvals.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-approvals-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-approvals-filament",
+                "reference": "2bd5ed6248f135db3de7595815f85d6c53a13719"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-approvals": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-approvals-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Approvals\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-approvals.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-approvals-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-approvals-livewire",
+                "reference": "3fe50fc724073ab403a9d9eda408100db0be5637"
+            },
+            "require": {
+                "liberusoftware/automation-approvals": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-approvals-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Approvals\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-approvals.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-automation-core",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-automation-core",
+                "reference": "644fbe776d19f1936bc6940938e7c0efb0919316"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-automation-core"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\AutomationCore\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral automation-core domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-automation-core-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-automation-core-api",
+                "reference": "f5ea6a8dc2041d988bba848c02cf660d0aed1035"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-automation-core": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-automation-core-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\AutomationCore\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-automation-core.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-automation-core-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-automation-core-filament",
+                "reference": "ee7b074673d48b3806ffb79a57bbce2cbfb53820"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-automation-core": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-automation-core-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\AutomationCore\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-automation-core.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-automation-core-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-automation-core-livewire",
+                "reference": "cc5f46089c848fd9027f6bfeb439e24862e18bb2"
+            },
+            "require": {
+                "liberusoftware/automation-automation-core": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-automation-core-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\AutomationCore\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-automation-core.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-connectors",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-connectors",
+                "reference": "46e3653258d423823be708fd05a6404c0d115e45"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-connectors"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Connectors\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral connectors domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-connectors-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-connectors-api",
+                "reference": "037ffd6d3343c4a5df45554972dae3fffbc7b037"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-connectors": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-connectors-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Connectors\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-connectors.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-connectors-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-connectors-filament",
+                "reference": "4a45ad7a8e084eb6a42ac1dec88a8f1a74531378"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-connectors": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-connectors-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Connectors\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-connectors.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-connectors-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-connectors-livewire",
+                "reference": "fa793d642166fbad17893419bb28b67c3f92b31d"
+            },
+            "require": {
+                "liberusoftware/automation-connectors": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-connectors-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Connectors\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-connectors.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-data-processing",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-data-processing",
+                "reference": "a40070bd6b55e8ed7a914ee37481640ab66270b5"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-data-processing"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\DataProcessing\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral data-processing domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-data-processing-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-data-processing-api",
+                "reference": "73c4710d3238525b2e7f63e840b9df1ede3d4a49"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-data-processing": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-data-processing-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\DataProcessing\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-data-processing.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-data-processing-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-data-processing-filament",
+                "reference": "e11f13dd8bc8fcac5f78806aa340c7d87ff9a8fa"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-data-processing": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-data-processing-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\DataProcessing\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-data-processing.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-data-processing-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-data-processing-livewire",
+                "reference": "1e63bddd1212c72e120de8701fd61fdc811f4a44"
+            },
+            "require": {
+                "liberusoftware/automation-data-processing": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-data-processing-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\DataProcessing\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-data-processing.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-evaluation",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-evaluation",
+                "reference": "61ca5ce90824c0f95ce1bebd81321602750cccd1"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-evaluation"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Evaluation\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral evaluation domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-evaluation-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-evaluation-api",
+                "reference": "1a9bfaf389383e10128d0bcdd14c94a8b26e6775"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-evaluation": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-evaluation-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Evaluation\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-evaluation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-evaluation-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-evaluation-filament",
+                "reference": "a26b7e070ac8cbae67e6b54b01ca65370b7c7b0f"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-evaluation": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-evaluation-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Evaluation\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-evaluation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-evaluation-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-evaluation-livewire",
+                "reference": "f944bba2c69a0591c1367f84ee577577f39974b7"
+            },
+            "require": {
+                "liberusoftware/automation-evaluation": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-evaluation-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Evaluation\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-evaluation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-image",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-image",
+                "reference": "5290a3026d06239c9f8815c9b15c0a37c9a0ff78"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-image"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Image\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral image domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-image-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-image-api",
+                "reference": "ccc4a1df33fd17e370f906a80924783015a7552f"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-image": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-image-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Image\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-image.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-image-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-image-filament",
+                "reference": "a23601b2b83eb33dba813d3e9b3fa20820d5b996"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-image": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-image-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Image\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-image.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-image-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-image-livewire",
+                "reference": "e117fc4ea7c8d51fe3b6786044c7db06fdaa87f6"
+            },
+            "require": {
+                "liberusoftware/automation-image": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-image-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Image\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-image.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-prompt-registry",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-prompt-registry",
+                "reference": "85f883cd50a4e089ed585c8751d7f1884a4cb37c"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-prompt-registry"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\PromptRegistry\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral prompt-registry domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-prompt-registry-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-prompt-registry-api",
+                "reference": "311b7b0ffc504adfcc8c093e804083328c117e77"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-prompt-registry": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-prompt-registry-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\PromptRegistry\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-prompt-registry.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-prompt-registry-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-prompt-registry-filament",
+                "reference": "a01c3f4909eb6ccb0b5d26cc8110da887f783876"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-prompt-registry": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-prompt-registry-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\PromptRegistry\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-prompt-registry.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-prompt-registry-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-prompt-registry-livewire",
+                "reference": "9fddcdd31007c7700dce0797798121cd1773304a"
+            },
+            "require": {
+                "liberusoftware/automation-prompt-registry": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-prompt-registry-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\PromptRegistry\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-prompt-registry.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-rules",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-rules",
+                "reference": "6f3e5e33ed2763db64119f08419a7cf9501e40ef"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-rules"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Rules\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral rules domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-rules-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-rules-api",
+                "reference": "2ac3673f38b5baac5cffbfddfb1d56b905b66dbb"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-rules": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-rules-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Rules\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-rules.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-rules-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-rules-filament",
+                "reference": "45c33d04e954e258ff334785b9c39073f7ed77ac"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-rules": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-rules-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Rules\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-rules.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-rules-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-rules-livewire",
+                "reference": "c47678d0477a79f48395264d9ef8f410eae8fb58"
+            },
+            "require": {
+                "liberusoftware/automation-rules": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-rules-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Rules\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-rules.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-video",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-video",
+                "reference": "4e33e8163d948966a6f86316c4101fc9bf41bb0a"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-video"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Video\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral video domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-video-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-video-api",
+                "reference": "653b2b414caa0a771c5e028412e670d2b2c70e16"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-video": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-video-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Video\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-video.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-video-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-video-filament",
+                "reference": "2c16f762ec6866e43e422927abbab47c9a93ecc2"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-video": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-video-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Video\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-video.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-video-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-video-livewire",
+                "reference": "7b2ba98a5d34ec9a905e4fe1881346d58b5f083e"
+            },
+            "require": {
+                "liberusoftware/automation-video": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-video-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Video\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-video.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-voice",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-voice",
+                "reference": "deda2f3b88ebef506da8ba334ab2d4af78a855dc"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-voice"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Voice\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral voice domain module for Liberu Automation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-voice-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-voice-api",
+                "reference": "4a9acffa92baea65b16ce63797214ba6be0a7c50"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/automation-voice": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-voice-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Voice\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for module-automation-voice.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-voice-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-voice-filament",
+                "reference": "4f23f454c7bc4d83416af6b2d4deb085a9f76b97"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/automation-voice": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-voice-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Voice\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for module-automation-voice.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/automation-voice-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-automation-voice-livewire",
+                "reference": "661404bf980a6341761f2827772bb62819bfadc0"
+            },
+            "require": {
+                "liberusoftware/automation-voice": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "module-automation-voice-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Automation\\Voice\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for module-automation-voice.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/composer-installer",
             "version": "1.1.0",
             "source": {
@@ -6295,1601 +7890,6 @@
                 "issues": "https://github.com/liberusoftware/module-localization-mymemory/issues"
             },
             "time": "2026-08-07T14:25:31+00:00"
-        },
-        {
-            "name": "liberusoftware/module-automation-ai-gateway",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-ai-gateway",
-                "reference": "af5c90457f213a442dad19246ccebd73ee3aacd1"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-ai-gateway"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\AiGateway\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral ai-gateway domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-ai-gateway-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-ai-gateway-api",
-                "reference": "be54033fb8e74d7521c228941d4dc33afebcd003"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-ai-gateway": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-ai-gateway-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\AiGateway\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-ai-gateway.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-ai-gateway-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-ai-gateway-filament",
-                "reference": "a5c79a2d6df75571bdd933cf0b6669235da1e1e5"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-ai-gateway": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-ai-gateway-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\AiGateway\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-ai-gateway.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-ai-gateway-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-ai-gateway-livewire",
-                "reference": "41dbfb86b0d58852c21acb93d2aa031022e95ee8"
-            },
-            "require": {
-                "liberusoftware/module-automation-ai-gateway": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-ai-gateway-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\AiGateway\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-ai-gateway.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-approvals",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-approvals",
-                "reference": "614661dd2493480243fb1695501c1f89d3070515"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-approvals"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Approvals\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral approvals domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-approvals-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-approvals-api",
-                "reference": "be37e95b9901e2d2c9fc70ad836d4294b62d41d0"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-approvals": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-approvals-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Approvals\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-approvals.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-approvals-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-approvals-filament",
-                "reference": "2abec2a533034a33557a2a52d65dc9856bf2b988"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-approvals": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-approvals-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Approvals\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-approvals.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-approvals-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-approvals-livewire",
-                "reference": "c2004b5705d4e5a17b44880b9ed5ebbb8a26e188"
-            },
-            "require": {
-                "liberusoftware/module-automation-approvals": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-approvals-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Approvals\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-approvals.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-automation-core",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-automation-core",
-                "reference": "db19d070ed0f157f1d64c938674837ba4327a3a4"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-automation-core"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\AutomationCore\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral automation-core domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-automation-core-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-automation-core-api",
-                "reference": "69a86dc6f142adbbdb1790b12bd50ccae5e70285"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-automation-core": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-automation-core-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\AutomationCore\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-automation-core.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-automation-core-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-automation-core-filament",
-                "reference": "3c43289519731cfc6818637dc75b4a83f6eaeaef"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-automation-core": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-automation-core-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\AutomationCore\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-automation-core.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-automation-core-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-automation-core-livewire",
-                "reference": "dee72bce57a8fc3d53f1dbee798b3947824bbaca"
-            },
-            "require": {
-                "liberusoftware/module-automation-automation-core": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-automation-core-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\AutomationCore\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-automation-core.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-connectors",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-connectors",
-                "reference": "9d26ca4148bc5b34e12da1c178e2c5887f01bdd5"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-connectors"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Connectors\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral connectors domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-connectors-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-connectors-api",
-                "reference": "a3248840d99afbe1c25e073f068cb6b41ecb89fc"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-connectors": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-connectors-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Connectors\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-connectors.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-connectors-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-connectors-filament",
-                "reference": "fc270f1f5113d4aa147f9e80c33504532ad8784a"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-connectors": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-connectors-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Connectors\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-connectors.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-connectors-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-connectors-livewire",
-                "reference": "d222fcf55bda729d5bf3fd3d9985a8203907d54f"
-            },
-            "require": {
-                "liberusoftware/module-automation-connectors": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-connectors-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Connectors\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-connectors.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-data-processing",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-data-processing",
-                "reference": "0aedc9d1830283747447b78ce79894b4ea5f169f"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-data-processing"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\DataProcessing\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral data-processing domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-data-processing-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-data-processing-api",
-                "reference": "85ac74f43d77516f3ede4b93b29cde0a3f3d7cf7"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-data-processing": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-data-processing-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\DataProcessing\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-data-processing.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-data-processing-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-data-processing-filament",
-                "reference": "a34e56580ad56578e07a8b3234213da50eb758a0"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-data-processing": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-data-processing-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\DataProcessing\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-data-processing.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-data-processing-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-data-processing-livewire",
-                "reference": "3adc6a2a979e1e90c5e9a5a09531743f4d34ffbb"
-            },
-            "require": {
-                "liberusoftware/module-automation-data-processing": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-data-processing-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\DataProcessing\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-data-processing.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-evaluation",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-evaluation",
-                "reference": "ac4faf434aa9075caca3214cf9e6e88b8e6b4e0e"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-evaluation"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Evaluation\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral evaluation domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-evaluation-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-evaluation-api",
-                "reference": "bcbad90ee060f815c590a91c133824e41acdaa74"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-evaluation": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-evaluation-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Evaluation\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-evaluation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-evaluation-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-evaluation-filament",
-                "reference": "b90bba700394b7bf36bdf2edee1941b8f1306e8b"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-evaluation": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-evaluation-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Evaluation\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-evaluation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-evaluation-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-evaluation-livewire",
-                "reference": "71a3a1ed50794c491fc8185d684fecd4b482b723"
-            },
-            "require": {
-                "liberusoftware/module-automation-evaluation": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-evaluation-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Evaluation\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-evaluation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-image",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-image",
-                "reference": "a7a102261f57c9fde63987c90e4cd44d1d25a9b9"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-image"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Image\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral image domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-image-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-image-api",
-                "reference": "9862fd09642e649d77e930c6ef2e158cc756e4d2"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-image": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-image-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Image\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-image.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-image-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-image-filament",
-                "reference": "0d224ca29e50c97d1be6e0ce2d7597f6c938e4ef"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-image": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-image-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Image\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-image.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-image-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-image-livewire",
-                "reference": "ba1177dc6ffee0aa6583ce5a6116a183458bd8bb"
-            },
-            "require": {
-                "liberusoftware/module-automation-image": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-image-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Image\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-image.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-prompt-registry",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-prompt-registry",
-                "reference": "4bcbf91f9e05cb862049bd44df9ca8f8e540b0ad"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-prompt-registry"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\PromptRegistry\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral prompt-registry domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-prompt-registry-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-prompt-registry-api",
-                "reference": "87320338c5a91db50cb46b1bab5d134a50d16fca"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-prompt-registry": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-prompt-registry-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\PromptRegistry\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-prompt-registry.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-prompt-registry-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-prompt-registry-filament",
-                "reference": "9b900aaba9be249259f0699bf35b95fd334d4bbd"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-prompt-registry": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-prompt-registry-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\PromptRegistry\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-prompt-registry.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-prompt-registry-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-prompt-registry-livewire",
-                "reference": "aa9d05f804b2b81ea2dbe4891b3b8d35abed09cb"
-            },
-            "require": {
-                "liberusoftware/module-automation-prompt-registry": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-prompt-registry-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\PromptRegistry\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-prompt-registry.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-rules",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-rules",
-                "reference": "d7f709517fec1e7ba39533673bf12285a8acb611"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-rules"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Rules\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral rules domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-rules-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-rules-api",
-                "reference": "d68d3f850a3beafae6d63cf9017e8c37dfe42c03"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-rules": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-rules-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Rules\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-rules.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-rules-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-rules-filament",
-                "reference": "d04d332cf4a56a255e5ecbd9fbee739f190489fe"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-rules": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-rules-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Rules\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-rules.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-rules-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-rules-livewire",
-                "reference": "dd700efb97f463fd97e26bfd281b27989724fd91"
-            },
-            "require": {
-                "liberusoftware/module-automation-rules": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-rules-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Rules\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-rules.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-video",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-video",
-                "reference": "1a1ae764fe8db2d1d679808d4ba0524630b65dc6"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-video"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Video\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral video domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-video-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-video-api",
-                "reference": "f89a77780d452c0b7742265a0979273db37e3c48"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-video": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-video-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Video\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-video.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-video-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-video-filament",
-                "reference": "8669ff0e63909bc666f5e17c96d82bda218cd8c3"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-video": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-video-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Video\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-video.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-video-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-video-livewire",
-                "reference": "31bddcd40e43df9f026a98d89fe403b0dfc67b16"
-            },
-            "require": {
-                "liberusoftware/module-automation-video": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-video-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Video\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-video.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-voice",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-voice",
-                "reference": "5e84b2aa5f536ad4f26c7ae6679b6c73c95b4f4c"
-            },
-            "require": {
-                "illuminate/database": "^13.0",
-                "illuminate/support": "^13.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-voice"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Voice\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Provider-neutral voice domain module for Liberu Automation.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-voice-api",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-voice-api",
-                "reference": "e455d5cab5d4d46d255ae74533a6cb8fbdbc3be9"
-            },
-            "require": {
-                "illuminate/support": "^13.0",
-                "laravel/framework": "^13.0",
-                "liberusoftware/module-automation-voice": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-voice-api"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Voice\\Api\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "HTTP API adapter for module-automation-voice.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-voice-filament",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-voice-filament",
-                "reference": "9c270fcb4b6ebf6a4856aedbc9392b247e26fa4a"
-            },
-            "require": {
-                "filament/filament": "^5.1",
-                "liberusoftware/module-automation-voice": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-voice-filament"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Voice\\Filament\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Filament 5 adapter for module-automation-voice.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/module-automation-voice-livewire",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "modules/module-automation-voice-livewire",
-                "reference": "e1ee16d491b0dd3371f4861d879bec8ad922a888"
-            },
-            "require": {
-                "liberusoftware/module-automation-voice": "^1.0",
-                "livewire/livewire": "^4.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "pestphp/pest": "^5.0"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "module-automation-voice-livewire"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Modules\\Automation\\Voice\\Livewire\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Livewire 4 adapter for module-automation-voice.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
         },
         {
             "name": "liberusoftware/module-manager",
