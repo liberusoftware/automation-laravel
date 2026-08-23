@@ -20,6 +20,7 @@ Liberu Automation is a deployable Laravel application for governed workflows, ap
 - Independently versioned modules installed into tracked `/modules` directories
 - Independently versioned themes installed into tracked `/themes` directories with inheritance and safe fallback
 - Architecture tests for manifests, dependency direction, package ownership, and presentation boundaries
+- Governed Automation capabilities covering workflows, rules, approvals, AI gateways, prompts, data processing, media, connectors, and evaluation
 
 ## Requirements
 
@@ -51,7 +52,7 @@ Review `.env` before migrating. Use `php artisan migrate --seed` only when examp
 
 ## Composable package architecture
 
-Each runtime capability is an independent `liberu-module` Composer package with its own GitHub repository, release lifecycle, manifest, provider, documentation, and tests. Each visual package is an independent `liberu-theme`. Shared contract packages and the custom installer are normal Composer dependencies under `/vendor`.
+Each runtime capability is an independent `liberusoftware/automation-*` Composer package with its own `module-automation-*` GitHub repository, release lifecycle, manifest, provider, documentation, and tests. Each visual package is an independent `liberu-theme`. Shared contract packages and the custom installer are normal Composer dependencies under `/vendor`.
 
 ```text
 Application composition
@@ -122,27 +123,35 @@ npm run build
 
 The test suite exercises application behaviour and every installed module provider. Package architecture tests verify metadata, declared dependencies, host isolation, UI boundaries, and Composer ownership.
 
-### Publishing the component repositories
-
-The publishing helper derives repository names from directory names, using
-`module-` for entries in `modules/` and `theme-` for entries in `themes/`. It
-also handles this complete meta repository as `automation-laravel`.
+The release gate measures the owned application executable scope and requires
+100% coverage. The current release passes with 209 tests and 949 assertions:
 
 ```bash
-# Inspect all mappings without changing GitHub
-scripts/publish-components
+XDEBUG_MODE=coverage php artisan test --coverage-clover=coverage.xml --min=100
+```
 
-# Create any missing public repositories in the organisation
-scripts/publish-components --create
+Coverage excludes only vendor code, generated files, static assets, and
+configuration-only paths. PHPStan, module validation, Composer validation,
+Pint, Docker, and install checks are also required in CI.
 
-# After committing the complete worktree, split and push every component plus the meta repository
-scripts/publish-components --push
+### Publishing Automation packages
+
+Automation repositories keep the `module-` prefix on GitHub. Their Composer
+and Packagist names use `liberusoftware/automation-*` without that prefix.
+The publishing helper copies each committed package into its corresponding
+public repository and never force-pushes existing history.
+
+```bash
+# Publish or update all 44 Automation package repositories
+scripts/publish-automation-packages
+
+# Inspect package-to-repository mappings without submitting to Packagist
+php scripts/submit-packagist.php --dry-run
 ```
 
 Publishing requires authenticated `gh` and `git` access to the organisation.
-Push mode deliberately refuses a dirty worktree because subtree splits can only
-publish committed content. Existing repositories are updated without force, so
-non-fast-forward histories must be reconciled explicitly rather than overwritten.
+The released packages are tagged independently; the application release is
+tagged `v1.0.0`.
 
 After the repositories are public, register every Composer package on Packagist:
 
