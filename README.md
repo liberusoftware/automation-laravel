@@ -150,8 +150,8 @@ php scripts/submit-packagist.php --dry-run
 ```
 
 Publishing requires authenticated `gh` and `git` access to the organisation.
-The released packages are tagged independently; the application release is
-tagged `v1.0.0`.
+The released packages are tagged independently; the application’s current
+release is `v1.0.1` (the initial major release was `v1.0.0`).
 
 After the repositories are public, register every Composer package on Packagist:
 
