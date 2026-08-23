@@ -19,7 +19,6 @@
       "name": "module-automation-ai-gateway-api"
     }
   },
-  "version": "1.0.0",
   "require-dev": {
     "pestphp/pest": "^5.0"
   },
