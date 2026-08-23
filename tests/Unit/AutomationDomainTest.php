@@ -6,14 +6,18 @@ use Carbon\CarbonImmutable;
 use InvalidArgumentException;
 use Liberu\Modules\Automation\AiGateway\Domain\ProviderContract;
 use Liberu\Modules\Automation\AiGateway\Domain\RoutingPolicy;
+use Liberu\Modules\Automation\Approvals\Domain\ApprovalQueue;
 use Liberu\Modules\Automation\Approvals\Domain\ApprovalRequest;
 use Liberu\Modules\Automation\Approvals\Enums\ApprovalDecision;
 use Liberu\Modules\Automation\AutomationCore\Domain\WorkflowDefinition;
+use Liberu\Modules\Automation\AutomationCore\Domain\WorkflowRun;
+use Liberu\Modules\Automation\AutomationCore\Domain\WorkflowTrigger;
 use Liberu\Modules\Automation\Connectors\Domain\ConnectorDefinition;
 use Liberu\Modules\Automation\DataProcessing\Domain\ProcessingRequest;
 use Liberu\Modules\Automation\Evaluation\Domain\QualityGate;
 use Liberu\Modules\Automation\Image\Domain\ImageRequest;
 use Liberu\Modules\Automation\PromptRegistry\Domain\PromptVersion;
+use Liberu\Modules\Automation\Rules\Domain\DecisionTable;
 use Liberu\Modules\Automation\Rules\Domain\RuleCondition;
 use Liberu\Modules\Automation\Rules\Services\RuleEvaluator;
 use Liberu\Modules\Automation\Video\Domain\VideoRequest;
@@ -100,4 +104,28 @@ it('protects connector endpoints and evaluation release gates', function (): voi
         ->and($gate->passes(0.75))->toBeFalse();
     expect(fn () => new ConnectorDefinition('unsafe', 'http://billing.example.test', 'secret'))
         ->toThrow(InvalidArgumentException::class);
+});
+
+it('enforces workflow run transitions and trigger contracts', function (): void {
+    $run = new WorkflowRun('run-1', 'workflow-1');
+    $trigger = new WorkflowTrigger('webhook', 'invoice.created');
+
+    $run->transitionTo('running');
+    $run->transitionTo('succeeded');
+
+    expect($run->status())->toBe('succeeded')->and($trigger->enabled)->toBeTrue();
+    expect(fn () => $run->transitionTo('failed'))->toThrow(InvalidArgumentException::class);
+});
+
+it('evaluates reusable decision tables and keeps approval queues team-scoped', function (): void {
+    $table = new DecisionTable('invoice-routing', [[
+        'conditions' => [['field' => 'amount', 'operator' => 'greater_than', 'value' => 1000]],
+        'outcome' => 'manual-review',
+    ]]);
+    $pending = new ApprovalRequest('approval-2', 'team-1', 'requester-2', 'pending', CarbonImmutable::tomorrow());
+    $queue = new ApprovalQueue('team-1', [$pending]);
+
+    expect($table->outcomesFor(['amount' => 1500]))->toBe(['manual-review'])
+        ->and($queue->pending())->toHaveCount(1);
+    expect(fn () => new ApprovalQueue('team-2', [$pending]))->toThrow(InvalidArgumentException::class);
 });
