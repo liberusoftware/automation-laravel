@@ -18,6 +18,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Copy composer files
 COPY composer.json composer.lock ./
+# The application owns the first-party path repositories declared in composer.json.
+# They must be present before Composer resolves the lock file in the build stage.
+COPY modules ./modules
 
 # Install composer dependencies (no autoloader yet, will optimize in final stage)
 RUN composer install \
@@ -168,4 +171,3 @@ EXPOSE 8080
 ENTRYPOINT ["start-container"]
 
 HEALTHCHECK --start-period=5s --interval=2s --timeout=5s --retries=8 CMD php artisan octane:status || exit 1
-
