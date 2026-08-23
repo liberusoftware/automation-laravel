@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+remote_owner="${GITHUB_OWNER:-liberusoftware}"
+commit_message="Publish Automation package"
+
+slugs=(automation-core rules approvals ai-gateway prompt-registry data-processing voice image video connectors evaluation)
+
+for slug in "${slugs[@]}"; do
+    for suffix in "" "-api" "-filament" "-livewire"; do
+        package_name="module-automation-${slug}${suffix}"
+        source_dir="$project_root/modules/$package_name"
+        repository="$remote_owner/$package_name"
+
+        if [[ ! -d "$source_dir" ]]; then
+            printf 'Missing package directory: %s\n' "$source_dir" >&2
+            exit 1
+        fi
+
+        if ! gh repo view "$repository" --json nameWithOwner >/dev/null 2>&1; then
+            gh repo create "$repository" --public --description "Liberu Automation package: ${package_name#module-automation-}" >/dev/null
+        fi
+
+        checkout_dir="$(mktemp -d "${TMPDIR:-/tmp}/$package_name.XXXXXX")"
+        trap 'rm -rf "$checkout_dir"' EXIT
+
+        git clone --quiet "git@github.com:$repository.git" "$checkout_dir"
+        cp -a "$source_dir/." "$checkout_dir/"
+
+        git -C "$checkout_dir" add --all
+        if ! git -C "$checkout_dir" diff --cached --quiet; then
+            git -C "$checkout_dir" -c user.name='Liberu Automation' -c user.email='opensource@liberu.co.uk' commit --quiet -m "$commit_message"
+            git -C "$checkout_dir" push --quiet origin HEAD:main
+        fi
+
+        rm -rf "$checkout_dir"
+        trap - EXIT
+        printf 'Published %s\n' "$repository"
+    done
+done
