@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-image-filament",
+  "display_name": "Image Filament",
+  "description": "Filament 5 presentation adapter for module-automation-image.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Image\\Filament\\ImageFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-image": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.image.filament"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Explicit Filament plugin",
+    "Team-scoped resource page"
+  ]
+}
+

@@ -1,0 +1,30 @@
+{
+  "name": "liberusoftware/module-automation-approvals-livewire",
+  "description": "Livewire 4 adapter for module-automation-approvals.",
+  "type": "liberu-module",
+  "license": "MIT",
+  "require": {
+    "php": "^8.5",
+    "livewire/livewire": "^4.0",
+    "liberusoftware/module-automation-approvals": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liberu\\Modules\\Automation\\Approvals\\Livewire\\": "src/"
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "module-automation-approvals-livewire"
+    }
+  },
+  "version": "1.0.0",
+  "require-dev": {
+    "pestphp/pest": "^5.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "liberusoftware/module-automation-data-processing-api",
+  "description": "HTTP API adapter for module-automation-data-processing.",
+  "type": "liberu-module",
+  "license": "MIT",
+  "require": {
+    "php": "^8.5",
+    "illuminate/support": "^13.0",
+    "laravel/framework": "^13.0",
+    "liberusoftware/module-automation-data-processing": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liberu\\Modules\\Automation\\DataProcessing\\Api\\": "src/"
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "module-automation-data-processing-api"
+    }
+  },
+  "version": "1.0.0",
+  "require-dev": {
+    "pestphp/pest": "^5.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

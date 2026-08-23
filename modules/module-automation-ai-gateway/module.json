@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-ai-gateway",
+  "display_name": "Ai Gateway",
+  "description": "Provider-neutral ai-gateway capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\AiGateway\\AiGatewayServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.ai-gateway.provider-contracts",
+    "automation.ai-gateway.model-catalog",
+    "automation.ai-gateway.routing",
+    "automation.ai-gateway.fallback",
+    "automation.ai-gateway.structured-output",
+    "automation.ai-gateway.tool-policy",
+    "automation.ai-gateway.usage-metering"
+  ],
+  "default_enabled": true,
+  "features": [
+    "provider contracts",
+    "model catalog",
+    "routing",
+    "fallback",
+    "structured output",
+    "tool policy",
+    "usage metering"
+  ]
+}

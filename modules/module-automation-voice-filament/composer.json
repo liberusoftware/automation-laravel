@@ -1,0 +1,30 @@
+{
+  "name": "liberusoftware/module-automation-voice-filament",
+  "description": "Filament 5 adapter for module-automation-voice.",
+  "type": "liberu-module",
+  "license": "MIT",
+  "require": {
+    "php": "^8.5",
+    "filament/filament": "^5.1",
+    "liberusoftware/module-automation-voice": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liberu\\Modules\\Automation\\Voice\\Filament\\": "src/"
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "module-automation-voice-filament"
+    }
+  },
+  "version": "1.0.0",
+  "require-dev": {
+    "pestphp/pest": "^5.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

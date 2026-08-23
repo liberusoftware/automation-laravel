@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-data-processing-api",
+  "display_name": "DataProcessing API",
+  "description": "HTTP presentation adapter for module-automation-data-processing.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\DataProcessing\\Api\\DataProcessingApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-data-processing": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.data-processing.api"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Versioned JSON API",
+    "Team-scoped resources",
+    "Idempotent writes"
+  ]
+}
+

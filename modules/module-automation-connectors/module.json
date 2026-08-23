@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-connectors",
+  "display_name": "Connectors",
+  "description": "Provider-neutral connectors capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\Connectors\\ConnectorsServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.connectors.authenticated-triggers-actions",
+    "automation.connectors.webhooks",
+    "automation.connectors.rate-limits",
+    "automation.connectors.cursor-sync",
+    "automation.connectors.replay",
+    "automation.connectors.reconciliation"
+  ],
+  "default_enabled": true,
+  "features": [
+    "authenticated triggers/actions",
+    "webhooks",
+    "rate limits",
+    "cursor sync",
+    "replay",
+    "reconciliation"
+  ]
+}

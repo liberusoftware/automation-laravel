@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-rules-api",
+  "display_name": "Rules API",
+  "description": "HTTP presentation adapter for module-automation-rules.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Rules\\Api\\RulesApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-rules": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.rules.api"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Versioned JSON API",
+    "Team-scoped resources",
+    "Idempotent writes"
+  ]
+}
+

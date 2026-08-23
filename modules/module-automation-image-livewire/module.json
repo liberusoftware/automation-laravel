@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-image-livewire",
+  "display_name": "Image Livewire",
+  "description": "Livewire 4 presentation adapter for module-automation-image.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Image\\Livewire\\ImageLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-image": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.image.livewire"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Bounded Livewire namespace",
+    "Team-scoped interactive state"
+  ]
+}
+

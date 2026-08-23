@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-video-livewire",
+  "display_name": "Video Livewire",
+  "description": "Livewire 4 presentation adapter for module-automation-video.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Video\\Livewire\\VideoLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-video": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.video.livewire"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Bounded Livewire namespace",
+    "Team-scoped interactive state"
+  ]
+}
+

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-approvals-api",
+  "display_name": "Approvals API",
+  "description": "HTTP presentation adapter for module-automation-approvals.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Approvals\\Api\\ApprovalsApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-approvals": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.approvals.api"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Versioned JSON API",
+    "Team-scoped resources",
+    "Idempotent writes"
+  ]
+}
+

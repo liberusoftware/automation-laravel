@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-voice",
+  "display_name": "Voice",
+  "description": "Provider-neutral voice capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\Voice\\VoiceServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.voice.speech-to-text",
+    "automation.voice.text-to-speech",
+    "automation.voice.streaming-sessions",
+    "automation.voice.interruption",
+    "automation.voice.transcripts",
+    "automation.voice.consent-controls"
+  ],
+  "default_enabled": true,
+  "features": [
+    "speech-to-text",
+    "text-to-speech",
+    "streaming sessions",
+    "interruption",
+    "transcripts",
+    "consent controls"
+  ]
+}

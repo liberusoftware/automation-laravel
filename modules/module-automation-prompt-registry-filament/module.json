@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-prompt-registry-filament",
+  "display_name": "PromptRegistry Filament",
+  "description": "Filament 5 presentation adapter for module-automation-prompt-registry.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\PromptRegistry\\Filament\\PromptRegistryFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-prompt-registry": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.prompt-registry.filament"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Explicit Filament plugin",
+    "Team-scoped resource page"
+  ]
+}
+

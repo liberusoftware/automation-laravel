@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-voice-livewire",
+  "display_name": "Voice Livewire",
+  "description": "Livewire 4 presentation adapter for module-automation-voice.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Voice\\Livewire\\VoiceLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-voice": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.voice.livewire"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Bounded Livewire namespace",
+    "Team-scoped interactive state"
+  ]
+}
+

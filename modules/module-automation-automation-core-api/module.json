@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-automation-core-api",
+  "display_name": "AutomationCore API",
+  "description": "HTTP presentation adapter for module-automation-automation-core.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\AutomationCore\\Api\\AutomationCoreApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-automation-core": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.automation-core.api"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Versioned JSON API",
+    "Team-scoped resources",
+    "Idempotent writes"
+  ]
+}
+

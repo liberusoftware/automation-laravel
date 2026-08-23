@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-evaluation",
+  "display_name": "Evaluation",
+  "description": "Provider-neutral evaluation capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\Evaluation\\EvaluationServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.evaluation.quality-suites",
+    "automation.evaluation.regression-comparison",
+    "automation.evaluation.latency-cost-metrics",
+    "automation.evaluation.safety-checks",
+    "automation.evaluation.release-gates"
+  ],
+  "default_enabled": true,
+  "features": [
+    "quality suites",
+    "regression comparison",
+    "latency/cost metrics",
+    "safety checks",
+    "release gates"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-connectors-api",
+  "display_name": "Connectors API",
+  "description": "HTTP presentation adapter for module-automation-connectors.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Connectors\\Api\\ConnectorsApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-connectors": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.connectors.api"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Versioned JSON API",
+    "Team-scoped resources",
+    "Idempotent writes"
+  ]
+}
+

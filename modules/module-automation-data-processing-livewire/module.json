@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-data-processing-livewire",
+  "display_name": "DataProcessing Livewire",
+  "description": "Livewire 4 presentation adapter for module-automation-data-processing.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\DataProcessing\\Livewire\\DataProcessingLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-data-processing": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.data-processing.livewire"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Bounded Livewire namespace",
+    "Team-scoped interactive state"
+  ]
+}
+

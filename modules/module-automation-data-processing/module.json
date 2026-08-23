@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-data-processing",
+  "display_name": "Data Processing",
+  "description": "Provider-neutral data-processing capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\DataProcessing\\DataProcessingServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.data-processing.classification",
+    "automation.data-processing.extraction",
+    "automation.data-processing.summarization",
+    "automation.data-processing.translation",
+    "automation.data-processing.enrichment",
+    "automation.data-processing.redaction",
+    "automation.data-processing.batch-processing"
+  ],
+  "default_enabled": true,
+  "features": [
+    "classification",
+    "extraction",
+    "summarization",
+    "translation",
+    "enrichment",
+    "redaction",
+    "batch processing"
+  ]
+}

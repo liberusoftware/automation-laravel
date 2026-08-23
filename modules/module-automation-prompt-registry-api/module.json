@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-prompt-registry-api",
+  "display_name": "PromptRegistry API",
+  "description": "HTTP presentation adapter for module-automation-prompt-registry.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\PromptRegistry\\Api\\PromptRegistryApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-prompt-registry": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.prompt-registry.api"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Versioned JSON API",
+    "Team-scoped resources",
+    "Idempotent writes"
+  ]
+}
+

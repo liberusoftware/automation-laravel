@@ -1,0 +1,18 @@
+openapi: 3.1.0
+info:
+  title: data-processing API
+  version: 1.0.0
+paths:
+  /api/v1/automation/data-processing:
+    get:
+      operationId: automation.data-processing.list
+      security: [{ sanctum: [] }]
+      responses: { '200': { description: Authorized team-scoped resources } }
+    post:
+      operationId: automation.data-processing.create
+      security: [{ sanctum: [] }]
+      responses: { '201': { description: Created resource } }
+components:
+  securitySchemes:
+    sanctum: { type: http, scheme: bearer, bearerFormat: Sanctum }
+

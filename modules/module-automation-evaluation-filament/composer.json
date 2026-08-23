@@ -1,0 +1,30 @@
+{
+  "name": "liberusoftware/module-automation-evaluation-filament",
+  "description": "Filament 5 adapter for module-automation-evaluation.",
+  "type": "liberu-module",
+  "license": "MIT",
+  "require": {
+    "php": "^8.5",
+    "filament/filament": "^5.1",
+    "liberusoftware/module-automation-evaluation": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liberu\\Modules\\Automation\\Evaluation\\Filament\\": "src/"
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "module-automation-evaluation-filament"
+    }
+  },
+  "version": "1.0.0",
+  "require-dev": {
+    "pestphp/pest": "^5.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

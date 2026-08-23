@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-image",
+  "display_name": "Image",
+  "description": "Provider-neutral image capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\Image\\ImageServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.image.generation-requests",
+    "automation.image.editing-requests",
+    "automation.image.source-assets",
+    "automation.image.moderation",
+    "automation.image.provenance",
+    "automation.image.variants",
+    "automation.image.delivery"
+  ],
+  "default_enabled": true,
+  "features": [
+    "generation requests",
+    "editing requests",
+    "source assets",
+    "moderation",
+    "provenance",
+    "variants",
+    "delivery"
+  ]
+}

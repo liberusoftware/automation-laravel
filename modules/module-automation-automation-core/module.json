@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-automation-core",
+  "display_name": "Automation Core",
+  "description": "Provider-neutral automation-core capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\AutomationCore\\AutomationCoreServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.automation-core.workflow-definitions",
+    "automation.automation-core.versions",
+    "automation.automation-core.triggers",
+    "automation.automation-core.state",
+    "automation.automation-core.runs",
+    "automation.automation-core.variables",
+    "automation.automation-core.schedules",
+    "automation.automation-core.retries",
+    "automation.automation-core.cancellation",
+    "automation.automation-core.compensation"
+  ],
+  "default_enabled": true,
+  "features": [
+    "workflow definitions",
+    "versions",
+    "triggers",
+    "state",
+    "runs",
+    "variables",
+    "schedules",
+    "retries",
+    "cancellation",
+    "compensation"
+  ]
+}

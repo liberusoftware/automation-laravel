@@ -1,0 +1,9 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use Liberu\Modules\Automation\Approvals\Api\Http\Controllers\ApprovalsResourceController;
+
+Route::middleware(['api', 'auth:sanctum'])->prefix('api/v1/automation/approvals')->group(function (): void {
+    Route::get('/', [ApprovalsResourceController::class, 'index']);
+    Route::post('/', [ApprovalsResourceController::class, 'store']);
+});

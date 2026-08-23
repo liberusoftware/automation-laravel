@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-connectors-livewire",
+  "display_name": "Connectors Livewire",
+  "description": "Livewire 4 presentation adapter for module-automation-connectors.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Connectors\\Livewire\\ConnectorsLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-connectors": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.connectors.livewire"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Bounded Livewire namespace",
+    "Team-scoped interactive state"
+  ]
+}
+

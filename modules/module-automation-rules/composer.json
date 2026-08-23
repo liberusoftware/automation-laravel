@@ -1,0 +1,30 @@
+{
+  "name": "liberusoftware/module-automation-rules",
+  "description": "Provider-neutral rules domain module for Liberu Automation.",
+  "type": "liberu-module",
+  "license": "MIT",
+  "require": {
+    "php": "^8.5",
+    "illuminate/database": "^13.0",
+    "illuminate/support": "^13.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liberu\\Modules\\Automation\\Rules\\": "src/"
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "module-automation-rules"
+    }
+  },
+  "version": "1.0.0",
+  "require-dev": {
+    "pestphp/pest": "^5.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-automation-core-filament",
+  "display_name": "AutomationCore Filament",
+  "description": "Filament 5 presentation adapter for module-automation-automation-core.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\AutomationCore\\Filament\\AutomationCoreFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-automation-core": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.automation-core.filament"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Explicit Filament plugin",
+    "Team-scoped resource page"
+  ]
+}
+

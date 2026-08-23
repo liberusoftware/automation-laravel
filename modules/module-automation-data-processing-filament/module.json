@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-data-processing-filament",
+  "display_name": "DataProcessing Filament",
+  "description": "Filament 5 presentation adapter for module-automation-data-processing.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\DataProcessing\\Filament\\DataProcessingFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-data-processing": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.data-processing.filament"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Explicit Filament plugin",
+    "Team-scoped resource page"
+  ]
+}
+

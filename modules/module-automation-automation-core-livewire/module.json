@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-automation-core-livewire",
+  "display_name": "AutomationCore Livewire",
+  "description": "Livewire 4 presentation adapter for module-automation-automation-core.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\AutomationCore\\Livewire\\AutomationCoreLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-automation-core": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.automation-core.livewire"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Bounded Livewire namespace",
+    "Team-scoped interactive state"
+  ]
+}
+

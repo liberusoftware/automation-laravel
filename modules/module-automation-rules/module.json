@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-rules",
+  "display_name": "Rules",
+  "description": "Provider-neutral rules capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\Rules\\RulesServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.rules.typed-conditions",
+    "automation.rules.expressions",
+    "automation.rules.validation",
+    "automation.rules.simulation",
+    "automation.rules.decision-tables"
+  ],
+  "default_enabled": true,
+  "features": [
+    "typed conditions",
+    "expressions",
+    "validation",
+    "simulation",
+    "decision tables"
+  ]
+}

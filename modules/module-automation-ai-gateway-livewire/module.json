@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-ai-gateway-livewire",
+  "display_name": "AiGateway Livewire",
+  "description": "Livewire 4 presentation adapter for module-automation-ai-gateway.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\AiGateway\\Livewire\\AiGatewayLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-ai-gateway": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.ai-gateway.livewire"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Bounded Livewire namespace",
+    "Team-scoped interactive state"
+  ]
+}
+

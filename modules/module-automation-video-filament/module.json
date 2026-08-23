@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-video-filament",
+  "display_name": "Video Filament",
+  "description": "Filament 5 presentation adapter for module-automation-video.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\Video\\Filament\\VideoFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-video": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.video.filament"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Explicit Filament plugin",
+    "Team-scoped resource page"
+  ]
+}
+

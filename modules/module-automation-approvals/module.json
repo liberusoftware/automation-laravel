@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-approvals",
+  "display_name": "Approvals",
+  "description": "Provider-neutral approvals capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\Approvals\\ApprovalsServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.approvals.human-review-queues",
+    "automation.approvals.separation-of-duties",
+    "automation.approvals.expiry",
+    "automation.approvals.escalation",
+    "automation.approvals.delegation",
+    "automation.approvals.evidence"
+  ],
+  "default_enabled": true,
+  "features": [
+    "human review queues",
+    "separation of duties",
+    "expiry",
+    "escalation",
+    "delegation",
+    "evidence"
+  ]
+}

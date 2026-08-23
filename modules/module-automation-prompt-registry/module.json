@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-prompt-registry",
+  "display_name": "Prompt Registry",
+  "description": "Provider-neutral prompt-registry capability for Liberu Automation.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Modules\\Automation\\PromptRegistry\\PromptRegistryServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {}
+  },
+  "capabilities": [
+    "automation.prompt-registry.versioned-prompts",
+    "automation.prompt-registry.variables",
+    "automation.prompt-registry.evaluation-sets",
+    "automation.prompt-registry.tenant-overrides",
+    "automation.prompt-registry.approvals",
+    "automation.prompt-registry.rollback"
+  ],
+  "default_enabled": true,
+  "features": [
+    "versioned prompts",
+    "variables",
+    "evaluation sets",
+    "tenant overrides",
+    "approvals",
+    "rollback"
+  ]
+}

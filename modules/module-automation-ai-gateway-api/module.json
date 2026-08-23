@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "module-automation-ai-gateway-api",
+  "display_name": "AiGateway API",
+  "description": "HTTP presentation adapter for module-automation-ai-gateway.",
+  "version": "1.0.0",
+  "category": "presentation",
+  "provider": "Liberu\\Modules\\Automation\\AiGateway\\Api\\AiGatewayApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-automation-ai-gateway": "^1.0"
+    }
+  },
+  "capabilities": [
+    "automation.ai-gateway.api"
+  ],
+  "default_enabled": false,
+  "features": [
+    "Versioned JSON API",
+    "Team-scoped resources",
+    "Idempotent writes"
+  ]
+}
+
