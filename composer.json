@@ -1,12 +1,14 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "liberusoftware/boilerplate-laravel",
+    "name": "liberusoftware/automation-laravel",
     "type": "project",
-    "description": "Liberu boilerplate Laravel application.",
+    "description": "Liberu Automation Laravel application for governed workflows and provider-neutral AI capabilities.",
     "keywords": [
         "laravel",
         "framework",
-        "boilerplate"
+        "automation",
+        "workflows",
+        "artificial-intelligence"
     ],
     "license": "MIT",
     "repositories": [
