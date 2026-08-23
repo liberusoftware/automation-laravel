@@ -34,4 +34,9 @@ final readonly class ApprovalRequest
 
         return new self($this->id, $this->teamId, $this->requesterId, $decision->value, $this->expiresAt);
     }
+
+    public function isPending(): bool
+    {
+        return $this->status === 'pending';
+    }
 }
