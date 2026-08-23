@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-image",
+  "name": "liberusoftware/automation-image",
   "description": "Provider-neutral image domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

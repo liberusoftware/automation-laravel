@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-prompt-registry",
+  "name": "liberusoftware/automation-prompt-registry",
   "description": "Provider-neutral prompt-registry domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

@@ -1,12 +1,12 @@
 {
-  "name": "liberusoftware/module-automation-ai-gateway-filament",
+  "name": "liberusoftware/automation-ai-gateway-filament",
   "description": "Filament 5 adapter for module-automation-ai-gateway.",
   "type": "liberu-module",
   "license": "MIT",
   "require": {
     "php": "^8.5",
     "filament/filament": "^5.1",
-    "liberusoftware/module-automation-ai-gateway": "^1.0"
+    "liberusoftware/automation-ai-gateway": "^1.0"
   },
   "autoload": {
     "psr-4": {

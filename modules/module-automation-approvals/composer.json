@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-approvals",
+  "name": "liberusoftware/automation-approvals",
   "description": "Provider-neutral approvals domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

@@ -1,12 +1,12 @@
 {
-  "name": "liberusoftware/module-automation-video-filament",
+  "name": "liberusoftware/automation-video-filament",
   "description": "Filament 5 adapter for module-automation-video.",
   "type": "liberu-module",
   "license": "MIT",
   "require": {
     "php": "^8.5",
     "filament/filament": "^5.1",
-    "liberusoftware/module-automation-video": "^1.0"
+    "liberusoftware/automation-video": "^1.0"
   },
   "autoload": {
     "psr-4": {

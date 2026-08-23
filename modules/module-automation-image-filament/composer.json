@@ -1,12 +1,12 @@
 {
-  "name": "liberusoftware/module-automation-image-filament",
+  "name": "liberusoftware/automation-image-filament",
   "description": "Filament 5 adapter for module-automation-image.",
   "type": "liberu-module",
   "license": "MIT",
   "require": {
     "php": "^8.5",
     "filament/filament": "^5.1",
-    "liberusoftware/module-automation-image": "^1.0"
+    "liberusoftware/automation-image": "^1.0"
   },
   "autoload": {
     "psr-4": {

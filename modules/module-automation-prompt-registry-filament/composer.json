@@ -1,12 +1,12 @@
 {
-  "name": "liberusoftware/module-automation-prompt-registry-filament",
+  "name": "liberusoftware/automation-prompt-registry-filament",
   "description": "Filament 5 adapter for module-automation-prompt-registry.",
   "type": "liberu-module",
   "license": "MIT",
   "require": {
     "php": "^8.5",
     "filament/filament": "^5.1",
-    "liberusoftware/module-automation-prompt-registry": "^1.0"
+    "liberusoftware/automation-prompt-registry": "^1.0"
   },
   "autoload": {
     "psr-4": {

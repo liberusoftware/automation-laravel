@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-video",
+  "name": "liberusoftware/automation-video",
   "description": "Provider-neutral video domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

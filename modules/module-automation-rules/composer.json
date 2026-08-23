@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-rules",
+  "name": "liberusoftware/automation-rules",
   "description": "Provider-neutral rules domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

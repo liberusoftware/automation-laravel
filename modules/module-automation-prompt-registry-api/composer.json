@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-prompt-registry-api",
+  "name": "liberusoftware/automation-prompt-registry-api",
   "description": "HTTP API adapter for module-automation-prompt-registry.",
   "type": "liberu-module",
   "license": "MIT",
@@ -7,7 +7,7 @@
     "php": "^8.5",
     "illuminate/support": "^13.0",
     "laravel/framework": "^13.0",
-    "liberusoftware/module-automation-prompt-registry": "^1.0"
+    "liberusoftware/automation-prompt-registry": "^1.0"
   },
   "autoload": {
     "psr-4": {

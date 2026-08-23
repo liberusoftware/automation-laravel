@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-evaluation",
+  "name": "liberusoftware/automation-evaluation",
   "description": "Provider-neutral evaluation domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

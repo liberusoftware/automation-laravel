@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/module-automation-voice",
+  "name": "liberusoftware/automation-voice",
   "description": "Provider-neutral voice domain module for Liberu Automation.",
   "type": "liberu-module",
   "license": "MIT",

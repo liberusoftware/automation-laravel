@@ -11,7 +11,7 @@ PHP 8.5 · Laravel 13 · Composer 2 · Pest 5
 ## Installation
 
 ```bash
-composer require liberusoftware/module-automation-data-processing
+composer require liberusoftware/automation-data-processing
 php artisan migrate
 ```
 
