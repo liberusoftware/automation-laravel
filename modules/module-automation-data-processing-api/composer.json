@@ -19,7 +19,6 @@
       "name": "module-automation-data-processing-api"
     }
   },
-  "version": "1.0.0",
   "require-dev": {
     "pestphp/pest": "^5.0"
   },
