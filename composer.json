@@ -373,7 +373,11 @@
         ],
         "test": "vendor/bin/pest",
         "test:automation": "scripts/test-automation-packages",
-        "verify:automation": "scripts/verify-automation-release"
+        "verify:automation": "scripts/verify-automation-release",
+        "test:unit": "vendor/bin/pest tests/Unit",
+        "test:feature": "vendor/bin/pest tests/Feature",
+        "test:coverage": "vendor/bin/pest --coverage --min=100",
+        "test:parallel": "vendor/bin/pest --parallel"
     },
     "extra": {
         "laravel": {
