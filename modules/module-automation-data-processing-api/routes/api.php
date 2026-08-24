@@ -6,4 +6,7 @@ use Liberu\Modules\Automation\DataProcessing\Api\Http\Controllers\DataProcessing
 Route::middleware(['api', 'auth:sanctum'])->prefix('api/v1/automation/data-processing')->group(function (): void {
     Route::get('/', [DataProcessingResourceController::class, 'index']);
     Route::post('/', [DataProcessingResourceController::class, 'store']);
+    Route::get('/{id}', [DataProcessingResourceController::class, 'show']);
+    Route::patch('/{id}', [DataProcessingResourceController::class, 'update']);
+    Route::delete('/{id}', [DataProcessingResourceController::class, 'destroy']);
 });
