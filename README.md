@@ -128,7 +128,7 @@ vendor/bin/pest modules/module-automation-*/tests
 ```
 
 The release gate measures the owned application executable scope and requires
-100% coverage for the application composition scope. The current release passes with 215 tests and 1,122 assertions:
+100% coverage for the application composition scope. The current release passes with 216 tests and 1,243 assertions:
 
 ```bash
 XDEBUG_MODE=coverage php artisan test --coverage-clover=coverage.xml --min=100
@@ -155,7 +155,7 @@ php scripts/submit-packagist.php --dry-run
 
 Publishing requires authenticated `gh` and `git` access to the organisation.
 The released packages are tagged independently; the application’s current
-release is `v1.0.1` (the initial major release was `v1.0.0`).
+major release is `v4.0.0` (the initial major release was `v1.0.0`).
 
 After the repositories are public, register every Composer package on Packagist:
 
