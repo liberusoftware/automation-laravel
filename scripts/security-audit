@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$root"
+
+failures=0
+
+while IFS= read -r -d '' file; do
+    case "$file" in
+        .env|.env.*)
+            case "$file" in
+                .env.example|.env.testing|.env.ci) ;;
+                *)
+                    printf 'Tracked environment file: %s\n' "$file" >&2
+                    failures=$((failures + 1))
+                    ;;
+            esac
+            ;;
+    esac
+done < <(git ls-files -z)
+
+if matches="$(git grep -nI -E -- \
+    '-----BEGIN (RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----|gh[pousr]_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|xox[baprs]-[0-9A-Za-z-]{20,}' \
+    -- ':!scripts/security-audit' ':!*.lock' ':!vendor/**' ':!modules/*/vendor/**' ':!themes/*/vendor/**' || true)"; then
+    if [[ -n "$matches" ]]; then
+        printf 'High-confidence secret pattern found in tracked content:\n%s\n' "$matches" >&2
+        failures=$((failures + 1))
+    fi
+fi
+
+if ((failures > 0)); then
+    printf 'Security audit failed with %d finding(s).\n' "$failures" >&2
+    exit 1
+fi
+
+printf 'Security audit passed: no tracked environment files or high-confidence secret patterns found.\n'
