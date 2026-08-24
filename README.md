@@ -121,10 +121,14 @@ vendor/bin/pint --test
 npm run build
 ```
 
-The test suite exercises application behaviour and every installed module provider. Package architecture tests verify metadata, declared dependencies, host isolation, UI boundaries, and Composer ownership.
+The test suite exercises application behaviour and every installed module provider. Package architecture tests verify metadata, declared dependencies, host isolation, UI boundaries, and Composer ownership. Each of the eleven core Automation packages also carries package-local domain tests:
+
+```bash
+vendor/bin/pest modules/module-automation-*/tests
+```
 
 The release gate measures the owned application executable scope and requires
-100% coverage. The current release passes with 209 tests and 949 assertions:
+100% coverage for the application composition scope. The current release passes with 215 tests and 1,122 assertions:
 
 ```bash
 XDEBUG_MODE=coverage php artisan test --coverage-clover=coverage.xml --min=100
