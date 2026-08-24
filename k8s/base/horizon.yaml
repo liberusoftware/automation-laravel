@@ -47,6 +47,7 @@ spec:
           runAsNonRoot: true
           runAsUser: 1000
           allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
           capabilities:
             drop: [ALL]
       volumes:
@@ -54,4 +55,7 @@ spec:
         persistentVolumeClaim:
           claimName: automation-storage
       securityContext:
+        runAsNonRoot: true
         fsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault

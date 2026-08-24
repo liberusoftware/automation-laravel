@@ -68,6 +68,7 @@ spec:
           runAsNonRoot: true
           runAsUser: 1000
           allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
           capabilities:
             drop:
             - ALL
@@ -120,8 +121,12 @@ spec:
               runAsNonRoot: true
               runAsUser: 1000
               allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
               capabilities:
                 drop:
                 - ALL
           securityContext:
+            runAsNonRoot: true
             fsGroup: 1000
+            seccompProfile:
+              type: RuntimeDefault
