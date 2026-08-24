@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'Liberu Automation') }} — a foundation you keep</title>
+    <title>{{ config('app.name', 'Liberu Automation') }} — governed automation</title>
     <meta name="description" content="Liberu Automation provides governed workflows, approvals, AI gateways, connectors, media processing, and evaluation on Laravel, Filament, and Livewire.">
 
     @fonts
@@ -297,7 +297,7 @@
         <div class="wrap hero__grid">
             <div>
                 <span class="pill reveal" data-d="1"><span class="pill__dot"></span> Laravel 13 · Filament 5 · Livewire</span>
-                <h1 class="reveal" data-d="2">A foundation you <span class="sig">keep</span>, not scaffold you rip out.</h1>
+                <h1 class="reveal" data-d="2">Automate critical work with <span class="sig">confidence</span>.</h1>
                 <p class="hero__lede reveal" data-d="3">Auth, teams, roles, search, themes and multi-language — working out of the box on a clean, considered default. Clone it and build your app, not your plumbing.</p>
                 <div class="hero__cta reveal" data-d="3">
                     @if (Route::has('register'))
@@ -316,7 +316,7 @@
             </div>
 
             <div class="reveal" data-d="4">
-                <div class="mock" role="img" aria-label="The Automation's team messaging screen in the Clear Signal teal theme: a sidebar with Dashboard, Teams, Messages and Settings, beside a team conversation.">
+                <div class="mock" role="img" aria-label="Liberu Automation's workflow screen in the Clear Signal teal theme: a sidebar with Workflows, Approvals, Connectors and Settings, beside a workflow run.">
                     <div class="mock__bar">
                         <div class="mock__dots" aria-hidden="true"><i></i><i></i><i></i></div>
                         <div class="mock__addr">app · messages</div>
@@ -418,7 +418,7 @@
         <div class="wrap">
             <div class="box">
                 <div class="glow" aria-hidden="true"></div>
-                <h2>Start on a foundation, not a blank file.</h2>
+                <h2>Make every automation observable and accountable.</h2>
                 <p>Clone it, run <code style="font-family:var(--font-mono);color:#fff">docker compose up</code>, and you’re looking at a working, themed app in minutes.</p>
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}" class="btn btn--primary">Create your account</a>
