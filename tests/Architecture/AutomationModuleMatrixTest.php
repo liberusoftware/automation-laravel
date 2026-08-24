@@ -34,3 +34,31 @@ it('keeps deferred presentation technologies out of the automation implementatio
         ->and(glob($root.'/modules/module-automation-*-flutter*'))->toBe([])
         ->and(glob($root.'/modules/module-automation-*-react-native*'))->toBe([]);
 });
+
+it('keeps every Automation API adapter aligned with its CRUD and OpenAPI contract', function (): void {
+    $root = dirname(__DIR__, 2);
+    $slugs = [
+        'automation-core', 'rules', 'approvals', 'ai-gateway', 'prompt-registry',
+        'data-processing', 'voice', 'image', 'video', 'connectors', 'evaluation',
+    ];
+
+    foreach ($slugs as $slug) {
+        $directory = $root.'/modules/module-automation-'.$slug.'-api';
+        $controllerFile = glob($directory.'/src/Http/Controllers/*Controller.php')[0];
+        $controller = file_get_contents($controllerFile);
+        $routes = file_get_contents($directory.'/routes/api.php');
+        $openapi = file_get_contents((glob($directory.'/openapi/v1/*.yaml'))[0]);
+
+        foreach (['index', 'store', 'show', 'update', 'destroy'] as $method) {
+            expect($controller)->toContain('function '.$method);
+        }
+
+        foreach (['Route::get', 'Route::post', 'Route::patch', 'Route::delete'] as $route) {
+            expect($routes)->toContain($route);
+        }
+
+        foreach (['.list', '.create', '.show', '.update', '.delete'] as $operation) {
+            expect($openapi)->toContain('operationId: automation.'.$slug.$operation);
+        }
+    }
+});

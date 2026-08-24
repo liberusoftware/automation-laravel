@@ -1,9 +1,9 @@
 openapi: 3.1.0
 info:
-  title: data-processing API
+  title: rules API
   version: 1.0.0
 paths:
-  /api/v1/automation/data-processing:
+  /api/v1/automation.data-processing:
     get:
       operationId: automation.data-processing.list
       security: [{ sanctum: [] }]
@@ -11,8 +11,47 @@ paths:
     post:
       operationId: automation.data-processing.create
       security: [{ sanctum: [] }]
-      responses: { '201': { description: Created resource } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ResourceInput' }
+      responses: { '201': { description: Created resource, content: { application/json: { schema: { $ref: '#/components/schemas/ResourceResponse' } } } } }
+  /api/v1/automation.data-processing/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string, format: uuid }
+    get:
+      operationId: automation.data-processing.show
+      security: [{ sanctum: [] }]
+      responses: { '200': { description: Authorized team-scoped resource } }
+    patch:
+      operationId: automation.data-processing.update
+      security: [{ sanctum: [] }]
+      requestBody:
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ResourceInput' }
+      responses: { '200': { description: Updated resource } }
+    delete:
+      operationId: automation.data-processing.delete
+      security: [{ sanctum: [] }]
+      responses: { '204': { description: Deleted resource } }
 components:
   securitySchemes:
     sanctum: { type: http, scheme: bearer, bearerFormat: Sanctum }
-
+  schemas:
+    ResourceInput:
+      type: object
+      properties:
+        name: { type: string, maxLength: 255 }
+        payload: { type: object, additionalProperties: true }
+        status: { type: string, maxLength: 32 }
+      required: [name]
+    ResourceResponse:
+      type: object
+      required: [data]
+      properties:
+        data: { type: object, additionalProperties: true }

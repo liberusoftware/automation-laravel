@@ -6,4 +6,7 @@ use Liberu\Modules\Automation\Evaluation\Api\Http\Controllers\EvaluationResource
 Route::middleware(['api', 'auth:sanctum'])->prefix('api/v1/automation/evaluation')->group(function (): void {
     Route::get('/', [EvaluationResourceController::class, 'index']);
     Route::post('/', [EvaluationResourceController::class, 'store']);
+    Route::get('/{id}', [EvaluationResourceController::class, 'show']);
+    Route::patch('/{id}', [EvaluationResourceController::class, 'update']);
+    Route::delete('/{id}', [EvaluationResourceController::class, 'destroy']);
 });
