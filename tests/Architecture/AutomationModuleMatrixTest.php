@@ -62,3 +62,23 @@ it('keeps every Automation API adapter aligned with its CRUD and OpenAPI contrac
         }
     }
 });
+
+it('keeps every Automation Filament and Livewire adapter interactive', function (): void {
+    $root = dirname(__DIR__, 2);
+    $slugs = [
+        'automation-core', 'rules', 'approvals', 'ai-gateway', 'prompt-registry',
+        'data-processing', 'voice', 'image', 'video', 'connectors', 'evaluation',
+    ];
+
+    foreach ($slugs as $slug) {
+        $filament = $root.'/modules/module-automation-'.$slug.'-filament/src';
+        $resource = glob($filament.'/Resources/*Resource.php')[0];
+        $plugin = file_get_contents(glob($filament.'/*FilamentPlugin.php')[0]);
+        $livewire = file_get_contents($root.'/modules/module-automation-'.$slug.'-livewire/src/ResourceList.php');
+
+        expect(file_get_contents($resource))
+            ->toContain('function form', 'function table', 'function getPages', 'getEloquentQuery')
+            ->and($plugin)->toContain('->resources([')
+            ->and($livewire)->toContain('function save', 'function edit', 'function delete', 'forTeam');
+    }
+});

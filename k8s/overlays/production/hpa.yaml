@@ -1,13 +1,13 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: boilerplate-laravel
-  namespace: boilerplate-laravel
+  name: automation-laravel
+  namespace: automation-laravel
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: boilerplate-laravel
+    name: automation-laravel
   minReplicas: 3
   maxReplicas: 10
   metrics:
@@ -44,13 +44,13 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: boilerplate-horizon
-  namespace: boilerplate-laravel
+  name: automation-horizon
+  namespace: automation-laravel
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: boilerplate-horizon
+    name: automation-horizon
   minReplicas: 1
   maxReplicas: 5
   metrics:

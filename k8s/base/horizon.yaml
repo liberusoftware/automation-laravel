@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: boilerplate-horizon
-  namespace: boilerplate-laravel
+  name: automation-horizon
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: horizon
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: boilerplate-laravel
+      app: automation-laravel
       component: horizon
   template:
     metadata:
       labels:
-        app: boilerplate-laravel
+        app: automation-laravel
         component: horizon
     spec:
       containers:
       - name: horizon
-        image: ghcr.io/liberusoftware/boilerplate-laravel:latest
+        image: ghcr.io/liberusoftware/automation-laravel:latest
         command: ["php", "artisan", "horizon"]
         envFrom:
         - configMapRef:
-            name: boilerplate-config
+            name: automation-config
         - secretRef:
-            name: boilerplate-secrets
+            name: automation-secrets
         volumeMounts:
         - name: storage
           mountPath: /var/www/html/storage
@@ -52,6 +52,6 @@ spec:
       volumes:
       - name: storage
         persistentVolumeClaim:
-          claimName: boilerplate-storage
+          claimName: automation-storage
       securityContext:
         fsGroup: 1000

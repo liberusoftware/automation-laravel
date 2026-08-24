@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Kubernetes Deployment Script for Liberu Boilerplate Laravel
+# Kubernetes Deployment Script for Liberu Liberu Automation
 
 set -e
 
@@ -8,9 +8,9 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-NAMESPACE="${NAMESPACE:-boilerplate-laravel}"
+NAMESPACE="${NAMESPACE:-automation-laravel}"
 ENVIRONMENT="${ENVIRONMENT:-production}"
-DOMAIN="${DOMAIN:-boilerplate.example.com}"
+DOMAIN="${DOMAIN:-automation.example.com}"
 APP_KEY="${APP_KEY:-}"
 DB_PASSWORD="${DB_PASSWORD:-}"
 DB_ROOT_PASSWORD="${DB_ROOT_PASSWORD:-}"
@@ -19,7 +19,7 @@ info()  { echo -e "${GREEN}[INFO]${NC} $1"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC} $1"; }
 error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
-echo -e "${GREEN}=== Liberu Boilerplate Kubernetes Deployment ===${NC}"
+echo -e "${GREEN}=== Liberu Liberu Automation Kubernetes Deployment ===${NC}"
 
 command -v kubectl >/dev/null 2>&1 || { error "kubectl not installed"; exit 1; }
 
@@ -31,7 +31,7 @@ info "Creating namespace: $NAMESPACE"
 kubectl create namespace "$NAMESPACE" --dry-run=client -o yaml | kubectl apply -f -
 
 info "Updating secrets..."
-kubectl create secret generic boilerplate-secrets \
+kubectl create secret generic automation-secrets \
     --from-literal=APP_KEY="$APP_KEY" \
     --from-literal=DB_USERNAME="liberu" \
     --from-literal=DB_PASSWORD="$DB_PASSWORD" \
@@ -45,10 +45,10 @@ kubectl apply -k "k8s/overlays/$ENVIRONMENT"
 
 info "Waiting for deployment..."
 kubectl wait --for=condition=available --timeout=300s \
-    deployment/boilerplate-laravel -n "$NAMESPACE" || warn "Timeout waiting for deployment"
+    deployment/automation-laravel -n "$NAMESPACE" || warn "Timeout waiting for deployment"
 
 info "Deployment complete!"
 echo ""
 echo "  Status:  kubectl get pods -n $NAMESPACE"
-echo "  Logs:    kubectl logs -n $NAMESPACE -l app=boilerplate-laravel"
+echo "  Logs:    kubectl logs -n $NAMESPACE -l app=automation-laravel"
 echo "  URL:     https://$DOMAIN"

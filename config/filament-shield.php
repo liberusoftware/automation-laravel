@@ -40,7 +40,7 @@ return [
     | and configure the tenant model during setup. This enables tenant-scoped
     | roles and permissions throughout your application.
     |
-    | Keep this `null` in this boilerplate. Tenancy is wired manually, not via
+    | Keep this `null` in this Automation. Tenancy is wired manually, not via
     | `shield:install --tenant`: `AdminPanelProvider` declares
     | `->tenant(Team::class, ownershipRelationship: 'team')` and Shield's
     | `SyncShieldTenant` tenant middleware calls `setPermissionsTeamId()` on

@@ -94,7 +94,7 @@ check_cluster_connectivity() {
 }
 
 check_namespace() {
-    local namespace="${1:-boilerplate-laravel}"
+    local namespace="${1:-automation-laravel}"
     log_info "Checking namespace: $namespace..."
     if kubectl get namespace "$namespace" &> /dev/null; then
         log_success "Namespace '$namespace' exists"
@@ -110,38 +110,38 @@ check_namespace() {
 }
 
 validate_deployment() {
-    local namespace="${1:-boilerplate-laravel}"
+    local namespace="${1:-automation-laravel}"
     log_info "Checking deployment status in namespace: $namespace..."
     if ! kubectl get namespace "$namespace" &> /dev/null; then
         log_error "Namespace '$namespace' does not exist"
         return 1
     fi
-    if kubectl get deployment -n "$namespace" boilerplate-laravel &> /dev/null; then
+    if kubectl get deployment -n "$namespace" automation-laravel &> /dev/null; then
         local replicas ready available
-        replicas=$(kubectl get deployment -n "$namespace" boilerplate-laravel -o jsonpath='{.status.replicas}')
-        ready=$(kubectl get deployment -n "$namespace" boilerplate-laravel -o jsonpath='{.status.readyReplicas}')
-        available=$(kubectl get deployment -n "$namespace" boilerplate-laravel -o jsonpath='{.status.availableReplicas}')
+        replicas=$(kubectl get deployment -n "$namespace" automation-laravel -o jsonpath='{.status.replicas}')
+        ready=$(kubectl get deployment -n "$namespace" automation-laravel -o jsonpath='{.status.readyReplicas}')
+        available=$(kubectl get deployment -n "$namespace" automation-laravel -o jsonpath='{.status.availableReplicas}')
         log_info "Deployment: replicas=$replicas ready=${ready:-0} available=${available:-0}"
         if [ "${ready:-0}" -eq "$replicas" ] && [ "${available:-0}" -eq "$replicas" ]; then
             log_success "Deployment is healthy"
         else
             log_warning "Deployment is not fully ready"
-            kubectl get pods -n "$namespace" -l app=boilerplate-laravel
+            kubectl get pods -n "$namespace" -l app=automation-laravel
             kubectl get events -n "$namespace" --sort-by='.lastTimestamp' | tail -10
         fi
     else
-        log_warning "Deployment 'boilerplate-laravel' not found in namespace '$namespace'"
+        log_warning "Deployment 'automation-laravel' not found in namespace '$namespace'"
     fi
 }
 
 main() {
     echo ""
     echo "╔═══════════════════════════════════════════════════════════╗"
-    echo "║  Boilerplate Laravel - K8s Validation                   ║"
+    echo "║  Liberu Automation - K8s Validation                   ║"
     echo "╚═══════════════════════════════════════════════════════════╝"
     echo ""
 
-    local namespace="${1:-boilerplate-laravel}"
+    local namespace="${1:-automation-laravel}"
     local skip_cluster="${SKIP_CLUSTER_CHECKS:-false}"
 
     check_prerequisites || exit 1

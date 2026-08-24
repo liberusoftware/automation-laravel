@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: boilerplate-laravel
+namespace: automation-laravel
 
 resources:
 - namespace.yaml
@@ -21,4 +21,4 @@ resources:
 - resource-quota.yaml
 
 commonLabels:
-  app: liberu-boilerplate
+  app: liberu-automation

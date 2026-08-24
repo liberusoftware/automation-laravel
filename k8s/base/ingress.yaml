@@ -1,10 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: boilerplate-laravel
-  namespace: boilerplate-laravel
+  name: automation-laravel
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -25,27 +25,27 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - boilerplate.example.com  # REPLACE WITH YOUR DOMAIN
-    secretName: boilerplate-tls
+    - automation.example.com  # REPLACE WITH YOUR DOMAIN
+    secretName: automation-tls
   rules:
-  - host: boilerplate.example.com  # REPLACE WITH YOUR DOMAIN
+  - host: automation.example.com  # REPLACE WITH YOUR DOMAIN
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: boilerplate-laravel
+            name: automation-laravel
             port:
               number: 80
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: boilerplate-reverb
-  namespace: boilerplate-laravel
+  name: automation-reverb
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: reverb
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -61,16 +61,16 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - ws.boilerplate.example.com  # REPLACE WITH YOUR WS DOMAIN
-    secretName: boilerplate-reverb-tls
+    - ws.automation.example.com  # REPLACE WITH YOUR WS DOMAIN
+    secretName: automation-reverb-tls
   rules:
-  - host: ws.boilerplate.example.com  # REPLACE WITH YOUR WS DOMAIN
+  - host: ws.automation.example.com  # REPLACE WITH YOUR WS DOMAIN
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: boilerplate-reverb
+            name: automation-reverb
             port:
               number: 6001

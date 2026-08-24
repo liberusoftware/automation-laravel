@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$root"
+
+composer validate --strict
+php artisan module:validate
+vendor/bin/pint --test
+php -d memory_limit=512M vendor/bin/phpstan analyse --no-progress
+php scripts/validate-automation-openapi.php
+vendor/bin/pest --no-progress
+scripts/test-automation-packages
+XDEBUG_MODE=coverage php artisan test --coverage-clover=coverage.xml --min=100
+
+if command -v kubectl >/dev/null 2>&1; then
+    SKIP_CLUSTER_CHECKS=true bash k8s/validate.sh
+else
+    printf 'kubectl unavailable; Kubernetes validation was not run.\n' >&2
+fi

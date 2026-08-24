@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'Boilerplate Laravel') }}</title>
+    <title>{{ config('app.name', 'Liberu Automation') }}</title>
 
     @fonts
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))

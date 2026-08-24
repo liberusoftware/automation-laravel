@@ -35,7 +35,7 @@ return [
          * Eloquent model should be used to retrieve your teams. Of course, it
          * is often just the "Team" model but you may use whatever you like.
          *
-         * Keep this `null` in this boilerplate, even though `teams => true`
+         * Keep this `null` in this Automation, even though `teams => true`
          * below. Team scoping works off the `team_id` column and the team id
          * set by `setPermissionsTeamId()`; it does not need this class.
          *

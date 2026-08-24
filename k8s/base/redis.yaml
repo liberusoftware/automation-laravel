@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: boilerplate-redis
-  namespace: boilerplate-laravel
+  name: automation-redis
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: boilerplate-laravel
+      app: automation-laravel
       component: redis
   template:
     metadata:
       labels:
-        app: boilerplate-laravel
+        app: automation-laravel
         component: redis
     spec:
       containers:
@@ -45,10 +45,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: boilerplate-redis
-  namespace: boilerplate-laravel
+  name: automation-redis
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: redis
 spec:
   type: ClusterIP
@@ -57,5 +57,5 @@ spec:
     targetPort: 6379
     protocol: TCP
   selector:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: redis

@@ -5,7 +5,7 @@ resources:
 - ../../base
 - hpa.yaml
 
-namespace: boilerplate-laravel
+namespace: automation-laravel
 
 patches:
 - patch: |-
@@ -14,10 +14,10 @@ patches:
       value: 3
   target:
     kind: Deployment
-    name: boilerplate-laravel
+    name: automation-laravel
 
 configMapGenerator:
-- name: boilerplate-config
+- name: automation-config
   behavior: merge
   literals:
   - APP_ENV=production
@@ -25,5 +25,5 @@ configMapGenerator:
   - LOG_LEVEL=warning
 
 images:
-- name: ghcr.io/liberusoftware/boilerplate-laravel
+- name: ghcr.io/liberusoftware/automation-laravel
   newTag: latest

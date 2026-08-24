@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: boilerplate-mysql
-  namespace: boilerplate-laravel
+  name: automation-mysql
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: mysql
 spec:
-  serviceName: boilerplate-mysql
+  serviceName: automation-mysql
   replicas: 1
   selector:
     matchLabels:
-      app: boilerplate-laravel
+      app: automation-laravel
       component: mysql
   template:
     metadata:
       labels:
-        app: boilerplate-laravel
+        app: automation-laravel
         component: mysql
     spec:
       containers:
@@ -29,22 +29,22 @@ spec:
         - name: MYSQL_DATABASE
           valueFrom:
             configMapKeyRef:
-              name: boilerplate-config
+              name: automation-config
               key: DB_DATABASE
         - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
-              name: boilerplate-secrets
+              name: automation-secrets
               key: DB_USERNAME
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: boilerplate-secrets
+              name: automation-secrets
               key: DB_PASSWORD
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: boilerplate-secrets
+              name: automation-secrets
               key: DB_ROOT_PASSWORD
         volumeMounts:
         - name: mysql-data
@@ -78,10 +78,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: boilerplate-mysql
-  namespace: boilerplate-laravel
+  name: automation-mysql
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: mysql
 spec:
   type: ClusterIP
@@ -90,5 +90,5 @@ spec:
     targetPort: 3306
     protocol: TCP
   selector:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: mysql

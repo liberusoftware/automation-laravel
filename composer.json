@@ -371,7 +371,9 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "test": "vendor/bin/pest"
+        "test": "vendor/bin/pest",
+        "test:automation": "scripts/test-automation-packages",
+        "verify:automation": "scripts/verify-automation-release"
     },
     "extra": {
         "laravel": {

@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: boilerplate-queue
-  namespace: boilerplate-laravel
+  name: automation-queue
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: queue
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: boilerplate-laravel
+      app: automation-laravel
       component: queue
   template:
     metadata:
       labels:
-        app: boilerplate-laravel
+        app: automation-laravel
         component: queue
     spec:
       containers:
       - name: queue-worker
-        image: ghcr.io/liberusoftware/boilerplate-laravel:latest
+        image: ghcr.io/liberusoftware/automation-laravel:latest
         command:
         - php
         - artisan
         - horizon
         envFrom:
         - configMapRef:
-            name: boilerplate-config
+            name: automation-config
         - secretRef:
-            name: boilerplate-secrets
+            name: automation-secrets
         resources:
           requests:
             memory: "128Mi"
@@ -78,10 +78,10 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: boilerplate-scheduler
-  namespace: boilerplate-laravel
+  name: automation-scheduler
+  namespace: automation-laravel
   labels:
-    app: boilerplate-laravel
+    app: automation-laravel
     component: scheduler
 spec:
   schedule: "* * * * *"
@@ -93,22 +93,22 @@ spec:
       template:
         metadata:
           labels:
-            app: boilerplate-laravel
+            app: automation-laravel
             component: scheduler
         spec:
           restartPolicy: OnFailure
           containers:
           - name: scheduler
-            image: ghcr.io/liberusoftware/boilerplate-laravel:latest
+            image: ghcr.io/liberusoftware/automation-laravel:latest
             command:
             - php
             - artisan
             - schedule:run
             envFrom:
             - configMapRef:
-                name: boilerplate-config
+                name: automation-config
             - secretRef:
-                name: boilerplate-secrets
+                name: automation-secrets
             resources:
               requests:
                 memory: "64Mi"
