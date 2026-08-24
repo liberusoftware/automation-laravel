@@ -79,6 +79,8 @@ return [
 
     'timezone' => 'UTC',
 
+    'seed_admin_password' => env('SEED_ADMIN_PASSWORD'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
