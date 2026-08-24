@@ -19,6 +19,7 @@ genre, repository, component paths, prefixes, and additional Composer packages.
 - `measure-phpstan` finds the highest PHPStan level each package's `src/` passes, by bisection over a standalone resolution, writing `storage/app/phpstan.tsv`. Levels are monotone, so four runs settle it instead of eleven.
 - `set-phpstan-levels` writes each measured level into that package's `tests.yml` as the reusable workflow's `phpstan-level` input, ratcheting only upward and preserving the existing `coverage-threshold`.
 - `security-audit` rejects tracked environment files and high-confidence private-key, cloud-key, and access-token patterns; the host Security workflow runs it alongside Composer and npm audits.
+- `validate-documentation.php` checks internal Markdown links and balanced fenced code blocks for the host and tracked package documentation.
 
 All commands are non-interactive and fail on errors. GitHub operations require an
 authenticated `gh` CLI. Packagist operations read `PACKAGIST_USERNAME` and
