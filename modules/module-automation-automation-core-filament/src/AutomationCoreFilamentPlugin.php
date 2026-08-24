@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\AutomationCore\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\AutomationCore\Filament\Resources\AutomationCoreResource;
 
 final class AutomationCoreFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class AutomationCoreFilamentPlugin implements Plugin
         return 'module-automation-automation-core-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([AutomationCoreResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }

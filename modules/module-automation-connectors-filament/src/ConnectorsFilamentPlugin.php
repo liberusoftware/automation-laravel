@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\Connectors\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\Connectors\Filament\Resources\ConnectorsResource;
 
 final class ConnectorsFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class ConnectorsFilamentPlugin implements Plugin
         return 'module-automation-connectors-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([ConnectorsResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }

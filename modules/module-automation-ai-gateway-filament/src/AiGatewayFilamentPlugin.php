@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\AiGateway\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\AiGateway\Filament\Resources\AiGatewayResource;
 
 final class AiGatewayFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class AiGatewayFilamentPlugin implements Plugin
         return 'module-automation-ai-gateway-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([AiGatewayResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }

@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\Rules\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\Rules\Filament\Resources\RulesResource;
 
 final class RulesFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class RulesFilamentPlugin implements Plugin
         return 'module-automation-rules-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([RulesResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }

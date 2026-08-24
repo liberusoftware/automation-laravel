@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\Image\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\Image\Filament\Resources\ImageResource;
 
 final class ImageFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class ImageFilamentPlugin implements Plugin
         return 'module-automation-image-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([ImageResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }

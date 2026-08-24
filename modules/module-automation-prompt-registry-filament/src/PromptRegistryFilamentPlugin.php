@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\PromptRegistry\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\PromptRegistry\Filament\Resources\PromptRegistryResource;
 
 final class PromptRegistryFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class PromptRegistryFilamentPlugin implements Plugin
         return 'module-automation-prompt-registry-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([PromptRegistryResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }

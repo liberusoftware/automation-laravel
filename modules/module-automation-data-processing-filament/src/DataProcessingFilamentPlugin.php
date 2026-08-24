@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\DataProcessing\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\DataProcessing\Filament\Resources\DataProcessingResource;
 
 final class DataProcessingFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class DataProcessingFilamentPlugin implements Plugin
         return 'module-automation-data-processing-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([DataProcessingResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }

@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\Approvals\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\Approvals\Filament\Resources\ApprovalsResource;
 
 final class ApprovalsFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class ApprovalsFilamentPlugin implements Plugin
         return 'module-automation-approvals-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([ApprovalsResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }

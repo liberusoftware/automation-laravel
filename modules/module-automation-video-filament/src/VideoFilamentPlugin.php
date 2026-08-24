@@ -6,6 +6,7 @@ namespace Liberu\Modules\Automation\Video\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Modules\Automation\Video\Filament\Resources\VideoResource;
 
 final class VideoFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class VideoFilamentPlugin implements Plugin
         return 'module-automation-video-filament';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([VideoResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }
