@@ -34,6 +34,20 @@ check_prerequisites() {
 
 validate_yaml_syntax() {
     log_info "Validating YAML syntax..."
+    # `kubectl apply --dry-run=client` still performs API discovery for some
+    # resource kinds. In a CI runner without a cluster, Kustomize provides the
+    # equivalent parse/render validation and the live-cluster check below is
+    # intentionally handled separately.
+    if ! kubectl cluster-info &> /dev/null; then
+        if kubectl kustomize "$K8S_DIR/base" > /dev/null 2>&1; then
+            log_success "Base resources parse and render successfully (no cluster available)"
+            return 0
+        fi
+
+        log_error "Base Kustomize resources failed to parse"
+        return 1
+    fi
+
     local errors=0
     for file in "$K8S_DIR"/base/*.yaml; do
         if [ -f "$file" ]; then
