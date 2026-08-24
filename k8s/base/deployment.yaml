@@ -27,6 +27,12 @@ spec:
       - name: wait-for-mysql
         image: busybox:1.36
         command: ["sh", "-c", "until nc -z automation-mysql 3306; do echo 'Waiting for MySQL...'; sleep 2; done"]
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop: [ALL]
       - name: migrations
         image: ghcr.io/liberusoftware/automation-laravel:latest
         command: ["sh", "-c", "php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache"]
@@ -35,6 +41,13 @@ spec:
             name: automation-config
         - secretRef:
             name: automation-secrets
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 1000
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop: [ALL]
       containers:
       - name: app
         image: ghcr.io/liberusoftware/automation-laravel:latest
@@ -85,6 +98,7 @@ spec:
           runAsNonRoot: true
           runAsUser: 1000
           allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
           capabilities:
             drop: [ALL]
       volumes:
@@ -94,4 +108,7 @@ spec:
       - name: cache
         emptyDir: {}
       securityContext:
+        runAsNonRoot: true
         fsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault

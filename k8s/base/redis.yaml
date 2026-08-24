@@ -31,6 +31,16 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "500m"
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 999
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop: [ALL]
+        volumeMounts:
+        - name: redis-data
+          mountPath: /data
         livenessProbe:
           tcpSocket:
             port: 6379
@@ -41,6 +51,12 @@ spec:
             command: [redis-cli, ping]
           initialDelaySeconds: 5
           periodSeconds: 5
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+      - name: redis-data
+        emptyDir: {}
 ---
 apiVersion: v1
 kind: Service

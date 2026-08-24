@@ -49,6 +49,8 @@ spec:
         volumeMounts:
         - name: mysql-data
           mountPath: /var/lib/mysql
+        - name: mysql-tmp
+          mountPath: /tmp
         resources:
           requests:
             memory: "256Mi"
@@ -64,8 +66,19 @@ spec:
         readinessProbe:
           exec:
             command: [mysqladmin, ping, -h, localhost]
-          initialDelaySeconds: 5
-          periodSeconds: 5
+            initialDelaySeconds: 5
+            periodSeconds: 5
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop: [ALL]
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+      - name: mysql-tmp
+        emptyDir: {}
   volumeClaimTemplates:
   - metadata:
       name: mysql-data
