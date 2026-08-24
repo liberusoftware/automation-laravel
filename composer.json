@@ -11,14 +11,23 @@
         "artificial-intelligence"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "modules/module-automation-*",
-            "options": {
-                "symlink": false
-            }
-        },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "modules/module-automation-*",
+      "options": {
+        "symlink": false
+      },
+      "canonical": false
+    },
+    {
+      "type": "path",
+      "url": "modules/module-liberu-*",
+      "options": {
+        "symlink": false
+      },
+      "canonical": true
+    },
         {
             "type": "vcs",
             "url": "https://github.com/liberusoftware/composer-installer.git"
@@ -292,8 +301,24 @@
         "liberusoftware/automation-video-livewire": "^1.0",
         "liberusoftware/automation-voice": "^1.0",
         "liberusoftware/automation-voice-api": "^1.0",
-        "liberusoftware/automation-voice-filament": "^1.0",
-        "liberusoftware/automation-voice-livewire": "^1.0",
+    "liberusoftware/automation-voice-filament": "^1.0",
+    "liberusoftware/automation-voice-livewire": "^1.0",
+    "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+    "liberusoftware/module-liberu-platform-orchestration-api": "^1.0",
+    "liberusoftware/module-liberu-platform-orchestration-filament": "^1.0",
+    "liberusoftware/module-liberu-platform-orchestration-livewire": "^1.0",
+    "liberusoftware/module-liberu-executive-insights": "^1.0",
+    "liberusoftware/module-liberu-executive-insights-api": "^1.0",
+    "liberusoftware/module-liberu-executive-insights-filament": "^1.0",
+    "liberusoftware/module-liberu-executive-insights-livewire": "^1.0",
+    "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
+    "liberusoftware/module-liberu-business-workflow-reconciliation-api": "^1.0",
+    "liberusoftware/module-liberu-business-workflow-reconciliation-filament": "^1.0",
+    "liberusoftware/module-liberu-business-workflow-reconciliation-livewire": "^1.0",
+    "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
+    "liberusoftware/module-liberu-revenue-and-care-orchestration-api": "^1.0",
+    "liberusoftware/module-liberu-revenue-and-care-orchestration-filament": "^1.0",
+    "liberusoftware/module-liberu-revenue-and-care-orchestration-livewire": "^1.0",
         "liberusoftware/module-manager": "^1.0",
         "liberusoftware/module-manager-filament": "^1.1",
         "liberusoftware/notifications": "^1.0",

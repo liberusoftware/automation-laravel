@@ -22,7 +22,19 @@ final class RulesFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([RulesResource::class]);
+        $panel->resources(array_values($this->capabilities()));
+    }
+
+    /** @return array<string, class-string> */
+    public function capabilities(): array
+    {
+        return [
+            'automation.rules.typed-conditions' => RulesResource::class,
+            'automation.rules.expressions' => RulesResource::class,
+            'automation.rules.validation' => RulesResource::class,
+            'automation.rules.simulation' => RulesResource::class,
+            'automation.rules.decision-tables' => RulesResource::class,
+        ];
     }
 
     public function boot(Panel $panel): void {}

@@ -1,57 +1,254 @@
 openapi: 3.1.0
 info:
-  title: rules API
+  title: Automation Data Processing API
   version: 1.0.0
+  description: Versioned, authenticated API contract for the data-processing module.
+servers:
+  - url: /
 paths:
-  /api/v1/automation.data-processing:
+  /api/v1/automation/data-processing:
     get:
-      operationId: automation.data-processing.list
-      security: [{ sanctum: [] }]
-      responses: { '200': { description: Authorized team-scoped resources } }
+      operationId: automation.data.processing.list
+      summary: List authorized data-processing resources.
+      security:
+        - sanctum: []
+      parameters:
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/PageNumber'
+      responses:
+        '200':
+          $ref: '#/components/responses/ResourceCollection'
+        '401':
+          $ref: '#/components/responses/Problem'
+        '403':
+          $ref: '#/components/responses/Problem'
     post:
-      operationId: automation.data-processing.create
-      security: [{ sanctum: [] }]
+      operationId: automation.data.processing.create
+      summary: Create a data-processing resource.
+      security:
+        - sanctum: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
         required: true
         content:
           application/json:
-            schema: { $ref: '#/components/schemas/ResourceInput' }
-      responses: { '201': { description: Created resource, content: { application/json: { schema: { $ref: '#/components/schemas/ResourceResponse' } } } } }
-  /api/v1/automation.data-processing/{id}:
+            schema:
+              $ref: '#/components/schemas/ResourceInput'
+      responses:
+        '201':
+          $ref: '#/components/responses/Resource'
+        '401':
+          $ref: '#/components/responses/Problem'
+        '422':
+          $ref: '#/components/responses/Problem'
+  /api/v1/automation/data-processing/{id}:
     parameters:
-      - name: id
-        in: path
-        required: true
-        schema: { type: string, format: uuid }
+      - $ref: '#/components/parameters/ResourceId'
     get:
-      operationId: automation.data-processing.show
-      security: [{ sanctum: [] }]
-      responses: { '200': { description: Authorized team-scoped resource } }
+      operationId: automation.data.processing.get
+      summary: Retrieve one authorized data-processing resource.
+      security:
+        - sanctum: []
+      responses:
+        '200':
+          $ref: '#/components/responses/Resource'
+        '404':
+          $ref: '#/components/responses/Problem'
     patch:
-      operationId: automation.data-processing.update
-      security: [{ sanctum: [] }]
+      operationId: automation.data.processing.update
+      summary: Update permitted data-processing fields.
+      security:
+        - sanctum: []
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+        - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
+        required: true
         content:
           application/json:
-            schema: { $ref: '#/components/schemas/ResourceInput' }
-      responses: { '200': { description: Updated resource } }
+            schema:
+              $ref: '#/components/schemas/ResourceInput'
+      responses:
+        '200':
+          $ref: '#/components/responses/Resource'
+        '409':
+          $ref: '#/components/responses/Problem'
+        '422':
+          $ref: '#/components/responses/Problem'
     delete:
-      operationId: automation.data-processing.delete
-      security: [{ sanctum: [] }]
-      responses: { '204': { description: Deleted resource } }
+      operationId: automation.data.processing.delete
+      summary: Delete or deactivate a data-processing resource.
+      security:
+        - sanctum: []
+      responses:
+        '204':
+          description: Resource deleted successfully.
+        '404':
+          $ref: '#/components/responses/Problem'
 components:
+  parameters:
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: Opaque resource identifier.
+      schema:
+        type: string
+        format: uuid
+    PageSize:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 25
+    PageNumber:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      schema:
+        type: string
+        maxLength: 255
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: Optional concurrency validator for updates.
+      schema:
+        type: string
   securitySchemes:
-    sanctum: { type: http, scheme: bearer, bearerFormat: Sanctum }
+    sanctum:
+      type: http
+      scheme: bearer
+      bearerFormat: Sanctum
   schemas:
     ResourceInput:
       type: object
+      additionalProperties: false
+      required:
+        - name
       properties:
-        name: { type: string, maxLength: 255 }
-        payload: { type: object, additionalProperties: true }
-        status: { type: string, maxLength: 32 }
-      required: [name]
+        name:
+          type: string
+          maxLength: 255
+        payload:
+          type: object
+          additionalProperties: true
+        status:
+          type: string
+          maxLength: 32
+        classification:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for classification.
+        extraction:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for extraction.
+        summarization:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for summarization.
+        translation:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for translation.
+        enrichment:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for enrichment.
+        redaction:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for redaction.
+        batch_processing:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for batch_processing.
+        idempotency_key:
+          type: string
+          maxLength: 255
+    Resource:
+      type: object
+      required:
+        - id
+        - type
+        - attributes
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+          const: automation-data-processing
+        attributes:
+          type: object
+          additionalProperties: true
     ResourceResponse:
       type: object
-      required: [data]
+      required:
+        - data
       properties:
-        data: { type: object, additionalProperties: true }
+        data:
+          $ref: '#/components/schemas/Resource'
+    ResourceCollection:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        links:
+          type: object
+          additionalProperties: true
+        meta:
+          type: object
+          additionalProperties: true
+    ProblemDetails:
+      type: object
+      required:
+        - type
+        - title
+        - status
+      properties:
+        type:
+          type: string
+          format: uri-reference
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string
+  responses:
+    Resource:
+      description: Authorized resource response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResourceResponse'
+    ResourceCollection:
+      description: Authorized paginated resource collection.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResourceCollection'
+    Problem:
+      description: RFC 9457 Problem Details response.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'

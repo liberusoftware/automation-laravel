@@ -7,8 +7,13 @@ namespace Liberu\Modules\Automation\AutomationCore\Api\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Liberu\Modules\Automation\AutomationCore\Actions\CancelWorkflowRun;
 use Liberu\Modules\Automation\AutomationCore\Actions\CreateAutomationCoreResource;
+use Liberu\Modules\Automation\AutomationCore\Actions\PublishWorkflow;
+use Liberu\Modules\Automation\AutomationCore\Actions\StartWorkflowRun;
+use Liberu\Modules\Automation\AutomationCore\Domain\WorkflowDefinition;
 use Liberu\Modules\Automation\AutomationCore\Models\AutomationCoreResource;
+use Liberu\Modules\Automation\AutomationCore\Models\WorkflowRunRecord;
 
 final class AutomationCoreResourceController extends Controller
 {
@@ -56,5 +61,41 @@ final class AutomationCoreResourceController extends Controller
         AutomationCoreResource::query()->forTeam($teamId)->findOrFail($id)->delete();
 
         return response()->json(status: 204);
+    }
+
+    public function publish(Request $request, string $id, PublishWorkflow $publish): JsonResponse
+    {
+        $data = $request->validate(['definition' => ['required', 'array']]);
+        $teamId = $this->teamId($request);
+        $workflow = AutomationCoreResource::query()->forTeam($teamId)->findOrFail($id);
+        $version = $publish->execute($workflow, $teamId, WorkflowDefinition::fromArray($data['definition']));
+
+        return response()->json(['data' => $version->toArray()], 201);
+    }
+
+    public function run(Request $request, string $id, StartWorkflowRun $start): JsonResponse
+    {
+        $data = $request->validate(['variables' => ['array'], 'idempotency_key' => ['nullable', 'string', 'max:255']]);
+        $teamId = $this->teamId($request);
+        $workflow = AutomationCoreResource::query()->forTeam($teamId)->findOrFail($id);
+        $run = $start->execute($workflow, $teamId, $data['variables'] ?? [], $data['idempotency_key'] ?? $request->header('Idempotency-Key'));
+
+        return response()->json(['data' => $run->toArray()], 202);
+    }
+
+    public function cancelRun(Request $request, string $id, string $runId, CancelWorkflowRun $cancel): JsonResponse
+    {
+        $teamId = $this->teamId($request);
+        $run = WorkflowRunRecord::query()->forTeam($teamId)->where('workflow_id', $id)->findOrFail($runId);
+
+        return response()->json(['data' => $cancel->execute($run, $teamId)->toArray()]);
+    }
+
+    private function teamId(Request $request): string
+    {
+        $teamId = (string) $request->user()->currentTeam?->getKey();
+        abort_if($teamId === '', 403);
+
+        return $teamId;
     }
 }

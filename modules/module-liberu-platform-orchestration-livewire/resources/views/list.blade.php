@@ -1,0 +1,1 @@
+<div><label for="liberu-composition-search">Search compositions</label><input id="liberu-composition-search" type="search" wire:model.live="search"><ul>@forelse($records as $record)<li wire:key="{{ $record->getKey() }}">{{ $record->name }} <span>{{ $record->status }}</span></li>@empty<li>No compositions found.</li>@endforelse</ul></div>

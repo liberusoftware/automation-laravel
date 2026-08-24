@@ -8,10 +8,15 @@ use Liberu\Modules\Automation\AiGateway\Domain\ProviderContract;
 use Liberu\Modules\Automation\AiGateway\Domain\RoutingPolicy;
 use Liberu\Modules\Automation\Approvals\Domain\ApprovalQueue;
 use Liberu\Modules\Automation\Approvals\Domain\ApprovalRequest;
+use Liberu\Modules\Automation\Approvals\Domain\Delegation;
+use Liberu\Modules\Automation\Approvals\Domain\EscalationPolicy;
+use Liberu\Modules\Automation\Approvals\Domain\Evidence;
 use Liberu\Modules\Automation\Approvals\Enums\ApprovalDecision;
+use Liberu\Modules\Automation\AutomationCore\Domain\RetryPolicy;
 use Liberu\Modules\Automation\AutomationCore\Domain\WorkflowDefinition;
 use Liberu\Modules\Automation\AutomationCore\Domain\WorkflowRun;
 use Liberu\Modules\Automation\AutomationCore\Domain\WorkflowTrigger;
+use Liberu\Modules\Automation\AutomationCore\Domain\WorkflowVariables;
 use Liberu\Modules\Automation\Connectors\Domain\ConnectorDefinition;
 use Liberu\Modules\Automation\DataProcessing\Domain\ProcessingRequest;
 use Liberu\Modules\Automation\Evaluation\Domain\QualityGate;
@@ -19,6 +24,7 @@ use Liberu\Modules\Automation\Image\Domain\ImageRequest;
 use Liberu\Modules\Automation\PromptRegistry\Domain\PromptVersion;
 use Liberu\Modules\Automation\Rules\Domain\DecisionTable;
 use Liberu\Modules\Automation\Rules\Domain\RuleCondition;
+use Liberu\Modules\Automation\Rules\Domain\RuleExpression;
 use Liberu\Modules\Automation\Rules\Services\RuleEvaluator;
 use Liberu\Modules\Automation\Video\Domain\VideoRequest;
 use Liberu\Modules\Automation\Voice\Domain\VoiceRequest;
@@ -33,6 +39,25 @@ it('validates workflow definitions before they cross the domain boundary', funct
         ->and($workflow->steps)->toHaveCount(1);
 
     expect(fn () => WorkflowDefinition::fromArray(['name' => 'Invalid', 'steps' => []]))
+        ->toThrow(InvalidArgumentException::class);
+});
+
+it('models schedules, retries, compensation, and typed workflow variables', function (): void {
+    $workflow = WorkflowDefinition::fromArray([
+        'name' => 'Invoice processing',
+        'steps' => [['id' => 'charge', 'type' => 'action']],
+        'schedule' => ['expression' => '0 * * * *', 'timezone' => 'UTC'],
+        'retry' => ['max_attempts' => 3, 'backoff_seconds' => 30],
+        'compensation' => [['type' => 'refund']],
+    ]);
+
+    $variables = WorkflowVariables::validate(['amount' => 10], ['amount' => ['type' => 'integer', 'required' => true]]);
+    expect($workflow->schedule?->timezone)->toBe('UTC')
+        ->and($workflow->retryPolicy->maxAttempts)->toBe(3)
+        ->and($workflow->compensation)->toHaveCount(1)
+        ->and($variables->values['amount'])->toBe(10);
+
+    expect(fn () => WorkflowVariables::validate([], ['amount' => ['type' => 'integer', 'required' => true]]))
         ->toThrow(InvalidArgumentException::class);
 });
 
@@ -52,6 +77,25 @@ it('evaluates typed rule conditions without executing arbitrary expressions', fu
         ->toBeTrue();
 });
 
+it('evaluates only allow-listed nested rule expressions and produces simulations', function (): void {
+    $expression = RuleExpression::fromArray([
+        'operator' => 'all',
+        'conditions' => [
+            ['field' => 'amount', 'operator' => 'greater_than', 'value' => 100],
+            ['operator' => 'not', 'conditions' => [['field' => 'blocked', 'operator' => 'exists', 'value' => true]]],
+        ],
+    ]);
+    $table = new DecisionTable('routing', [[
+        'conditions' => [['field' => 'amount', 'operator' => 'greater_than', 'value' => 100]],
+        'outcome' => 'review',
+    ]]);
+
+    expect($expression->matches(['amount' => 150]))->toBeTrue()
+        ->and($table->simulate(['amount' => 150])->toArray()['outcomes'])->toBe(['review']);
+    expect(fn () => RuleExpression::fromArray(['operator' => 'eval', 'conditions' => []]))
+        ->toThrow(InvalidArgumentException::class);
+});
+
 it('enforces approval expiry and separation of duties', function (): void {
     $request = new ApprovalRequest(
         id: 'approval-1',
@@ -68,6 +112,16 @@ it('enforces approval expiry and separation of duties', function (): void {
         ->toThrow(InvalidArgumentException::class);
     expect(fn () => $request->decide('reviewer-1', ApprovalDecision::Approved, CarbonImmutable::parse('2026-08-24T00:00:00Z')))
         ->toThrow(InvalidArgumentException::class);
+});
+
+it('supports bounded approval delegation, escalation, and evidence', function (): void {
+    $request = new ApprovalRequest('approval-2', 'team-1', 'requester-1', 'pending', CarbonImmutable::parse('2026-08-24T01:00:00Z'));
+    $delegated = $request->delegate('requester-1', new Delegation('reviewer-1', CarbonImmutable::parse('2026-08-24T00:30:00Z')), CarbonImmutable::parse('2026-08-23T00:00:00Z'));
+    $escalated = $request->escalate('manager-1', new EscalationPolicy(3600, ['manager-1']), CarbonImmutable::parse('2026-08-24T00:30:00Z'));
+
+    expect($delegated->status)->toBe('delegated')->and($escalated->status)->toBe('escalated');
+    expect(new Evidence('decision', 'audit-1', str_repeat('a', 64))->type)->toBe('decision');
+    expect(fn () => new Evidence('decision', 'audit-1', 'invalid'))->toThrow(InvalidArgumentException::class);
 });
 
 it('governs provider routing and prompt rendering', function (): void {
@@ -115,6 +169,17 @@ it('enforces workflow run transitions and trigger contracts', function (): void 
 
     expect($run->status())->toBe('succeeded')->and($trigger->enabled)->toBeTrue();
     expect(fn () => $run->transitionTo('failed'))->toThrow(InvalidArgumentException::class);
+});
+
+it('supports bounded retries and explicit cancellation', function (): void {
+    $run = new WorkflowRun('run-2', 'workflow-1');
+    $run->startAttempt();
+    $run->transitionTo('failed');
+
+    expect($run->canRetry(new RetryPolicy(maxAttempts: 2)))->toBeTrue();
+    $cancelled = new WorkflowRun('run-3', 'workflow-1');
+    $cancelled->requestCancellation();
+    expect($cancelled->status())->toBe('cancelled')->and($cancelled->cancellationRequested())->toBeTrue();
 });
 
 it('evaluates reusable decision tables and keeps approval queues team-scoped', function (): void {

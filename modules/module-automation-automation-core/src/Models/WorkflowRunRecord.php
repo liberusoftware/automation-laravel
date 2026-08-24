@@ -15,10 +15,7 @@ final class WorkflowRunRecord extends Model
 
     protected $guarded = ['id'];
 
-    protected function casts(): array
-    {
-        return ['variables' => 'array', 'version' => 'integer'];
-    }
+    protected $casts = ['variables' => 'array', 'version' => 'integer'];
 
     public function scopeForTeam($query, string $teamId)
     {

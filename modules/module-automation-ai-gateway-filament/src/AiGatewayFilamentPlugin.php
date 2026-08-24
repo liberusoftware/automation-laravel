@@ -22,7 +22,21 @@ final class AiGatewayFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([AiGatewayResource::class]);
+        $panel->resources(array_values($this->capabilities()));
+    }
+
+    /** @return array<string, class-string> */
+    public function capabilities(): array
+    {
+        return [
+            'automation.ai-gateway.provider-contracts' => AiGatewayResource::class,
+            'automation.ai-gateway.model-catalog' => AiGatewayResource::class,
+            'automation.ai-gateway.routing' => AiGatewayResource::class,
+            'automation.ai-gateway.fallback' => AiGatewayResource::class,
+            'automation.ai-gateway.structured-output' => AiGatewayResource::class,
+            'automation.ai-gateway.tool-policy' => AiGatewayResource::class,
+            'automation.ai-gateway.usage-metering' => AiGatewayResource::class,
+        ];
     }
 
     public function boot(Panel $panel): void {}

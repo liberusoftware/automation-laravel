@@ -1,57 +1,246 @@
 openapi: 3.1.0
 info:
-  title: rules API
+  title: Automation Evaluation API
   version: 1.0.0
+  description: Versioned, authenticated API contract for the evaluation module.
+servers:
+  - url: /
 paths:
-  /api/v1/automation.evaluation:
+  /api/v1/automation/evaluation:
     get:
       operationId: automation.evaluation.list
-      security: [{ sanctum: [] }]
-      responses: { '200': { description: Authorized team-scoped resources } }
+      summary: List authorized evaluation resources.
+      security:
+        - sanctum: []
+      parameters:
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/PageNumber'
+      responses:
+        '200':
+          $ref: '#/components/responses/ResourceCollection'
+        '401':
+          $ref: '#/components/responses/Problem'
+        '403':
+          $ref: '#/components/responses/Problem'
     post:
       operationId: automation.evaluation.create
-      security: [{ sanctum: [] }]
+      summary: Create a evaluation resource.
+      security:
+        - sanctum: []
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
         required: true
         content:
           application/json:
-            schema: { $ref: '#/components/schemas/ResourceInput' }
-      responses: { '201': { description: Created resource, content: { application/json: { schema: { $ref: '#/components/schemas/ResourceResponse' } } } } }
-  /api/v1/automation.evaluation/{id}:
+            schema:
+              $ref: '#/components/schemas/ResourceInput'
+      responses:
+        '201':
+          $ref: '#/components/responses/Resource'
+        '401':
+          $ref: '#/components/responses/Problem'
+        '422':
+          $ref: '#/components/responses/Problem'
+  /api/v1/automation/evaluation/{id}:
     parameters:
-      - name: id
-        in: path
-        required: true
-        schema: { type: string, format: uuid }
+      - $ref: '#/components/parameters/ResourceId'
     get:
-      operationId: automation.evaluation.show
-      security: [{ sanctum: [] }]
-      responses: { '200': { description: Authorized team-scoped resource } }
+      operationId: automation.evaluation.get
+      summary: Retrieve one authorized evaluation resource.
+      security:
+        - sanctum: []
+      responses:
+        '200':
+          $ref: '#/components/responses/Resource'
+        '404':
+          $ref: '#/components/responses/Problem'
     patch:
       operationId: automation.evaluation.update
-      security: [{ sanctum: [] }]
+      summary: Update permitted evaluation fields.
+      security:
+        - sanctum: []
+      parameters:
+        - $ref: '#/components/parameters/IfMatch'
+        - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
+        required: true
         content:
           application/json:
-            schema: { $ref: '#/components/schemas/ResourceInput' }
-      responses: { '200': { description: Updated resource } }
+            schema:
+              $ref: '#/components/schemas/ResourceInput'
+      responses:
+        '200':
+          $ref: '#/components/responses/Resource'
+        '409':
+          $ref: '#/components/responses/Problem'
+        '422':
+          $ref: '#/components/responses/Problem'
     delete:
       operationId: automation.evaluation.delete
-      security: [{ sanctum: [] }]
-      responses: { '204': { description: Deleted resource } }
+      summary: Delete or deactivate a evaluation resource.
+      security:
+        - sanctum: []
+      responses:
+        '204':
+          description: Resource deleted successfully.
+        '404':
+          $ref: '#/components/responses/Problem'
 components:
+  parameters:
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: Opaque resource identifier.
+      schema:
+        type: string
+        format: uuid
+    PageSize:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 25
+    PageNumber:
+      name: page[number]
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      schema:
+        type: string
+        maxLength: 255
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: Optional concurrency validator for updates.
+      schema:
+        type: string
   securitySchemes:
-    sanctum: { type: http, scheme: bearer, bearerFormat: Sanctum }
+    sanctum:
+      type: http
+      scheme: bearer
+      bearerFormat: Sanctum
   schemas:
     ResourceInput:
       type: object
+      additionalProperties: false
+      required:
+        - name
       properties:
-        name: { type: string, maxLength: 255 }
-        payload: { type: object, additionalProperties: true }
-        status: { type: string, maxLength: 32 }
-      required: [name]
+        name:
+          type: string
+          maxLength: 255
+        payload:
+          type: object
+          additionalProperties: true
+        status:
+          type: string
+          maxLength: 32
+        quality_suites:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for quality_suites.
+        regression_comparison:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for regression_comparison.
+        latency_cost_metrics:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for latency_cost_metrics.
+        safety_checks:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for safety_checks.
+        release_gates:
+          type: object
+          additionalProperties: true
+          description: Module capability payload for release_gates.
+        idempotency_key:
+          type: string
+          maxLength: 255
+    Resource:
+      type: object
+      required:
+        - id
+        - type
+        - attributes
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+          const: automation-evaluation
+        attributes:
+          type: object
+          additionalProperties: true
     ResourceResponse:
       type: object
-      required: [data]
+      required:
+        - data
       properties:
-        data: { type: object, additionalProperties: true }
+        data:
+          $ref: '#/components/schemas/Resource'
+    ResourceCollection:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        links:
+          type: object
+          additionalProperties: true
+        meta:
+          type: object
+          additionalProperties: true
+    ProblemDetails:
+      type: object
+      required:
+        - type
+        - title
+        - status
+      properties:
+        type:
+          type: string
+          format: uri-reference
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string
+  responses:
+    Resource:
+      description: Authorized resource response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResourceResponse'
+    ResourceCollection:
+      description: Authorized paginated resource collection.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResourceCollection'
+    Problem:
+      description: RFC 9457 Problem Details response.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'

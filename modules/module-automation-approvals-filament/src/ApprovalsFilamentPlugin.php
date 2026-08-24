@@ -22,7 +22,20 @@ final class ApprovalsFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([ApprovalsResource::class]);
+        $panel->resources(array_values($this->capabilities()));
+    }
+
+    /** @return array<string, class-string> */
+    public function capabilities(): array
+    {
+        return [
+            'automation.approvals.human-review-queues' => ApprovalsResource::class,
+            'automation.approvals.separation-of-duties' => ApprovalsResource::class,
+            'automation.approvals.expiry' => ApprovalsResource::class,
+            'automation.approvals.escalation' => ApprovalsResource::class,
+            'automation.approvals.delegation' => ApprovalsResource::class,
+            'automation.approvals.evidence' => ApprovalsResource::class,
+        ];
     }
 
     public function boot(Panel $panel): void {}
