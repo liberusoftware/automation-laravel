@@ -49,6 +49,9 @@ it('keeps every Automation API adapter aligned with its CRUD and OpenAPI contrac
         $routes = file_get_contents($directory.'/routes/api.php');
         $openapi = file_get_contents((glob($directory.'/openapi/v1/*.yaml'))[0]);
 
+        expect($routes)->toContain("'auth:sanctum'")
+            ->toContain("'throttle:60,1'");
+
         foreach (['index', 'store', 'show', 'update', 'destroy'] as $method) {
             expect($controller)->toContain('function '.$method);
         }
