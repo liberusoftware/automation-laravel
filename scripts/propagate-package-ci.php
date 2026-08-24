@@ -10,7 +10,6 @@ declare(strict_types=1);
  * look consistent. This script is intentionally explicit about its workspace
  * and reusable-workflow commit.
  */
-
 $workspace = getenv('FLEET_WORKSPACE') ?: '';
 $workflowSha = $argv[1] ?? '';
 
@@ -97,6 +96,7 @@ foreach (new DirectoryIterator($workspace) as $entry) {
                 file_put_contents($path, $updated);
                 $repoChanged = true;
             }
+
             continue;
         }
 
