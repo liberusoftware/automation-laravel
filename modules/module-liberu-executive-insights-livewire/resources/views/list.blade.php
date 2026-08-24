@@ -1,0 +1,1 @@
+<div><label for="liberu-metric-search">Search metrics</label><input id="liberu-metric-search" type="search" wire:model.live="search"><ul>@forelse($records as $record)<li wire:key="{{ $record->getKey() }}">{{ $record->key }} <span>{{ $record->status }}</span></li>@empty<li>No metrics found.</li>@endforelse</ul></div>

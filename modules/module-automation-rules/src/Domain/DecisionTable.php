@@ -33,4 +33,12 @@ final readonly class DecisionTable
             array_filter($this->rows, static fn (array $row): bool => $evaluator->all($row['conditions'], $context)),
         ));
     }
+
+    /** @param array<string, mixed> $context */
+    public function simulate(array $context): RuleSimulation
+    {
+        $outcomes = $this->outcomesFor($context);
+
+        return new RuleSimulation($outcomes !== [], $outcomes, $context);
+    }
 }

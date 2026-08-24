@@ -1,0 +1,4 @@
+{
+  "name":"liberusoftware/module-liberu-business-workflow-reconciliation","version":"1.0.0","description":"Cross-product workflow runs, reconciliation and recovery coordination.","type":"liberu-module","license":"MIT",
+  "require":{"php":"^8.5","illuminate/database":"^13.0","illuminate/support":"^13.0"},"autoload":{"psr-4":{"Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\":"src/"}},"extra":{"laravel":{"providers":["Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"]},"liberu":{"name":"module-liberu-business-workflow-reconciliation"}},"require-dev":{"pestphp/pest":"^5.0"},"config":{"allow-plugins":{"pestphp/pest-plugin":true}}
+}

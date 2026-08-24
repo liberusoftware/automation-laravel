@@ -22,7 +22,21 @@ final class DataProcessingFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([DataProcessingResource::class]);
+        $panel->resources(array_values($this->capabilities()));
+    }
+
+    /** @return array<string, class-string> */
+    public function capabilities(): array
+    {
+        return [
+            'automation.data-processing.classification' => DataProcessingResource::class,
+            'automation.data-processing.extraction' => DataProcessingResource::class,
+            'automation.data-processing.summarization' => DataProcessingResource::class,
+            'automation.data-processing.translation' => DataProcessingResource::class,
+            'automation.data-processing.enrichment' => DataProcessingResource::class,
+            'automation.data-processing.redaction' => DataProcessingResource::class,
+            'automation.data-processing.batch-processing' => DataProcessingResource::class,
+        ];
     }
 
     public function boot(Panel $panel): void {}

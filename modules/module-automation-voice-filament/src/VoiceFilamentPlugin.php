@@ -22,7 +22,20 @@ final class VoiceFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([VoiceResource::class]);
+        $panel->resources(array_values($this->capabilities()));
+    }
+
+    /** @return array<string, class-string> */
+    public function capabilities(): array
+    {
+        return [
+            'automation.voice.speech-to-text' => VoiceResource::class,
+            'automation.voice.text-to-speech' => VoiceResource::class,
+            'automation.voice.streaming-sessions' => VoiceResource::class,
+            'automation.voice.interruption' => VoiceResource::class,
+            'automation.voice.transcripts' => VoiceResource::class,
+            'automation.voice.consent-controls' => VoiceResource::class,
+        ];
     }
 
     public function boot(Panel $panel): void {}

@@ -48,6 +48,7 @@ it('keeps every Automation API adapter aligned with its CRUD and OpenAPI contrac
         $controller = file_get_contents($controllerFile);
         $routes = file_get_contents($directory.'/routes/api.php');
         $openapi = file_get_contents((glob($directory.'/openapi/v1/*.yaml'))[0]);
+        $manifest = json_decode(file_get_contents($root.'/modules/module-automation-'.$slug.'/module.json'), true, flags: JSON_THROW_ON_ERROR);
 
         expect($routes)->toContain("'auth:sanctum'")
             ->toContain("'throttle:60,1'");
@@ -60,8 +61,23 @@ it('keeps every Automation API adapter aligned with its CRUD and OpenAPI contrac
             expect($routes)->toContain($route);
         }
 
-        foreach (['.list', '.create', '.show', '.update', '.delete'] as $operation) {
-            expect($openapi)->toContain('operationId: automation.'.$slug.$operation);
+        if ($slug === 'automation-core') {
+            expect($routes)->toContain("'/{id}/publish'")
+                ->toContain("'/{id}/runs'")
+                ->toContain("'/{id}/runs/{runId}/cancel'")
+                ->and($openapi)->toContain('operationId: automation.automation.core.publish')
+                ->toContain('operationId: automation.automation.core.run')
+                ->toContain('operationId: automation.automation.core.cancel-run');
+        }
+
+        $operationPrefix = 'automation.'.str_replace('-', '.', $slug);
+        foreach (['.list', '.create', '.get', '.update', '.delete'] as $operation) {
+            expect($openapi)->toContain('operationId: '.$operationPrefix.$operation);
+        }
+
+        foreach ($manifest['capabilities'] as $capability) {
+            $field = str_replace('-', '_', substr($capability, strrpos($capability, '.') + 1));
+            expect($openapi)->toContain("        {$field}:");
         }
     }
 });
@@ -77,11 +93,20 @@ it('keeps every Automation Filament and Livewire adapter interactive', function 
         $filament = $root.'/modules/module-automation-'.$slug.'-filament/src';
         $resource = glob($filament.'/Resources/*Resource.php')[0];
         $plugin = file_get_contents(glob($filament.'/*FilamentPlugin.php')[0]);
-        $livewire = file_get_contents($root.'/modules/module-automation-'.$slug.'-livewire/src/ResourceList.php');
+        $livewireDirectory = $root.'/modules/module-automation-'.$slug.'-livewire/src';
+        $livewire = file_get_contents($livewireDirectory.'/ResourceList.php');
+        $livewireProvider = file_get_contents(glob($livewireDirectory.'/*LivewireServiceProvider.php')[0]);
+        $manifest = json_decode(file_get_contents($root.'/modules/module-automation-'.$slug.'/module.json'), true, flags: JSON_THROW_ON_ERROR);
 
         expect(file_get_contents($resource))
             ->toContain('function form', 'function table', 'function getPages', 'getEloquentQuery')
-            ->and($plugin)->toContain('->resources([')
-            ->and($livewire)->toContain('function save', 'function edit', 'function delete', 'forTeam');
+            ->and($plugin)->toContain('capabilities()', 'array_values($this->capabilities())')
+            ->and($livewire)->toContain('function save', 'function edit', 'function delete', 'forTeam')
+            ->and($livewireProvider)->toContain('capabilities()');
+
+        foreach ($manifest['capabilities'] as $capability) {
+            expect($plugin)->toContain("'{$capability}'")
+                ->and($livewireProvider)->toContain("'{$capability}'");
+        }
     }
 });

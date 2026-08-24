@@ -22,7 +22,22 @@ final class VideoFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([VideoResource::class]);
+        $panel->resources(array_values($this->capabilities()));
+    }
+
+    /** @return array<string, class-string> */
+    public function capabilities(): array
+    {
+        return [
+            'automation.video.generation-jobs' => VideoResource::class,
+            'automation.video.editing-jobs' => VideoResource::class,
+            'automation.video.scripts' => VideoResource::class,
+            'automation.video.captions' => VideoResource::class,
+            'automation.video.audio' => VideoResource::class,
+            'automation.video.moderation' => VideoResource::class,
+            'automation.video.provenance' => VideoResource::class,
+            'automation.video.delivery' => VideoResource::class,
+        ];
     }
 
     public function boot(Panel $panel): void {}

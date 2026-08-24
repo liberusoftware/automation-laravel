@@ -18,6 +18,10 @@ final readonly class PromptVersion
         if ($key === '' || $version < 1 || trim($template) === '') {
             throw new InvalidArgumentException('A prompt key, positive version, and template are required.');
         }
+
+        if (count($variables) !== count(array_unique($variables)) || array_filter($variables, static fn (mixed $variable): bool => ! is_string($variable) || preg_match('/^[a-zA-Z][a-zA-Z0-9_.-]*$/', $variable) !== 1) !== []) {
+            throw new InvalidArgumentException('Prompt variables must be unique, named, and safe identifiers.');
+        }
     }
 
     /** @param array<string, scalar> $values */
@@ -32,5 +36,10 @@ final readonly class PromptVersion
         return preg_replace_callback('/\{\{\s*([a-zA-Z0-9_.-]+)\s*\}\}/', static function (array $match) use ($values): string {
             return (string) ($values[$match[1]] ?? $match[0]);
         }, $this->template) ?? $this->template;
+    }
+
+    public function approvedForRelease(string $approverId, string $authorId): PromptApproval
+    {
+        return PromptApproval::approve($this->key, $this->version, $approverId, $authorId);
     }
 }

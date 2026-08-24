@@ -22,7 +22,21 @@ final class ImageFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([ImageResource::class]);
+        $panel->resources(array_values($this->capabilities()));
+    }
+
+    /** @return array<string, class-string> */
+    public function capabilities(): array
+    {
+        return [
+            'automation.image.generation-requests' => ImageResource::class,
+            'automation.image.editing-requests' => ImageResource::class,
+            'automation.image.source-assets' => ImageResource::class,
+            'automation.image.moderation' => ImageResource::class,
+            'automation.image.provenance' => ImageResource::class,
+            'automation.image.variants' => ImageResource::class,
+            'automation.image.delivery' => ImageResource::class,
+        ];
     }
 
     public function boot(Panel $panel): void {}

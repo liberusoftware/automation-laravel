@@ -22,7 +22,19 @@ final class EvaluationFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([EvaluationResource::class]);
+        $panel->resources(array_values($this->capabilities()));
+    }
+
+    /** @return array<string, class-string> */
+    public function capabilities(): array
+    {
+        return [
+            'automation.evaluation.quality-suites' => EvaluationResource::class,
+            'automation.evaluation.regression-comparison' => EvaluationResource::class,
+            'automation.evaluation.latency-cost-metrics' => EvaluationResource::class,
+            'automation.evaluation.safety-checks' => EvaluationResource::class,
+            'automation.evaluation.release-gates' => EvaluationResource::class,
+        ];
     }
 
     public function boot(Panel $panel): void {}

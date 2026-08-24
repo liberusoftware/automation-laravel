@@ -9,4 +9,7 @@ Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/auto
     Route::get('/{id}', [AutomationCoreResourceController::class, 'show']);
     Route::patch('/{id}', [AutomationCoreResourceController::class, 'update']);
     Route::delete('/{id}', [AutomationCoreResourceController::class, 'destroy']);
+    Route::post('/{id}/publish', [AutomationCoreResourceController::class, 'publish']);
+    Route::post('/{id}/runs', [AutomationCoreResourceController::class, 'run']);
+    Route::post('/{id}/runs/{runId}/cancel', [AutomationCoreResourceController::class, 'cancelRun']);
 });

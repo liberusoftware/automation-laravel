@@ -16,7 +16,11 @@ final readonly class ApprovalRequest
         public string $requesterId,
         public string $status,
         public ?CarbonImmutable $expiresAt = null,
-    ) {}
+    ) {
+        if ($id === '' || $teamId === '' || $requesterId === '' || ! in_array($status, ['pending', 'approved', 'rejected', 'expired', 'delegated', 'escalated'], true)) {
+            throw new InvalidArgumentException('Approval requests require valid identifiers and lifecycle state.');
+        }
+    }
 
     public function decide(string $actorId, ApprovalDecision $decision, CarbonImmutable $now): self
     {
@@ -38,5 +42,26 @@ final readonly class ApprovalRequest
     public function isPending(): bool
     {
         return $this->status === 'pending';
+    }
+
+    public function delegate(string $actorId, Delegation $delegation, CarbonImmutable $now): self
+    {
+        if ($actorId !== $this->requesterId || ! $this->isPending() || $delegation->expiresAt->lessThanOrEqualTo($now)) {
+            throw new InvalidArgumentException('Only the requester may delegate a pending, non-expired approval.');
+        }
+
+        return new self($this->id, $this->teamId, $this->requesterId, 'delegated', $this->expiresAt);
+    }
+
+    public function escalate(string $actorId, EscalationPolicy $policy, CarbonImmutable $now): self
+    {
+        if (! $this->isPending() || $this->expiresAt === null || $this->expiresAt->greaterThan($now->addSeconds($policy->afterSeconds))) {
+            throw new InvalidArgumentException('This approval is not eligible for escalation.');
+        }
+        if (! in_array($actorId, $policy->authorizedActors, true)) {
+            throw new InvalidArgumentException('The actor cannot escalate this approval.');
+        }
+
+        return new self($this->id, $this->teamId, $this->requesterId, 'escalated', $this->expiresAt);
     }
 }
