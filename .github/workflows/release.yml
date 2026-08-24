@@ -55,6 +55,9 @@ jobs:
       - name: Run release verification
         run: scripts/verify-automation-release
 
+      - name: Validate documentation
+        run: php scripts/validate-documentation.php
+
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}

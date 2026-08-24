@@ -71,6 +71,9 @@ jobs:
       - name: Validate Automation OpenAPI contracts
         run: php scripts/validate-automation-openapi.php
 
+      - name: Validate documentation
+        run: php scripts/validate-documentation.php
+
       - name: Test Automation packages
         run: scripts/test-automation-packages
 
