@@ -52,7 +52,19 @@ def repositories() -> dict[str, str]:
             continue
         for package in sorted(base.iterdir()):
             if package.is_dir():
-                found[package.name] = spec['repositoryPrefix'] + package.name
+                prefix = spec['repositoryPrefix']
+                # Some source directories already carry the repository prefix
+                # (the automation modules are named `module-*`). Keep the
+                # fleet mapping aligned with submit-packagist.php.
+                found[package.name] = (
+                    package.name
+                    if package.name.startswith(prefix)
+                    else prefix + package.name
+                )
+                # These two legacy package directories intentionally differ
+                # from their GitHub repository names.
+                if package.name in {'module-manager', 'module-manager-filament'}:
+                    found[package.name] = 'module-' + package.name
     for repository in META.get('additionalPackages', {}).values():
         found[repository] = repository
     return found
