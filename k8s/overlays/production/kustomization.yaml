@@ -15,14 +15,19 @@ patches:
   target:
     kind: Deployment
     name: automation-laravel
-
-configMapGenerator:
-- name: automation-config
-  behavior: merge
-  literals:
-  - APP_ENV=production
-  - APP_DEBUG=false
-  - LOG_LEVEL=warning
+- patch: |-
+    - op: replace
+      path: /data/APP_ENV
+      value: production
+    - op: replace
+      path: /data/APP_DEBUG
+      value: "false"
+    - op: replace
+      path: /data/LOG_LEVEL
+      value: warning
+  target:
+    kind: ConfigMap
+    name: automation-config
 
 images:
 - name: ghcr.io/liberusoftware/automation-laravel
