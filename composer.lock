@@ -8776,16 +8776,16 @@
         },
         {
             "name": "liberusoftware/theme-base",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/theme-base.git",
-                "reference": "a79f3355a9dd7af74f080d66ea82f700cfac09b8"
+                "url": "https://github.com/liberusoftware/theme-base.git",
+                "reference": "2f1c4a469dea81cf20ced3a3617061e60e98f49d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/theme-base/zipball/a79f3355a9dd7af74f080d66ea82f700cfac09b8",
-                "reference": "a79f3355a9dd7af74f080d66ea82f700cfac09b8",
+                "url": "https://api.github.com/repos/liberusoftware/theme-base/zipball/2f1c4a469dea81cf20ced3a3617061e60e98f49d",
+                "reference": "2f1c4a469dea81cf20ced3a3617061e60e98f49d",
                 "shasum": ""
             },
             "require": {
@@ -8822,23 +8822,23 @@
             ],
             "description": "Shared semantic tokens and accessible presentation primitives for Liberu themes.",
             "support": {
-                "source": "https://github.com/liberusoftware/theme-base/tree/2.0.1",
+                "source": "https://github.com/liberusoftware/theme-base/tree/2.0.2",
                 "issues": "https://github.com/liberusoftware/theme-base/issues"
             },
-            "time": "2026-08-07T14:25:52+00:00"
+            "time": "2026-08-24T01:26:33+00:00"
         },
         {
             "name": "liberusoftware/theme-clear-signal",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/theme-clear-signal.git",
-                "reference": "e4f7e56bdf4edc722c59976acdf3acbf9757df28"
+                "url": "https://github.com/liberusoftware/theme-clear-signal.git",
+                "reference": "79cbe0320f2363a9f04135ef490f97d34438208b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/theme-clear-signal/zipball/e4f7e56bdf4edc722c59976acdf3acbf9757df28",
-                "reference": "e4f7e56bdf4edc722c59976acdf3acbf9757df28",
+                "url": "https://api.github.com/repos/liberusoftware/theme-clear-signal/zipball/79cbe0320f2363a9f04135ef490f97d34438208b",
+                "reference": "79cbe0320f2363a9f04135ef490f97d34438208b",
                 "shasum": ""
             },
             "require": {
@@ -8876,23 +8876,23 @@
             ],
             "description": "Clear Signal public theme for Liberu applications.",
             "support": {
-                "source": "https://github.com/liberusoftware/theme-clear-signal/tree/1.5.1",
+                "source": "https://github.com/liberusoftware/theme-clear-signal/tree/1.5.2",
                 "issues": "https://github.com/liberusoftware/theme-clear-signal/issues"
             },
-            "time": "2026-08-07T14:25:54+00:00"
+            "time": "2026-08-24T01:26:47+00:00"
         },
         {
             "name": "liberusoftware/theme-dark",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/theme-dark.git",
-                "reference": "d5d2027dd87a806cd4faee81ca798caf0ae75845"
+                "url": "https://github.com/liberusoftware/theme-dark.git",
+                "reference": "cf5294bad6ce8321739e629b6d46a6340c160c49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/theme-dark/zipball/d5d2027dd87a806cd4faee81ca798caf0ae75845",
-                "reference": "d5d2027dd87a806cd4faee81ca798caf0ae75845",
+                "url": "https://api.github.com/repos/liberusoftware/theme-dark/zipball/cf5294bad6ce8321739e629b6d46a6340c160c49",
+                "reference": "cf5294bad6ce8321739e629b6d46a6340c160c49",
                 "shasum": ""
             },
             "require": {
@@ -8930,23 +8930,23 @@
             ],
             "description": "Liberu dark public theme.",
             "support": {
-                "source": "https://github.com/liberusoftware/theme-dark/tree/1.5.1",
+                "source": "https://github.com/liberusoftware/theme-dark/tree/1.5.2",
                 "issues": "https://github.com/liberusoftware/theme-dark/issues"
             },
-            "time": "2026-08-07T14:26:22+00:00"
+            "time": "2026-08-24T01:26:42+00:00"
         },
         {
             "name": "liberusoftware/theme-default",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/theme-default.git",
-                "reference": "759e19abeba7d39d129d6ce9acaa10d9d4e7da50"
+                "url": "https://github.com/liberusoftware/theme-default.git",
+                "reference": "5943f51bb86cfef39172cf97b44d9352e101670e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/theme-default/zipball/759e19abeba7d39d129d6ce9acaa10d9d4e7da50",
-                "reference": "759e19abeba7d39d129d6ce9acaa10d9d4e7da50",
+                "url": "https://api.github.com/repos/liberusoftware/theme-default/zipball/5943f51bb86cfef39172cf97b44d9352e101670e",
+                "reference": "5943f51bb86cfef39172cf97b44d9352e101670e",
                 "shasum": ""
             },
             "require": {
@@ -8984,10 +8984,10 @@
             ],
             "description": "Liberu default public theme.",
             "support": {
-                "source": "https://github.com/liberusoftware/theme-default/tree/1.5.1",
+                "source": "https://github.com/liberusoftware/theme-default/tree/1.5.2",
                 "issues": "https://github.com/liberusoftware/theme-default/issues"
             },
-            "time": "2026-08-07T14:26:23+00:00"
+            "time": "2026-08-24T01:26:38+00:00"
         },
         {
             "name": "liberusoftware/theme-support",
