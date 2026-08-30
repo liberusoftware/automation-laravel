@@ -1,1 +1,0 @@
-<div><label for="liberu-signal-search">Search health signals</label><input id="liberu-signal-search" type="search" wire:model.live="search"><ul>@forelse($records as $record)<li wire:key="{{ $record->getKey() }}">{{ $record->kind }} <span>{{ $record->status }}</span></li>@empty<li>No health signals found.</li>@endforelse</ul></div>

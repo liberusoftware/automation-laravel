@@ -1,1 +1,0 @@
-<div><label for="liberu-run-search">Search workflow runs</label><input id="liberu-run-search" type="search" wire:model.live="search"><ul>@forelse($records as $record)<li wire:key="{{ $record->getKey() }}">{{ $record->workflow }} <span>{{ $record->status }}</span></li>@empty<li>No workflow runs found.</li>@endforelse</ul></div>
