@@ -60,6 +60,17 @@ final class ModuleDiscovery
             }
             $package = $this->canonicalPackageName($package);
 
+            // During the package rename, keep the legacy checkout available for
+            // existing deployments but never register it beside its canonical
+            // sibling in a fresh checkout.
+            $directory = basename($manifest->path);
+            if (str_starts_with($directory, 'module-liberu-')) {
+                $canonicalDirectory = dirname($manifest->path).'/'.substr($directory, strlen('module-'));
+                if (is_file($canonicalDirectory.'/module.json')) {
+                    continue;
+                }
+            }
+
             $isInstalledCopy = in_array(realpath($manifest->path), $installedPaths, true);
 
             // A checked-out module is authoritative over the copy Composer installed
