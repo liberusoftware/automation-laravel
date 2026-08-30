@@ -9,7 +9,7 @@
     "php": "^8.5",
     "laravel": "^13.0",
     "packages": {
-      "liberusoftware/module-liberu-executive-insights": "^1.0"
+      "liberusoftware/liberu-executive-insights": "^1.0"
     }
   },
   "capabilities": [
