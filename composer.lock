@@ -8812,6 +8812,630 @@
             "time": "2026-08-07T14:25:31+00:00"
         },
         {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-business-workflow-reconciliation",
+                "reference": "52ed5ebd062f3cfcf02ec659dee21b704dfb4f29"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-business-workflow-reconciliation"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Cross-product workflow runs, reconciliation and recovery coordination.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-business-workflow-reconciliation-api",
+                "reference": "631d312d60d4541ae7cbbec19ffcc017b92f5e1e"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\Api\\BusinessWorkflowReconciliationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-business-workflow-reconciliation-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "API adapter for Liberu workflow reconciliation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-business-workflow-reconciliation-filament",
+                "reference": "7279c289d918b94e69767f8d08550d7b29466d3d"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\Filament\\BusinessWorkflowReconciliationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-business-workflow-reconciliation-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for Liberu workflow reconciliation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-business-workflow-reconciliation-livewire",
+                "reference": "a93ce23b32bfd0701227a5015d390886b85fb823"
+            },
+            "require": {
+                "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\Livewire\\BusinessWorkflowReconciliationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-business-workflow-reconciliation-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\BusinessWorkflowReconciliation\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for Liberu workflow reconciliation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-executive-insights",
+                "reference": "3e5c2c9d2ffdb4bf20ae8a9395ba9e84ed67ebec"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\ExecutiveInsights\\ExecutiveInsightsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-executive-insights"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\ExecutiveInsights\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Governed Liberu cross-product metrics and decision snapshots.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-executive-insights-api",
+                "reference": "a0b822e965c0104a68e13f35c4eeb173286fa910"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-liberu-executive-insights": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\ExecutiveInsights\\Api\\ExecutiveInsightsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-executive-insights-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\ExecutiveInsights\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "API adapter for Liberu executive insights.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-executive-insights-filament",
+                "reference": "dad6e955d19d46494563503d9ac3632c577a5ae7"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-liberu-executive-insights": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\ExecutiveInsights\\Filament\\ExecutiveInsightsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-executive-insights-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\ExecutiveInsights\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for Liberu executive insights.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-executive-insights-livewire",
+                "reference": "28a5519126892e6d2b8a5c362f8530f555abdf9a"
+            },
+            "require": {
+                "liberusoftware/module-liberu-executive-insights": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\ExecutiveInsights\\Livewire\\ExecutiveInsightsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-executive-insights-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\ExecutiveInsights\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for Liberu executive insights.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-platform-orchestration",
+                "reference": "a9b3e23d77941688c9052e616616e7794c79c68f"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\PlatformOrchestration\\PlatformOrchestrationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-platform-orchestration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\PlatformOrchestration\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral Liberu platform composition and lifecycle domain module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-platform-orchestration-api",
+                "reference": "840c5f6fe5cb3044b35da7420a312221d272f1ba"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\PlatformOrchestration\\Api\\PlatformOrchestrationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-platform-orchestration-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\PlatformOrchestration\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "API adapter for Liberu platform orchestration.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-platform-orchestration-filament",
+                "reference": "cb8ca4b840dfdec490aa0bff2c2bc6817f1285e9"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\PlatformOrchestration\\Filament\\PlatformOrchestrationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-platform-orchestration-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\PlatformOrchestration\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for Liberu platform orchestration.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-platform-orchestration-livewire",
+                "reference": "74c283bb0d8fa24b6fb51f63e27685f54fa4966c"
+            },
+            "require": {
+                "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\PlatformOrchestration\\Livewire\\PlatformOrchestrationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-platform-orchestration-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\PlatformOrchestration\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for Liberu platform orchestration.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-revenue-and-care-orchestration",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-revenue-and-care-orchestration",
+                "reference": "ca05d5b9998816805f54b2dd04064598102981df"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\RevenueAndCareOrchestration\\RevenueAndCareOrchestrationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-revenue-and-care-orchestration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\RevenueAndCareOrchestration\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Customer health, consent-aware outreach and recovery projections for Liberu.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-revenue-and-care-orchestration-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-revenue-and-care-orchestration-api",
+                "reference": "ccb5450f2f56e9809c656420c8869529170ebe7b"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\RevenueAndCareOrchestration\\Api\\RevenueAndCareOrchestrationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-revenue-and-care-orchestration-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\RevenueAndCareOrchestration\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "API adapter for Liberu revenue and care orchestration.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-revenue-and-care-orchestration-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-revenue-and-care-orchestration-filament",
+                "reference": "62739d3441331e7e88a2b77b3ab4a81cfd9af28f"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\RevenueAndCareOrchestration\\Filament\\RevenueAndCareOrchestrationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-revenue-and-care-orchestration-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\RevenueAndCareOrchestration\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for Liberu revenue and care orchestration.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-revenue-and-care-orchestration-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/module-liberu-revenue-and-care-orchestration-livewire",
+                "reference": "4b3515b1b31d9716fe4839f05de99d91578a8bca"
+            },
+            "require": {
+                "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Modules\\Liberu\\RevenueAndCareOrchestration\\Livewire\\RevenueAndCareOrchestrationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "module-liberu-revenue-and-care-orchestration-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Modules\\Liberu\\RevenueAndCareOrchestration\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for Liberu revenue and care orchestration.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/module-manager",
             "version": "1.4.2",
             "source": {
@@ -22922,7 +23546,20 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "liberusoftware/module-liberu-business-workflow-reconciliation-api": 20,
+        "liberusoftware/module-liberu-business-workflow-reconciliation-filament": 20,
+        "liberusoftware/module-liberu-business-workflow-reconciliation-livewire": 20,
+        "liberusoftware/module-liberu-executive-insights-api": 20,
+        "liberusoftware/module-liberu-executive-insights-filament": 20,
+        "liberusoftware/module-liberu-executive-insights-livewire": 20,
+        "liberusoftware/module-liberu-platform-orchestration-api": 20,
+        "liberusoftware/module-liberu-platform-orchestration-filament": 20,
+        "liberusoftware/module-liberu-platform-orchestration-livewire": 20,
+        "liberusoftware/module-liberu-revenue-and-care-orchestration-api": 20,
+        "liberusoftware/module-liberu-revenue-and-care-orchestration-filament": 20,
+        "liberusoftware/module-liberu-revenue-and-care-orchestration-livewire": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
