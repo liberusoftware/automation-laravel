@@ -26,4 +26,8 @@ it('compares evaluation regressions and blocks unsafe release output', function 
         ->and($regression->delta())->toBe(-0.03)
         ->and($safety->passes('safe output'))->toBeTrue()
         ->and($safety->passes('api_key=secret'))->toBeFalse();
+
+    expect(fn () => new EvaluationSuite('invalid', [new stdClass()]))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new RegressionComparison('accuracy', INF, 0.9))->toThrow(InvalidArgumentException::class)
+        ->and($suite->passes(['accuracy' => INF]))->toBeFalse();
 });

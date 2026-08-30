@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Liberu\Modules\Automation\Approvals\Livewire;
 
+use Liberu\Modules\Automation\Approvals\Actions\TransitionApprovalsResource;
 use Liberu\Modules\Automation\Approvals\Models\ApprovalsResource;
 use Livewire\Component;
 
@@ -26,13 +27,11 @@ final class ResourceList extends Component
 
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
-            'status' => ['required', 'string', 'max:32'],
             'payload' => ['nullable', 'json'],
         ]);
 
         $attributes = [
             'name' => $validated['name'],
-            'status' => $validated['status'],
             'payload' => $validated['payload'] === '' ? [] : json_decode($validated['payload'], true, 512, JSON_THROW_ON_ERROR),
         ];
 
@@ -61,6 +60,15 @@ final class ResourceList extends Component
         if ($this->editingId === $id) {
             $this->resetForm();
         }
+    }
+
+    public function transition(string $id, string $status): void
+    {
+        $teamId = $this->teamId();
+        abort_if($teamId === null, 403);
+
+        $record = $this->query()->findOrFail($id);
+        app(TransitionApprovalsResource::class)->execute($record, $teamId, $status);
     }
 
     public function render(): mixed

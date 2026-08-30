@@ -31,3 +31,16 @@ it('governs authenticated actions, signed webhooks, cursors, and reconciliation'
     expect(fn () => new ConnectorAction('unsafe', 'TRACE', '/'))->toThrow(InvalidArgumentException::class)
         ->and((new Webhook('invoice.created', $payload, 1000, 'bad'))->verify('secret', 1000))->toBeFalse();
 });
+
+it('resets connector rate limits at the end of their window', function (): void {
+    $limit = new RateLimit(2, 60);
+
+    expect($limit->consume(now: 1000))->toBeTrue()
+        ->and($limit->consume(now: 1001))->toBeTrue()
+        ->and($limit->consume(now: 1002))->toBeFalse()
+        ->and($limit->remaining(1002))->toBe(0)
+        ->and($limit->retryAfter(1002))->toBe(58)
+        ->and($limit->consume(now: 1060))->toBeTrue()
+        ->and($limit->remaining(1060))->toBe(1)
+        ->and($limit->retryAfter(1060))->toBe(60);
+});

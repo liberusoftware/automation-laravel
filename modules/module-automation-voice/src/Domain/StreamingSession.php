@@ -40,7 +40,8 @@ final class StreamingSession
 
     public function append(TranscriptSegment $segment): void
     {
-        if ($this->status !== 'active' || ($this->segments !== [] && $segment->sequence <= end($this->segments)->sequence)) {
+        $previous = $this->segments === [] ? null : end($this->segments);
+        if ($this->status !== 'active' || ($previous !== null && ($segment->sequence <= $previous->sequence || $segment->startSeconds < $previous->endSeconds))) {
             throw new InvalidArgumentException('Only active sessions accept strictly ordered transcript segments.');
         }
         $this->segments[] = $segment;

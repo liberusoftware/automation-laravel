@@ -10,7 +10,7 @@ final readonly class DeliveryTarget
 {
     public function __construct(public string $url, public string $method = 'GET')
     {
-        if (filter_var($url, FILTER_VALIDATE_URL) === false || parse_url($url, PHP_URL_SCHEME) !== 'https' || $method !== 'GET') {
+        if (filter_var($url, FILTER_VALIDATE_URL) === false || parse_url($url, PHP_URL_SCHEME) !== 'https' || parse_url($url, PHP_URL_USER) !== null || $method !== 'GET') {
             throw new InvalidArgumentException('Image delivery targets must be HTTPS read endpoints.');
         }
     }

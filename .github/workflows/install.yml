@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Setup PHP
         uses: shivammathur/setup-php@b604ade2a87db23f8871b7182e69ec5e75effb45 # v2
@@ -23,7 +23,7 @@ jobs:
           extensions: mbstring, bcmath, pdo, pdo_sqlite, sqlite3, mysql, dom, curl, intl, gd
 
       - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 'latest'
           cache: 'npm'
@@ -33,7 +33,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache Composer dependencies
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -41,12 +41,20 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Install PHP dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+        run: composer install --no-interaction --prefer-dist --no-progress --no-scripts
 
-      # §6.2: modules/ and themes/ are Composer output that happens to be tracked. A
-      # clean install must reproduce them byte for byte — a diff here means someone
-      # edited an installed package instead of its repository, and the next install
-      # would silently discard the change.
+      - name: Restore tracked module sources
+        run: |
+          # Composer's Liberu installer writes published package archives into
+          # modules/ and themes/. This application keeps the checked-out package
+          # sources there as well, so restore them before Laravel boots and runs
+          # package discovery.
+          git restore --worktree -- modules themes
+          composer dump-autoload --no-interaction --no-scripts --optimize
+
+      # §6.2: modules/ and themes/ are checked-out package sources that Composer
+      # temporarily overlays during installation. They must be clean before the
+      # application boots, so package discovery always uses the committed sources.
       - name: Installed packages match the tracked source
         run: |
           if ! git diff --exit-code --stat -- modules themes; then

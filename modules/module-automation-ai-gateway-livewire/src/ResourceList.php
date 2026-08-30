@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Liberu\Modules\Automation\AiGateway\Livewire;
 
+use Liberu\Modules\Automation\AiGateway\Actions\TransitionAiGatewayResource;
 use Liberu\Modules\Automation\AiGateway\Models\AiGatewayResource;
 use Livewire\Component;
 
@@ -26,13 +27,11 @@ final class ResourceList extends Component
 
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
-            'status' => ['required', 'string', 'max:32'],
             'payload' => ['nullable', 'json'],
         ]);
 
         $attributes = [
             'name' => $validated['name'],
-            'status' => $validated['status'],
             'payload' => $validated['payload'] === '' ? [] : json_decode($validated['payload'], true, 512, JSON_THROW_ON_ERROR),
         ];
 
@@ -61,6 +60,15 @@ final class ResourceList extends Component
         if ($this->editingId === $id) {
             $this->resetForm();
         }
+    }
+
+    public function transition(string $id, string $status): void
+    {
+        $teamId = $this->teamId();
+        abort_if($teamId === null, 403);
+
+        $record = $this->query()->findOrFail($id);
+        app(TransitionAiGatewayResource::class)->execute($record, $teamId, $status);
     }
 
     public function render(): mixed

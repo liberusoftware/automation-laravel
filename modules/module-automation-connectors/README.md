@@ -17,3 +17,4 @@ php artisan migrate
 
 The module uses explicit team context and idempotency keys. Disabling it never deletes its data.
 
+See [RUNBOOK.md](RUNBOOK.md) for lifecycle operations, recovery, observability, and upgrade guidance.

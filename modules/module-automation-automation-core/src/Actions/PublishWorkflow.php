@@ -13,13 +13,13 @@ use RuntimeException;
 
 final class PublishWorkflow
 {
-    public function execute(AutomationCoreResource $workflow, string $teamId, WorkflowDefinition $definition): WorkflowVersion
+    public function execute(AutomationCoreResource $workflow, string $teamId, WorkflowDefinition $definition, ?string $actorId = null, ?string $correlationId = null): WorkflowVersion
     {
         if ($workflow->team_id !== $teamId) {
             throw new RuntimeException('The workflow does not belong to the active team.');
         }
 
-        return DB::transaction(function () use ($workflow, $definition, $teamId): WorkflowVersion {
+        return DB::transaction(function () use ($workflow, $definition, $teamId, $actorId, $correlationId): WorkflowVersion {
             $version = (int) WorkflowVersion::query()
                 ->where('workflow_id', $workflow->getKey())
                 ->lockForUpdate()
@@ -30,6 +30,8 @@ final class PublishWorkflow
                 'team_id' => $teamId,
                 'version' => $version,
                 'definition' => $definition->toArray(),
+                'actor_id' => $actorId,
+                'correlation_id' => $correlationId,
             ]);
 
             $workflow->forceFill(['status' => 'published', 'payload' => $definition->toArray()])->save();

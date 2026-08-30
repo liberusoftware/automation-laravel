@@ -13,7 +13,8 @@ final class PromptRelease
     /** @param list<PromptVersion> $versions */
     public function __construct(public readonly string $key, private array $versions)
     {
-        if ($key === '' || $versions === [] || array_filter($versions, fn (PromptVersion $version): bool => $version->key !== $key) !== []) {
+        $versionNumbers = array_map(static fn (PromptVersion $version): int => $version->version, $versions);
+        if ($key === '' || $versions === [] || count($versionNumbers) !== count(array_unique($versionNumbers)) || array_filter($versions, fn (PromptVersion $version): bool => $version->key !== $key) !== []) {
             throw new InvalidArgumentException('Prompt releases require versions with one matching key.');
         }
     }
@@ -22,6 +23,9 @@ final class PromptRelease
     {
         if ($version->key !== $this->key || $approval->key !== $this->key || $approval->version !== $version->version) {
             throw new InvalidArgumentException('Only an approved matching prompt version can be published.');
+        }
+        if (! $this->hasVersion($version->version)) {
+            throw new InvalidArgumentException('Only a registered prompt version can be published.');
         }
         $this->active = $version;
     }
@@ -41,5 +45,10 @@ final class PromptRelease
     public function active(): ?PromptVersion
     {
         return $this->active;
+    }
+
+    public function hasVersion(int $version): bool
+    {
+        return array_any($this->versions, static fn (PromptVersion $candidate): bool => $candidate->version === $version);
     }
 }

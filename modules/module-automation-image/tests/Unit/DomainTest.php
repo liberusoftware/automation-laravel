@@ -24,5 +24,8 @@ it('governs image moderation, provenance, variants, and safe delivery', function
         ->and($variant->format)->toBe('webp')
         ->and(new DeliveryTarget('https://cdn.example.test/image.webp'))->toBeInstanceOf(DeliveryTarget::class);
     expect(fn () => new ModerationDecision('rejected', 'policy-1'))->toThrow(InvalidArgumentException::class)
-        ->and(fn () => new DeliveryTarget('http://cdn.example.test/image.webp'))->toThrow(InvalidArgumentException::class);
+        ->and(fn () => new DeliveryTarget('http://cdn.example.test/image.webp'))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new ImageRequest('generate', 'generate', 'asset-1'))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new ImageRequest('edit', 'edit', ''))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new DeliveryTarget('https://user:secret@cdn.example.test/image.webp'))->toThrow(InvalidArgumentException::class);
 });

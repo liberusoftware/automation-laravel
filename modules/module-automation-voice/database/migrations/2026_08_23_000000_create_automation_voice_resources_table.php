@@ -12,7 +12,7 @@ return new class() extends Migration
     {
         Schema::create('automation_voice_resources', function (Blueprint $table): void {
             $table->uuid('id')->primary();
-            $table->uuid('team_id')->index();
+            $table->string('team_id', 191)->index();
             $table->string('name');
             $table->string('status', 32)->index();
             $table->json('payload')->nullable();

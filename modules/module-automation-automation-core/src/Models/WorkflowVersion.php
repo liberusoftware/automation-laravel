@@ -6,10 +6,12 @@ namespace Liberu\Modules\Automation\AutomationCore\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 final class WorkflowVersion extends Model
 {
     use HasUuids;
+    use SoftDeletes;
 
     protected $table = 'automation_workflow_versions';
 
@@ -17,7 +19,7 @@ final class WorkflowVersion extends Model
 
     protected function casts(): array
     {
-        return ['definition' => 'array', 'version' => 'integer'];
+        return ['definition' => 'array', 'metadata' => 'array', 'version' => 'integer'];
     }
 
     public function scopeForTeam($query, string $teamId)

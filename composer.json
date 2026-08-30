@@ -11,23 +11,7 @@
         "artificial-intelligence"
     ],
     "license": "MIT",
-  "repositories": [
-    {
-      "type": "path",
-      "url": "modules/module-automation-*",
-      "options": {
-        "symlink": false
-      },
-      "canonical": false
-    },
-    {
-      "type": "path",
-      "url": "modules/module-liberu-*",
-      "options": {
-        "symlink": false
-      },
-      "canonical": true
-    },
+    "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/liberusoftware/composer-installer.git"
@@ -43,182 +27,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/liberusoftware/boilerplate-scripts.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-activity-comments.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-analytics-core.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-analytics-google.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-analytics-meta.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-api-access.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-application.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-audit.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-currency-context.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-developer-experience.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-feature-flags.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-files-media.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-module-manager-filament.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-identity-core.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-identity-core-filament.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-identity-socialstream.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-import-export.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-integrations.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-jetstream-bridge.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-localization-core.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-localization-core-livewire.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-localization-mymemory.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-module-manager.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-notifications.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-observability.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-organizations-teams.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-organizations-teams-filament.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-profiles.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-roles-permissions.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-roles-permissions-filament.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-scheduler-queues.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-search.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-search-api.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-sessions-devices.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-sessions-devices-filament.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-settings.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-settings-filament.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-theme-support.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-theme-support-livewire.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-two-factor-authentication.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/module-webhooks.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/theme-clear-signal.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/theme-dark.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/theme-default.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/liberusoftware/theme-base.git"
         }
     ],
     "require": {
@@ -303,22 +111,22 @@
         "liberusoftware/automation-voice-api": "^1.0",
     "liberusoftware/automation-voice-filament": "^1.0",
     "liberusoftware/automation-voice-livewire": "^1.0",
-    "liberusoftware/module-liberu-platform-orchestration": "^1.0",
-    "liberusoftware/module-liberu-platform-orchestration-api": "^1.0",
-    "liberusoftware/module-liberu-platform-orchestration-filament": "^1.0",
-    "liberusoftware/module-liberu-platform-orchestration-livewire": "^1.0",
-    "liberusoftware/module-liberu-executive-insights": "^1.0",
-    "liberusoftware/module-liberu-executive-insights-api": "^1.0",
-    "liberusoftware/module-liberu-executive-insights-filament": "^1.0",
-    "liberusoftware/module-liberu-executive-insights-livewire": "^1.0",
-    "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
-    "liberusoftware/module-liberu-business-workflow-reconciliation-api": "^1.0",
-    "liberusoftware/module-liberu-business-workflow-reconciliation-filament": "^1.0",
-    "liberusoftware/module-liberu-business-workflow-reconciliation-livewire": "^1.0",
-    "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
-    "liberusoftware/module-liberu-revenue-and-care-orchestration-api": "^1.0",
-    "liberusoftware/module-liberu-revenue-and-care-orchestration-filament": "^1.0",
-    "liberusoftware/module-liberu-revenue-and-care-orchestration-livewire": "^1.0",
+    "liberusoftware/liberu-platform-orchestration": "^1.0",
+    "liberusoftware/liberu-platform-orchestration-api": "^1.0",
+    "liberusoftware/liberu-platform-orchestration-filament": "^1.0",
+    "liberusoftware/liberu-platform-orchestration-livewire": "^1.0",
+    "liberusoftware/liberu-executive-insights": "^1.0",
+    "liberusoftware/liberu-executive-insights-api": "^1.0",
+    "liberusoftware/liberu-executive-insights-filament": "^1.0",
+    "liberusoftware/liberu-executive-insights-livewire": "^1.0",
+    "liberusoftware/liberu-business-workflow-reconciliation": "^1.0",
+    "liberusoftware/liberu-business-workflow-reconciliation-api": "^1.0",
+    "liberusoftware/liberu-business-workflow-reconciliation-filament": "^1.0",
+    "liberusoftware/liberu-business-workflow-reconciliation-livewire": "^1.0",
+    "liberusoftware/liberu-revenue-and-care-orchestration": "^1.0",
+    "liberusoftware/liberu-revenue-and-care-orchestration-api": "^1.0",
+    "liberusoftware/liberu-revenue-and-care-orchestration-filament": "^1.0",
+    "liberusoftware/liberu-revenue-and-care-orchestration-livewire": "^1.0",
         "liberusoftware/module-manager": "^1.0",
         "liberusoftware/module-manager-filament": "^1.1",
         "liberusoftware/notifications": "^1.0",

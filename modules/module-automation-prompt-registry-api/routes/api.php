@@ -9,4 +9,5 @@ Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/auto
     Route::get('/{id}', [PromptRegistryResourceController::class, 'show']);
     Route::patch('/{id}', [PromptRegistryResourceController::class, 'update']);
     Route::delete('/{id}', [PromptRegistryResourceController::class, 'destroy']);
+    Route::post('/{id}/transition', [PromptRegistryResourceController::class, 'transition']);
 });

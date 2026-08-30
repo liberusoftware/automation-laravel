@@ -9,4 +9,5 @@ Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/auto
     Route::get('/{id}', [VoiceResourceController::class, 'show']);
     Route::patch('/{id}', [VoiceResourceController::class, 'update']);
     Route::delete('/{id}', [VoiceResourceController::class, 'destroy']);
+    Route::post('/{id}/transition', [VoiceResourceController::class, 'transition']);
 });

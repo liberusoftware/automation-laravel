@@ -9,4 +9,5 @@ Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/auto
     Route::get('/{id}', [VideoResourceController::class, 'show']);
     Route::patch('/{id}', [VideoResourceController::class, 'update']);
     Route::delete('/{id}', [VideoResourceController::class, 'destroy']);
+    Route::post('/{id}/transition', [VideoResourceController::class, 'transition']);
 });

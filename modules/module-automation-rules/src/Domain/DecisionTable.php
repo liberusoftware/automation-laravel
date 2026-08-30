@@ -12,12 +12,23 @@ final readonly class DecisionTable
     /** @param list<array{conditions: list<array{field:string,operator:string,value:mixed}>, outcome: string}> $rows */
     public function __construct(public string $name, public array $rows)
     {
-        if ($name === '' || $rows === []) {
+        if (trim($name) === '' || $rows === [] || count($rows) > 1000) {
             throw new InvalidArgumentException('Decision tables require a name and at least one row.');
         }
 
         foreach ($rows as $row) {
-            if (($row['conditions'] ?? []) === [] || trim($row['outcome'] ?? '') === '') {
+            if (! is_array($row) || ! is_array($row['conditions'] ?? null) || ($row['conditions'] ?? []) === []) {
+                throw new InvalidArgumentException('Decision table rows require conditions and an outcome.');
+            }
+
+            foreach ($row['conditions'] as $condition) {
+                if (! is_array($condition)) {
+                    throw new InvalidArgumentException('Decision table conditions must be arrays.');
+                }
+                RuleCondition::fromArray($condition);
+            }
+
+            if (! is_string($row['outcome'] ?? null) || trim($row['outcome']) === '') {
                 throw new InvalidArgumentException('Decision table rows require conditions and an outcome.');
             }
         }

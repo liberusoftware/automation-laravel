@@ -11,7 +11,7 @@ final readonly class ProcessingBatch
     /** @param list<ProcessingRequest> $requests */
     public function __construct(public string $id, public array $requests)
     {
-        if ($id === '' || $requests === [] || count($requests) > 100) {
+        if (trim($id) === '' || $requests === [] || count($requests) > 100 || array_filter($requests, static fn (mixed $request): bool => ! $request instanceof ProcessingRequest) !== []) {
             throw new InvalidArgumentException('Processing batches require an identifier and between 1 and 100 requests.');
         }
     }

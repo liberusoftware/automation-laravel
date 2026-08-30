@@ -25,11 +25,16 @@ it('governs streaming interruptions, transcripts, synthesis, and revocable conse
     $session->start();
     $session->complete();
     $consent->revoke($now->addMinute());
+    $request = new VoiceRequest('speech_to_text', 'en-GB', true);
 
     expect($session->status())->toBe('completed')
         ->and($session->transcript())->toHaveCount(1)
         ->and($consent->isActive($now->addMinutes(2)))->toBeFalse()
+        ->and($consent->isActive($now->subMinute()))->toBeFalse()
         ->and(new SpeechSynthesisRequest('Hello', 'alloy'))->toBeInstanceOf(SpeechSynthesisRequest::class);
+
+    expect(fn () => $request->assertConsentActive($consent, $now->addMinutes(2)))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new VoiceRequest('stream', 'not-a-locale', true))->toThrow(InvalidArgumentException::class);
 
     expect(fn () => $session->append(new TranscriptSegment(1, 'speaker-1', 'late', 1, 2)))->toThrow(InvalidArgumentException::class);
 });

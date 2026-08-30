@@ -21,10 +21,19 @@ final readonly class RetryPolicy
     /** @param array<string, mixed> $attributes */
     public static function fromArray(array $attributes): self
     {
+        foreach (['max_attempts', 'backoff_seconds'] as $key) {
+            if (isset($attributes[$key]) && (! is_int($attributes[$key]) || $attributes[$key] < 0)) {
+                throw new InvalidArgumentException("Retry policy {$key} must be a non-negative integer.");
+            }
+        }
+        if (isset($attributes['retryable_failures_only']) && ! is_bool($attributes['retryable_failures_only'])) {
+            throw new InvalidArgumentException('Retry policy retryable_failures_only must be boolean.');
+        }
+
         return new self(
-            maxAttempts: (int) ($attributes['max_attempts'] ?? 1),
-            backoffSeconds: (int) ($attributes['backoff_seconds'] ?? 0),
-            retryableFailuresOnly: (bool) ($attributes['retryable_failures_only'] ?? true),
+            maxAttempts: $attributes['max_attempts'] ?? 1,
+            backoffSeconds: $attributes['backoff_seconds'] ?? 0,
+            retryableFailuresOnly: $attributes['retryable_failures_only'] ?? true,
         );
     }
 

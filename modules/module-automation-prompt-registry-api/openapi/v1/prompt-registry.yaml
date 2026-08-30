@@ -86,6 +86,38 @@ paths:
           description: Resource deleted successfully.
         '404':
           $ref: '#/components/responses/Problem'
+  /api/v1/automation/prompt-registry/{id}/transition:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+    post:
+      operationId: automation.prompt.registry.transition
+      summary: Transition the resource through an allowed lifecycle state.
+      security:
+        - sanctum: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+                - status
+              properties:
+                status:
+                  type: string
+                  enum: [draft, active, paused, completed, failed, cancelled]
+      responses:
+        '200':
+          $ref: '#/components/responses/Resource'
+        '401':
+          $ref: '#/components/responses/Problem'
+        '403':
+          $ref: '#/components/responses/Problem'
+        '404':
+          $ref: '#/components/responses/Problem'
+        '422':
+          $ref: '#/components/responses/Problem'
 components:
   parameters:
     ResourceId:
@@ -143,9 +175,6 @@ components:
         payload:
           type: object
           additionalProperties: true
-        status:
-          type: string
-          maxLength: 32
         versioned_prompts:
           type: object
           additionalProperties: true

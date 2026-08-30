@@ -28,4 +28,19 @@ final readonly class ProviderContract
     {
         return in_array($model, $this->models, true);
     }
+
+    public function validateRequest(GatewayRequest $request): void
+    {
+        if (! $this->supports($request->model)) {
+            throw new InvalidArgumentException('The provider does not support the requested model.');
+        }
+
+        if ($request->structuredOutput !== null && ! $this->supportsStructuredOutput) {
+            throw new InvalidArgumentException('The provider does not support structured output.');
+        }
+
+        if ($request->toolPolicy !== null && ! $this->supportsTools) {
+            throw new InvalidArgumentException('The provider does not support tools.');
+        }
+    }
 }

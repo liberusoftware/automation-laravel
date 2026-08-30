@@ -6,10 +6,12 @@ namespace Liberu\Modules\Automation\Image\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 final class ImageResource extends Model
 {
     use HasUuids;
+    use SoftDeletes;
 
     protected $table = 'automation_image_resources';
 
@@ -17,7 +19,11 @@ final class ImageResource extends Model
 
     protected function casts(): array
     {
-        return ['payload' => 'array'];
+        return [
+            'payload' => 'array',
+            'metadata' => 'array',
+            'lock_version' => 'integer',
+        ];
     }
 
     public function scopeForTeam($query, ?string $teamId)
