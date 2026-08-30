@@ -43,7 +43,12 @@ jobs:
         run: cp .env.example .env
 
       - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+        run: composer install --no-interaction --prefer-dist --no-progress --no-scripts
+
+      - name: Restore tracked module sources
+        run: |
+          git restore --worktree -- modules themes
+          composer dump-autoload --no-interaction --no-scripts --optimize
 
       - name: Audit dependencies
         run: composer audit --locked
