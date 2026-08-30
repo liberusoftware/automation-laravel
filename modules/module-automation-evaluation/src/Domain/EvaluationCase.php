@@ -11,8 +11,14 @@ final readonly class EvaluationCase
     /** @param array<string, mixed> $input */
     public function __construct(public string $id, public array $input, public string $expected)
     {
-        if ($id === '' || $input === [] || trim($expected) === '') {
+        if (trim($id) === '' || $input === [] || trim($expected) === '') {
             throw new InvalidArgumentException('Evaluation cases require an identifier, input, and expected result.');
+        }
+
+        foreach ($input as $value) {
+            if (! is_scalar($value) && $value !== null && ! is_array($value)) {
+                throw new InvalidArgumentException('Evaluation case inputs must be serializable values.');
+            }
         }
     }
 }

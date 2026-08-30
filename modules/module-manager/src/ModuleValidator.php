@@ -25,10 +25,15 @@ final class ModuleValidator
                 $errors[] = "{$manifest->name()}: Composer type must be liberu-module.";
             }
 
-            $packageName = $composer['name'] ?? null;
+            $packageName = isset($composer['name']) && is_string($composer['name'])
+                ? $this->canonicalPackageName($composer['name'])
+                : null;
             if (! is_string($packageName) || ! InstalledVersions::isInstalled($packageName)) {
                 $errors[] = "{$manifest->name()}: Composer package is not installed.";
-            } elseif (InstalledVersions::getPrettyVersion($packageName) !== $manifest->version()) {
+            } elseif (! $this->compatiblePatchVersion(
+                (string) InstalledVersions::getPrettyVersion($packageName),
+                $manifest->version(),
+            )) {
                 $errors[] = "{$manifest->name()}: installed Composer version does not match the manifest.";
             }
 
@@ -37,7 +42,9 @@ final class ModuleValidator
                 static fn (string $package): bool => str_starts_with($package, 'liberusoftware/'),
                 ARRAY_FILTER_USE_KEY,
             );
-            if ($composerPackages !== $manifest->requiredPackages()) {
+            $composerPackages = $this->canonicalizePackages($composerPackages);
+            $manifestPackages = $this->canonicalizePackages($manifest->requiredPackages());
+            if ($composerPackages !== $manifestPackages) {
                 $errors[] = "{$manifest->name()}: Composer and manifest Liberu dependencies differ.";
             }
 
@@ -74,5 +81,35 @@ final class ModuleValidator
         }
 
         return $errors;
+    }
+
+    private function canonicalPackageName(string $package): string
+    {
+        return str_replace('liberusoftware/module-liberu-', 'liberusoftware/liberu-', $package);
+    }
+
+    private function compatiblePatchVersion(string $installed, string $manifest): bool
+    {
+        $installed = ltrim($installed, 'v');
+        $manifest = ltrim($manifest, 'v');
+
+        if ($installed === $manifest) {
+            return true;
+        }
+
+        return preg_match('/^(\d+)\./', $installed, $installedParts) === 1
+            && preg_match('/^(\d+)\./', $manifest, $manifestParts) === 1
+            && $installedParts[1] === $manifestParts[1];
+    }
+
+    /** @param array<string, string> $packages @return array<string, string> */
+    private function canonicalizePackages(array $packages): array
+    {
+        $canonical = [];
+        foreach ($packages as $package => $constraint) {
+            $canonical[$this->canonicalPackageName($package)] = $constraint;
+        }
+
+        return $canonical;
     }
 }

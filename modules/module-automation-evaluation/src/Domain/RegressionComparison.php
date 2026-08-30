@@ -10,7 +10,7 @@ final readonly class RegressionComparison
 {
     public function __construct(public string $metric, public float $baseline, public float $candidate, public float $allowedDrop = 0.0)
     {
-        if ($metric === '' || $allowedDrop < 0) {
+        if (trim($metric) === '' || ! is_finite($baseline) || ! is_finite($candidate) || $allowedDrop < 0) {
             throw new InvalidArgumentException('Regression comparisons require a metric and non-negative tolerance.');
         }
     }

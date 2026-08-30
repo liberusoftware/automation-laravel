@@ -36,7 +36,7 @@ final readonly class WorkflowDefinition
             throw new InvalidArgumentException('A workflow name between 1 and 255 characters is required.');
         }
 
-        if (! is_array($steps) || $steps === []) {
+        if (! is_array($steps) || $steps === [] || count($steps) > 1000) {
             throw new InvalidArgumentException('A workflow must contain at least one step.');
         }
 
@@ -62,6 +62,9 @@ final readonly class WorkflowDefinition
             );
         }
 
+        if (isset($attributes['schedule']) && ! is_array($attributes['schedule'])) {
+            throw new InvalidArgumentException('Workflow schedules must be structured arrays.');
+        }
         $schedule = isset($attributes['schedule']) ? WorkflowSchedule::fromArray($attributes['schedule']) : null;
         $retryPolicy = RetryPolicy::fromArray($attributes['retry'] ?? []);
         $compensation = $attributes['compensation'] ?? [];
@@ -76,14 +79,24 @@ final readonly class WorkflowDefinition
 
         return new self(
             name: $name,
-            inputSchema: is_array($attributes['input_schema'] ?? null) ? $attributes['input_schema'] : [],
-            outputSchema: is_array($attributes['output_schema'] ?? null) ? $attributes['output_schema'] : [],
+            inputSchema: self::schema($attributes['input_schema'] ?? []),
+            outputSchema: self::schema($attributes['output_schema'] ?? []),
             steps: array_values($steps),
             triggers: array_values($triggers),
             schedule: $schedule,
             retryPolicy: $retryPolicy,
             compensation: array_values($compensation),
         );
+    }
+
+    /** @return array<string, mixed> */
+    private static function schema(mixed $schema): array
+    {
+        if (! is_array($schema)) {
+            throw new InvalidArgumentException('Workflow schemas must be structured arrays.');
+        }
+
+        return $schema;
     }
 
     /** @return array<string, mixed> */

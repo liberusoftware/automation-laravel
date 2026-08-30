@@ -90,7 +90,7 @@ final class ModuleRegistry
             }
             $composer = json_decode((string) file_get_contents($composerPath), true);
             if (isset($composer['name'])) {
-                $packageOwners[$composer['name']] = $name;
+                $packageOwners[$this->canonicalPackageName($composer['name'])] = $name;
             }
             foreach ($manifest->capabilities() as $capability) {
                 $capabilityOwners[$capability] = $name;
@@ -99,6 +99,7 @@ final class ModuleRegistry
 
         foreach ($selected as $name => $manifest) {
             foreach ($manifest->requiredPackages() as $package => $constraint) {
+                $package = $this->canonicalPackageName($package);
                 if (! isset($packageOwners[$package])) {
                     if (! InstalledVersions::isInstalled($package)
                         || ! Semver::satisfies((string) InstalledVersions::getPrettyVersion($package), $constraint)) {
@@ -137,6 +138,7 @@ final class ModuleRegistry
             }
             $visiting[$name] = true;
             foreach ($selected[$name]->requiredPackages() as $package => $_) {
+                $package = $this->canonicalPackageName($package);
                 if (isset($packageOwners[$package], $selected[$packageOwners[$package]])) {
                     $visit($packageOwners[$package]);
                 }
@@ -157,5 +159,10 @@ final class ModuleRegistry
         }
 
         return array_values($ordered);
+    }
+
+    private function canonicalPackageName(string $package): string
+    {
+        return str_replace('liberusoftware/module-liberu-', 'liberusoftware/liberu-', $package);
     }
 }

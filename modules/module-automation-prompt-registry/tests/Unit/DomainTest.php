@@ -29,4 +29,6 @@ it('governs prompt approvals, overrides, evaluation sets, and rollback', functio
     $release->rollbackTo(1);
     expect($release->active()?->version)->toBe(1);
     expect(fn () => $versionTwo->approvedForRelease('author-1', 'author-1'))->toThrow(InvalidArgumentException::class);
+    expect(fn () => new PromptVersion('unsafe', 1, 'Hello {{ missing }}'))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new PromptEvaluationSet('invalid', [['input' => [], 'expected' => '']]))->toThrow(InvalidArgumentException::class);
 });

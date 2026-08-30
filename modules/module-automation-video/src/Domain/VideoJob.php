@@ -40,7 +40,7 @@ final class VideoJob
 
     public function retry(int $maxAttempts = 3): void
     {
-        if ($this->status !== 'failed' || $this->attempts >= $maxAttempts) {
+        if ($maxAttempts < 1 || $this->status !== 'failed' || $this->attempts >= $maxAttempts) {
             throw new InvalidArgumentException('This video job cannot be retried.');
         }
         $this->status = 'queued';

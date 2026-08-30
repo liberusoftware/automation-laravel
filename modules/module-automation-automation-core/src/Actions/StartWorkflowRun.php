@@ -14,13 +14,13 @@ use Liberu\Modules\Automation\AutomationCore\Models\WorkflowVersion;
 final class StartWorkflowRun
 {
     /** @param array<string, mixed> $variables */
-    public function execute(AutomationCoreResource $workflow, string $teamId, array $variables = [], ?string $idempotencyKey = null): WorkflowRunRecord
+    public function execute(AutomationCoreResource $workflow, string $teamId, array $variables = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): WorkflowRunRecord
     {
         if ($workflow->team_id !== $teamId || $workflow->status !== 'published') {
             throw new InvalidArgumentException('Only a published workflow in the active team can run.');
         }
 
-        return DB::transaction(function () use ($workflow, $teamId, $variables, $idempotencyKey): WorkflowRunRecord {
+        return DB::transaction(function () use ($workflow, $teamId, $variables, $idempotencyKey, $actorId, $correlationId): WorkflowRunRecord {
             if ($idempotencyKey !== null) {
                 $existing = WorkflowRunRecord::query()->forTeam($teamId)->where('workflow_id', $workflow->getKey())->where('idempotency_key', $idempotencyKey)->first();
                 if ($existing !== null) {
@@ -42,6 +42,8 @@ final class StartWorkflowRun
                 'status' => 'queued',
                 'variables' => $validated->values,
                 'idempotency_key' => $idempotencyKey,
+                'actor_id' => $actorId,
+                'correlation_id' => $correlationId,
             ]);
         });
     }

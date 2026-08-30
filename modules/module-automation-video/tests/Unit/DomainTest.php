@@ -33,4 +33,7 @@ it('governs video jobs, captions, moderation, provenance, and delivery', functio
 
     expect(fn () => new CaptionTrack('en-GB', [new CaptionCue(1, 'Invalid sequence', 0, 1)]))->toThrow(InvalidArgumentException::class)
         ->and(fn () => new VideoModerationDecision('rejected', 'policy-1'))->toThrow(InvalidArgumentException::class);
+    expect(fn () => new CaptionTrack('bad locale', [new CaptionCue(0, 'x', 0, 1)]))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new VideoRequest('script', true, ''))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new VideoDelivery('https://user:secret@cdn.example.test/video.mp4', 'mp4', time() + 3600))->toThrow(InvalidArgumentException::class);
 });

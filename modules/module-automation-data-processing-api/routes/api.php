@@ -9,4 +9,5 @@ Route::middleware(['api', 'auth:sanctum', 'throttle:60,1'])->prefix('api/v1/auto
     Route::get('/{id}', [DataProcessingResourceController::class, 'show']);
     Route::patch('/{id}', [DataProcessingResourceController::class, 'update']);
     Route::delete('/{id}', [DataProcessingResourceController::class, 'destroy']);
+    Route::post('/{id}/transition', [DataProcessingResourceController::class, 'transition']);
 });

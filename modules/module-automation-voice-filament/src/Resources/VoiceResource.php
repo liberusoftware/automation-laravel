@@ -43,10 +43,11 @@ final class VoiceResource extends Resource
                     'completed' => 'Completed',
                     'failed' => 'Failed',
                     'cancelled' => 'Cancelled',
-                    'published' => 'Published',
                 ])
                 ->default('draft')
-                ->required(),
+                ->required()
+                ->disabled()
+                ->dehydrated(false),
             Textarea::make('payload')
                 ->formatStateUsing(static fn (?array $state): string => json_encode($state ?? [], JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR))
                 ->dehydrateStateUsing(static fn (?string $state): array => is_string($state) && trim($state) !== '' ? (json_decode($state, true, 512, JSON_THROW_ON_ERROR) ?: []) : [])

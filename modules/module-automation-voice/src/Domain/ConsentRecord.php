@@ -16,7 +16,7 @@ final class ConsentRecord
         public readonly CarbonImmutable $grantedAt,
         private ?CarbonImmutable $revokedAt = null,
     ) {
-        if ($id === '' || $actorId === '' || $purpose === '') {
+        if (trim($id) === '' || trim($actorId) === '' || trim($purpose) === '') {
             throw new InvalidArgumentException('Voice consent requires an actor, purpose, and identifier.');
         }
     }
@@ -31,6 +31,7 @@ final class ConsentRecord
 
     public function isActive(CarbonImmutable $at): bool
     {
-        return $this->revokedAt === null || $this->revokedAt->greaterThan($at);
+        return ! $at->lessThan($this->grantedAt)
+            && ($this->revokedAt === null || $this->revokedAt->greaterThan($at));
     }
 }

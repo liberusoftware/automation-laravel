@@ -25,5 +25,8 @@ it('validates extraction, translation, redaction, and bounded batches', function
         ->and($batch->operations())->toBe(['translation', 'redaction']);
 
     expect(fn () => new ProcessingRequest('translation', 'hello'))->toThrow(InvalidArgumentException::class)
-        ->and(fn () => $schema->validate(['amount' => '12', 'approved' => true]))->toThrow(InvalidArgumentException::class);
+        ->and(fn () => $schema->validate(['amount' => '12', 'approved' => true]))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new ProcessingRequest('translation', 'hello', options: ['target_locale' => 'invalid']))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new ExtractionSchema(['unsafe field' => 'string']))->toThrow(InvalidArgumentException::class)
+        ->and(fn () => new ProcessingBatch('batch-1', [new stdClass()]))->toThrow(InvalidArgumentException::class);
 });

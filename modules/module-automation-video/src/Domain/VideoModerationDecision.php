@@ -10,7 +10,7 @@ final readonly class VideoModerationDecision
 {
     public function __construct(public string $status, public string $policyVersion, public ?string $reason = null)
     {
-        if (! in_array($status, ['approved', 'rejected', 'review'], true) || $policyVersion === '' || ($status !== 'approved' && trim((string) $reason) === '')) {
+        if (! in_array($status, ['approved', 'rejected', 'review'], true) || trim($policyVersion) === '' || ($status !== 'approved' && trim((string) $reason) === '')) {
             throw new InvalidArgumentException('Video moderation requires a policy and reason for non-approved outcomes.');
         }
     }

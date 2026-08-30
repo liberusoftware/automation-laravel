@@ -11,7 +11,7 @@ final readonly class ExtractionSchema
     /** @param array<string, string> $fields */
     public function __construct(public array $fields)
     {
-        if ($fields === [] || array_filter($fields, static fn (mixed $type): bool => ! in_array($type, ['string', 'integer', 'number', 'boolean'], true)) !== []) {
+        if ($fields === [] || count($fields) > 100 || array_filter($fields, static fn (mixed $type, mixed $field): bool => ! is_string($field) || preg_match('/^[a-zA-Z][a-zA-Z0-9_.-]*$/', $field) !== 1 || ! in_array($type, ['string', 'integer', 'number', 'boolean'], true), ARRAY_FILTER_USE_BOTH) !== []) {
             throw new InvalidArgumentException('Extraction schemas require at least one supported typed field.');
         }
     }

@@ -1,6 +1,6 @@
 {
-  "name":"liberusoftware/module-liberu-executive-insights","version":"1.0.0","description":"Governed Liberu cross-product metrics and decision snapshots.","type":"liberu-module","license":"MIT",
+  "name":"liberusoftware/liberu-executive-insights","version":"1.0.0","description":"Governed Liberu cross-product metrics and decision snapshots.","type":"liberu-module","license":"MIT",
   "require":{"php":"^8.5","illuminate/database":"^13.0","illuminate/support":"^13.0"},
   "autoload":{"psr-4":{"Liberu\\Modules\\Liberu\\ExecutiveInsights\\":"src/"}},
-  "extra":{"laravel":{"providers":["Liberu\\Modules\\Liberu\\ExecutiveInsights\\ExecutiveInsightsServiceProvider"]},"liberu":{"name":"module-liberu-executive-insights"}},"require-dev":{"pestphp/pest":"^5.0"},"config":{"allow-plugins":{"pestphp/pest-plugin":true}}
+  "extra":{"laravel":{"providers":["Liberu\\Modules\\Liberu\\ExecutiveInsights\\ExecutiveInsightsServiceProvider"]},"liberu":{"name":"liberu-executive-insights"}},"require-dev":{"pestphp/pest":"^5.0"},"config":{"allow-plugins":{"pestphp/pest-plugin":true}}
 }

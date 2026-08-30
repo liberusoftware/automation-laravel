@@ -15,6 +15,9 @@ final readonly class WorkflowVariables
     public static function validate(array $values, array $schema = []): self
     {
         foreach ($schema as $name => $definition) {
+            if (! is_string($name) || preg_match('/^[a-zA-Z][a-zA-Z0-9_]*$/', $name) !== 1 || ! is_array($definition)) {
+                throw new InvalidArgumentException('Workflow schemas require named object definitions.');
+            }
             if (is_array($definition) && ($definition['required'] ?? false) && ! array_key_exists($name, $values)) {
                 throw new InvalidArgumentException("Missing required workflow variable: {$name}");
             }
@@ -23,6 +26,9 @@ final readonly class WorkflowVariables
         foreach ($values as $name => $value) {
             if (! is_string($name) || trim($name) === '' || str_contains($name, '.')) {
                 throw new InvalidArgumentException('Workflow variable names must be non-empty dot-free strings.');
+            }
+            if (isset($schema[$name]) && ! is_array($schema[$name])) {
+                throw new InvalidArgumentException("Workflow variable schema is invalid: {$name}");
             }
             $expected = $schema[$name]['type'] ?? null;
             if ($expected !== null && ! self::matchesType($value, (string) $expected)) {

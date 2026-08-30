@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Liberu\Modules\Automation\Rules\Services;
 
 use Liberu\Modules\Automation\Rules\Domain\RuleCondition;
+use Liberu\Modules\Automation\Rules\Domain\RuleExpression;
 
 final class RuleEvaluator
 {
@@ -24,5 +25,11 @@ final class RuleEvaluator
     public function any(array $conditions, array $context): bool
     {
         return array_any($conditions, fn (array $condition): bool => RuleCondition::fromArray($condition)->matches($context));
+    }
+
+    /** @param array<string, mixed> $expression @param array<string, mixed> $context */
+    public function expression(array $expression, array $context): bool
+    {
+        return RuleExpression::fromArray($expression)->matches($context);
     }
 }

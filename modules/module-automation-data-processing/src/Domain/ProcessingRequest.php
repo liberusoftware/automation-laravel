@@ -13,11 +13,11 @@ final readonly class ProcessingRequest
     /** @param array<string, mixed> $options */
     public function __construct(public string $operation, public string $input, public bool $redactSensitive = false, public array $options = [])
     {
-        if (! in_array($operation, self::OPERATIONS, true) || trim($input) === '') {
+        if (! in_array($operation, self::OPERATIONS, true) || trim($input) === '' || strlen($input) > 100000) {
             throw new InvalidArgumentException('Processing requests require a supported operation and input.');
         }
 
-        if ($operation === 'translation' && trim((string) ($options['target_locale'] ?? '')) === '') {
+        if ($operation === 'translation' && preg_match('/^[a-z]{2,3}(?:-[A-Z][a-z]{3})?(?:-[A-Z]{2}|-[0-9]{3})?$/', (string) ($options['target_locale'] ?? '')) !== 1) {
             throw new InvalidArgumentException('Translation requests require a target locale.');
         }
 
