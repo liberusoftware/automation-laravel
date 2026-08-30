@@ -41,12 +41,20 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Install PHP dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+        run: composer install --no-interaction --prefer-dist --no-progress --no-scripts
 
-      # §6.2: modules/ and themes/ are Composer output that happens to be tracked. A
-      # clean install must reproduce them byte for byte — a diff here means someone
-      # edited an installed package instead of its repository, and the next install
-      # would silently discard the change.
+      - name: Restore tracked module sources
+        run: |
+          # Composer's Liberu installer writes published package archives into
+          # modules/ and themes/. This application keeps the checked-out package
+          # sources there as well, so restore them before Laravel boots and runs
+          # package discovery.
+          git restore --worktree -- modules themes
+          composer dump-autoload --no-interaction --no-scripts --optimize
+
+      # §6.2: modules/ and themes/ are checked-out package sources that Composer
+      # temporarily overlays during installation. They must be clean before the
+      # application boots, so package discovery always uses the committed sources.
       - name: Installed packages match the tracked source
         run: |
           if ! git diff --exit-code --stat -- modules themes; then
