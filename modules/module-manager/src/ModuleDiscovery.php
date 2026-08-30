@@ -32,19 +32,19 @@ final class ModuleDiscovery
         ))));
 
         $manifestPaths = [];
-        foreach ($installedPaths as $path) {
-            if (is_file($path.'/module.json')) {
-                // Installed packages are the runtime source of truth. This is
-                // important during a package rename, when the old checkout can
-                // still sit beside the newly installed package.
-                $manifestPaths[] = $path.'/module.json';
-            }
-        }
         foreach ($paths as $root) {
             foreach (glob(rtrim($root, '/').'/*/module.json') ?: [] as $path) {
                 if (! in_array(realpath(dirname($path)), $installedPaths, true)) {
                     $manifestPaths[] = $path;
                 }
+            }
+        }
+        foreach ($installedPaths as $path) {
+            if (is_file($path.'/module.json')) {
+                // A checked-out module is authoritative over Composer's copy.
+                // This keeps repository manifests usable while a renamed package
+                // is being published or when an installed manifest is stale.
+                $manifestPaths[] = $path.'/module.json';
             }
         }
 
