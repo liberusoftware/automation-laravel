@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\App\Pages\AccountSetupWizard;
 use App\Filament\ModulePlugins;
 use App\Support\ThemeColors;
 use BezhanSalleh\FilamentShield\Middleware\SyncShieldTenant;
@@ -9,6 +10,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -38,6 +40,15 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
                 Dashboard::class,
+                AccountSetupWizard::class,
+            ])
+            ->navigationGroups([
+                NavigationGroup::make('Workspace'),
+                NavigationGroup::make('Automation'),
+                NavigationGroup::make('Administration'),
+                NavigationGroup::make('Account'),
+                NavigationGroup::make('Operations'),
+                NavigationGroup::make('Settings'),
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([

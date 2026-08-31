@@ -1,5 +1,7 @@
 <?php
 
+use App\Filament\App\Pages\AccountSetupWizard;
+use App\Models\TeamOnboarding;
 use App\Models\User;
 use Filament\Facades\Filament;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +20,13 @@ Route::get('/dashboard', function () {
         $tenant = $user->getDefaultTenant($panel);
 
         return redirect($tenant !== null ? $panel->getUrl($tenant) : '/'.$panel->getPath());
+    }
+
+    if ($user instanceof User && $user->currentTeam !== null && ! TeamOnboarding::query()
+        ->where('team_id', $user->currentTeam->getKey())
+        ->whereNotNull('completed_at')
+        ->exists()) {
+        return redirect(AccountSetupWizard::getUrl(panel: 'app'));
     }
 
     return redirect()->route('filament.app.pages.dashboard');
