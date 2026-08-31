@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\TeamOnboarding;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Liberu\Foundation\Organizations\Models\Team;
@@ -12,6 +13,7 @@ function seedTeamUser(bool $superAdmin): User
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
     $user->forceFill(['current_team_id' => $team->id])->save();
+    TeamOnboarding::create(['team_id' => $team->id, 'completed_at' => now()]);
 
     if ($superAdmin) {
         setPermissionsTeamId($team->id);
