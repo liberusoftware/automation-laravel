@@ -19,6 +19,9 @@ use JoelButcher\Socialstream\Socialstream;
 use Liberu\Foundation\Integrations\Support\CredentialVault;
 use Liberu\Foundation\Organizations\Models\Team;
 
+/**
+ * @property-read Schema $form
+ */
 class AccountSetupWizard extends Page
 {
     protected string $view = 'filament.app.pages.account-setup-wizard';
@@ -45,7 +48,9 @@ class AccountSetupWizard extends Page
     {
         $user = auth()->user();
         $tenant = Filament::getTenant();
-        $team = $tenant instanceof Team ? $tenant : ($user?->currentTeam ?? $user?->latestTeam);
+        $team = $tenant instanceof Team
+            ? $tenant
+            : ($user !== null ? ($user->currentTeam ?? $user->latestTeam) : null);
 
         abort_unless($user !== null && $team instanceof Team && $user->belongsToTeam($team), 404);
 
@@ -54,8 +59,8 @@ class AccountSetupWizard extends Page
 
         $this->form->fill([
             'name' => $user->name,
-            'team_name' => $team->name,
-            'ai_provider' => $this->existingConnection()?->provider,
+            'team_name' => $team->getAttribute('name'),
+            'ai_provider' => $this->existingConnection()?->getAttribute('provider'),
         ]);
     }
 
