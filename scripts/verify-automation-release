@@ -7,7 +7,7 @@ cd "$root"
 
 composer validate --strict
 php artisan module:validate
-vendor/bin/pint --test
+vendor/bin/pint --test app config database routes tests
 php -d memory_limit=512M vendor/bin/phpstan analyse --no-progress
 php scripts/validate-automation-openapi.php
 vendor/bin/pest --no-progress
