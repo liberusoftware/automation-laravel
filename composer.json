@@ -81,7 +81,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-business-workflow-reconciliation": "1.1.1"
+                    "liberusoftware/module-liberu-business-workflow-reconciliation": "1.1.1"
                 }
             }
         },
@@ -91,7 +91,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-executive-insights": "1.1.2"
+                    "liberusoftware/module-liberu-executive-insights": "1.1.2"
                 }
             }
         },
@@ -101,7 +101,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-platform-orchestration": "1.1.2"
+                    "liberusoftware/module-liberu-platform-orchestration": "1.1.2"
                 }
             }
         },
@@ -111,7 +111,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-revenue-and-care-orchestration": "1.1.2"
+                    "liberusoftware/module-liberu-revenue-and-care-orchestration": "1.1.2"
                 }
             }
         },
@@ -121,7 +121,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-business-workflow-reconciliation-api": "1.1.2"
+                    "liberusoftware/module-liberu-business-workflow-reconciliation-api": "1.1.2"
                 }
             }
         },
@@ -131,7 +131,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-business-workflow-reconciliation-filament": "1.1.2"
+                    "liberusoftware/module-liberu-business-workflow-reconciliation-filament": "1.1.2"
                 }
             }
         },
@@ -141,7 +141,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-business-workflow-reconciliation-livewire": "1.1.2"
+                    "liberusoftware/module-liberu-business-workflow-reconciliation-livewire": "1.1.2"
                 }
             }
         },
@@ -151,7 +151,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-executive-insights-api": "1.1.2"
+                    "liberusoftware/module-liberu-executive-insights-api": "1.1.2"
                 }
             }
         },
@@ -161,7 +161,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-executive-insights-filament": "1.1.2"
+                    "liberusoftware/module-liberu-executive-insights-filament": "1.1.2"
                 }
             }
         },
@@ -171,7 +171,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-executive-insights-livewire": "1.1.2"
+                    "liberusoftware/module-liberu-executive-insights-livewire": "1.1.2"
                 }
             }
         },
@@ -181,7 +181,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-platform-orchestration-api": "1.1.2"
+                    "liberusoftware/module-liberu-platform-orchestration-api": "1.1.2"
                 }
             }
         },
@@ -191,7 +191,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-platform-orchestration-filament": "1.1.2"
+                    "liberusoftware/module-liberu-platform-orchestration-filament": "1.1.2"
                 }
             }
         },
@@ -201,7 +201,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-platform-orchestration-livewire": "1.1.2"
+                    "liberusoftware/module-liberu-platform-orchestration-livewire": "1.1.2"
                 }
             }
         },
@@ -211,7 +211,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-revenue-and-care-orchestration-api": "1.1.2"
+                    "liberusoftware/module-liberu-revenue-and-care-orchestration-api": "1.1.2"
                 }
             }
         },
@@ -221,7 +221,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-revenue-and-care-orchestration-filament": "1.1.2"
+                    "liberusoftware/module-liberu-revenue-and-care-orchestration-filament": "1.1.2"
                 }
             }
         },
@@ -231,7 +231,7 @@
             "options": {
                 "symlink": false,
                 "versions": {
-                    "liberusoftware/liberu-revenue-and-care-orchestration-livewire": "1.1.2"
+                    "liberusoftware/module-liberu-revenue-and-care-orchestration-livewire": "1.1.2"
                 }
             }
         },
@@ -258,22 +258,22 @@
                     "liberusoftware/import-export": "1.4.1",
                     "liberusoftware/integrations": "1.4.1",
                     "liberusoftware/jetstream-bridge": "1.4.1",
-                    "liberusoftware/liberu-business-workflow-reconciliation": "1.1.1",
-                    "liberusoftware/liberu-business-workflow-reconciliation-api": "1.1.2",
-                    "liberusoftware/liberu-business-workflow-reconciliation-filament": "1.1.2",
-                    "liberusoftware/liberu-business-workflow-reconciliation-livewire": "1.1.2",
-                    "liberusoftware/liberu-executive-insights": "1.1.2",
-                    "liberusoftware/liberu-executive-insights-api": "1.1.2",
-                    "liberusoftware/liberu-executive-insights-filament": "1.1.2",
-                    "liberusoftware/liberu-executive-insights-livewire": "1.1.2",
-                    "liberusoftware/liberu-platform-orchestration": "1.1.2",
-                    "liberusoftware/liberu-platform-orchestration-api": "1.1.2",
-                    "liberusoftware/liberu-platform-orchestration-filament": "1.1.2",
-                    "liberusoftware/liberu-platform-orchestration-livewire": "1.1.2",
-                    "liberusoftware/liberu-revenue-and-care-orchestration": "1.1.2",
-                    "liberusoftware/liberu-revenue-and-care-orchestration-api": "1.1.2",
-                    "liberusoftware/liberu-revenue-and-care-orchestration-filament": "1.1.2",
-                    "liberusoftware/liberu-revenue-and-care-orchestration-livewire": "1.1.2",
+                    "liberusoftware/module-liberu-business-workflow-reconciliation": "1.1.1",
+                    "liberusoftware/module-liberu-business-workflow-reconciliation-api": "1.1.2",
+                    "liberusoftware/module-liberu-business-workflow-reconciliation-filament": "1.1.2",
+                    "liberusoftware/module-liberu-business-workflow-reconciliation-livewire": "1.1.2",
+                    "liberusoftware/module-liberu-executive-insights": "1.1.2",
+                    "liberusoftware/module-liberu-executive-insights-api": "1.1.2",
+                    "liberusoftware/module-liberu-executive-insights-filament": "1.1.2",
+                    "liberusoftware/module-liberu-executive-insights-livewire": "1.1.2",
+                    "liberusoftware/module-liberu-platform-orchestration": "1.1.2",
+                    "liberusoftware/module-liberu-platform-orchestration-api": "1.1.2",
+                    "liberusoftware/module-liberu-platform-orchestration-filament": "1.1.2",
+                    "liberusoftware/module-liberu-platform-orchestration-livewire": "1.1.2",
+                    "liberusoftware/module-liberu-revenue-and-care-orchestration": "1.1.2",
+                    "liberusoftware/module-liberu-revenue-and-care-orchestration-api": "1.1.2",
+                    "liberusoftware/module-liberu-revenue-and-care-orchestration-filament": "1.1.2",
+                    "liberusoftware/module-liberu-revenue-and-care-orchestration-livewire": "1.1.2",
                     "liberusoftware/localization-core-livewire": "1.4.1",
                     "liberusoftware/localization-core": "1.4.1",
                     "liberusoftware/localization-mymemory": "1.4.1",
@@ -454,22 +454,22 @@
         "liberusoftware/import-export": "^1.0",
         "liberusoftware/integrations": "^1.0",
         "liberusoftware/jetstream-bridge": "^1.0",
-        "liberusoftware/liberu-business-workflow-reconciliation": "^1.0",
-        "liberusoftware/liberu-business-workflow-reconciliation-api": "^1.0",
-        "liberusoftware/liberu-business-workflow-reconciliation-filament": "^1.0",
-        "liberusoftware/liberu-business-workflow-reconciliation-livewire": "^1.0",
-        "liberusoftware/liberu-executive-insights": "^1.0",
-        "liberusoftware/liberu-executive-insights-api": "^1.0",
-        "liberusoftware/liberu-executive-insights-filament": "^1.0",
-        "liberusoftware/liberu-executive-insights-livewire": "^1.0",
-        "liberusoftware/liberu-platform-orchestration": "^1.0",
-        "liberusoftware/liberu-platform-orchestration-api": "^1.0",
-        "liberusoftware/liberu-platform-orchestration-filament": "^1.0",
-        "liberusoftware/liberu-platform-orchestration-livewire": "^1.0",
-        "liberusoftware/liberu-revenue-and-care-orchestration": "^1.0",
-        "liberusoftware/liberu-revenue-and-care-orchestration-api": "^1.0",
-        "liberusoftware/liberu-revenue-and-care-orchestration-filament": "^1.0",
-        "liberusoftware/liberu-revenue-and-care-orchestration-livewire": "^1.0",
+        "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
+        "liberusoftware/module-liberu-business-workflow-reconciliation-api": "^1.0",
+        "liberusoftware/module-liberu-business-workflow-reconciliation-filament": "^1.0",
+        "liberusoftware/module-liberu-business-workflow-reconciliation-livewire": "^1.0",
+        "liberusoftware/module-liberu-executive-insights": "^1.0",
+        "liberusoftware/module-liberu-executive-insights-api": "^1.0",
+        "liberusoftware/module-liberu-executive-insights-filament": "^1.0",
+        "liberusoftware/module-liberu-executive-insights-livewire": "^1.0",
+        "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+        "liberusoftware/module-liberu-platform-orchestration-api": "^1.0",
+        "liberusoftware/module-liberu-platform-orchestration-filament": "^1.0",
+        "liberusoftware/module-liberu-platform-orchestration-livewire": "^1.0",
+        "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
+        "liberusoftware/module-liberu-revenue-and-care-orchestration-api": "^1.0",
+        "liberusoftware/module-liberu-revenue-and-care-orchestration-filament": "^1.0",
+        "liberusoftware/module-liberu-revenue-and-care-orchestration-livewire": "^1.0",
         "liberusoftware/localization-contracts": "^1.0",
         "liberusoftware/localization-core": "^1.0",
         "liberusoftware/localization-core-livewire": "^1.0",
