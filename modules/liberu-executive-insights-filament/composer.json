@@ -1,12 +1,12 @@
 {
-  "name": "liberusoftware/liberu-executive-insights-filament",
+  "name": "liberusoftware/module-liberu-executive-insights-filament",
   "version": "1.1.2",
   "type": "liberu-module",
   "description": "Liberu liberu-executive-insights-filament module.",
   "license": "MIT",
   "require": {
     "php": "^8.5",
-    "liberusoftware/liberu-executive-insights": "^1.0",
+    "liberusoftware/module-liberu-executive-insights": "^1.0",
     "filament/filament": "^5.11.0"
   },
   "autoload": {

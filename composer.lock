@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "941b69a8fc23058134b02e8d1ff7a84f",
+    "content-hash": "68cd15f706670dc035ffa8eeb77a0ae6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5589,7 +5589,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/activity-comments",
-                "reference": "94a1a4a5f15a91f0ad0dc47e075d2d3687418c90"
+                "reference": "3ee48744e5f9bb656da9cc6d86505445969a114f"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -5666,7 +5666,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/analytics-core",
-                "reference": "2a23f70e60ea65003eb094b70691958f85e2c574"
+                "reference": "6c3c41cbc897f59708b9ee80f3f0f582ae436e59"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -5715,7 +5715,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/analytics-google",
-                "reference": "fbd360a15751d64790340b3432c445c7368a8b06"
+                "reference": "0cb59810837c6daf61491df4022cfdfbe6987f5c"
             },
             "require": {
                 "illuminate/support": "^13.38.0",
@@ -5763,7 +5763,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/analytics-meta",
-                "reference": "8cc74208d9500c67d2021c2f621628f844d15027"
+                "reference": "95884fdbb07434e198958dd4b9d67f4655de4452"
             },
             "require": {
                 "illuminate/support": "^13.38.0",
@@ -5811,7 +5811,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/api-access",
-                "reference": "a48f3c11c02d02da3d36d19ce62beee27b89d26c"
+                "reference": "3425afb7455722ed20d7da08c47d390c43149776"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -5860,7 +5860,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/application",
-                "reference": "847538d62c8e7732228ec39313b4111fb86dc22d"
+                "reference": "e15ea335699081d3b1ab8225a028a5d864b74e72"
             },
             "require": {
                 "illuminate/http": "^13.38.0",
@@ -5908,7 +5908,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/audit",
-                "reference": "5dfe9cee6e7a0bed80b2a0ca731475c8cd302c99"
+                "reference": "fdfe7ecb3ffe012ae384569d5f598cf5328b5064"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -7595,7 +7595,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/currency-context",
-                "reference": "df2024844ae6a80333126539751ef48816c8b3ee"
+                "reference": "1020b5b9a6552e25743b656190dfc13ae162af19"
             },
             "require": {
                 "illuminate/contracts": "^13.38.0",
@@ -7643,7 +7643,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/developer-experience",
-                "reference": "450244efca71df6083d5141f4e60202a88d31cca"
+                "reference": "473e980a4b8fe5de62d31897181369bf5e4b8693"
             },
             "require": {
                 "illuminate/console": "^13.38.0",
@@ -7691,7 +7691,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/feature-flags",
-                "reference": "effe0d3c5b7fc51cd3b0e90e4afe96eb17827466"
+                "reference": "1da6c5d5fe8c5d2ef8d19edcb2a415f2c883ffff"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -7739,7 +7739,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/files-media",
-                "reference": "9a01ed9fea1cf450fd3d127fe3b60d06f7fe56c3"
+                "reference": "e7702587a43d02643153df8a87ac9f061321b4e6"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -7787,7 +7787,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/identity-core",
-                "reference": "70a19d129573936790edb1834dc6e34f5186b0f3"
+                "reference": "0d1561f256c177d9d79b212be46f232029a4bb1c"
             },
             "require": {
                 "illuminate/support": "^13.38.0",
@@ -7834,7 +7834,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/identity-core-filament",
-                "reference": "3bdb6e05dff4b752cbcf3b92660be9b2e8aad76e"
+                "reference": "ae412038675386fa75bd447d43cdc83a2749ad06"
             },
             "require": {
                 "filament/filament": "^5.11.0",
@@ -7881,7 +7881,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/identity-socialstream",
-                "reference": "a88fa0d1d845e429673951c85b4921c5ee5d140e"
+                "reference": "8c37806fbee5365ae23deb7f918b10ba144f159c"
             },
             "require": {
                 "bursteri/socialstream": "^7.0.0",
@@ -7932,7 +7932,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/import-export",
-                "reference": "c258ff712424c12f852eed0652dce23216a03a13"
+                "reference": "e8a0f60b20134009d0b07388903c62f875dcb7ed"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -7980,7 +7980,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/integrations",
-                "reference": "8b7a3b8916880394ee5bbcbd1fbcfea55e6df913"
+                "reference": "6bf742684c58fab66e55d56c41fdb6b4fb0a2491"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -8028,7 +8028,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/jetstream-bridge",
-                "reference": "cc2973945eff61023beb3f4c0861c46a757ffd4a"
+                "reference": "0ac8ad36ded0106cfef63dfaa22d7a70b4f5b843"
             },
             "require": {
                 "laravel/fortify": "^1.41.0",
@@ -8073,786 +8073,6 @@
             }
         },
         {
-            "name": "liberusoftware/liberu-business-workflow-reconciliation",
-            "version": "1.1.1",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-business-workflow-reconciliation",
-                "reference": "4a82cca1e3090ccc91a2fb5a719d727c3bffc459"
-            },
-            "require": {
-                "illuminate/database": "^13.38.0",
-                "illuminate/events": "^13.38.0",
-                "illuminate/support": "^13.38.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-business-workflow-reconciliation",
-                    "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-business-workflow-reconciliation module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-business-workflow-reconciliation-api",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-business-workflow-reconciliation-api",
-                "reference": "ae0c8d54df6ad809306b101e2ed23b58130df34a"
-            },
-            "require": {
-                "illuminate/http": "^13.38.0",
-                "illuminate/routing": "^13.38.0",
-                "laravel/sanctum": "^4.3.3",
-                "liberusoftware/liberu-business-workflow-reconciliation": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-business-workflow-reconciliation-api",
-                    "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\Api\\BusinessWorkflowReconciliationApiServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Api\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Api\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-business-workflow-reconciliation-api module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-business-workflow-reconciliation-filament",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-business-workflow-reconciliation-filament",
-                "reference": "be4e57e38f26fc7682f3a8782463c301557e75f2"
-            },
-            "require": {
-                "filament/filament": "^5.11.0",
-                "liberusoftware/liberu-business-workflow-reconciliation": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-business-workflow-reconciliation-filament",
-                    "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\Filament\\BusinessWorkflowReconciliationFilamentServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Filament\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Filament\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-business-workflow-reconciliation-filament module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-business-workflow-reconciliation-livewire",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-business-workflow-reconciliation-livewire",
-                "reference": "b7e056d27b6b554bf0c66a008dd9cfa22e23a7e8"
-            },
-            "require": {
-                "liberusoftware/liberu-business-workflow-reconciliation": "^1.0",
-                "livewire/livewire": "^4.4.8",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-business-workflow-reconciliation-livewire",
-                    "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\Livewire\\BusinessWorkflowReconciliationLivewireServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Livewire\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Livewire\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-business-workflow-reconciliation-livewire module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-executive-insights",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-executive-insights",
-                "reference": "55707ac1068ead1c43d5505b16191b9a9d1c1024"
-            },
-            "require": {
-                "illuminate/database": "^13.38.0",
-                "illuminate/events": "^13.38.0",
-                "illuminate/support": "^13.38.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-executive-insights",
-                    "provider": "Liberu\\Platform\\ExecutiveInsights\\ExecutiveInsightsServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\ExecutiveInsights\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\ExecutiveInsights\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-executive-insights module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-executive-insights-api",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-executive-insights-api",
-                "reference": "899e4aea5ae9094a6fdab9bc99947a0c5a2f39ea"
-            },
-            "require": {
-                "illuminate/http": "^13.38.0",
-                "illuminate/routing": "^13.38.0",
-                "laravel/sanctum": "^4.3.3",
-                "liberusoftware/liberu-executive-insights": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-executive-insights-api",
-                    "provider": "Liberu\\Platform\\ExecutiveInsights\\Api\\ExecutiveInsightsApiServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\ExecutiveInsights\\Api\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\ExecutiveInsights\\Api\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-executive-insights-api module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-executive-insights-filament",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-executive-insights-filament",
-                "reference": "60c8b6831043a6be9cef02f641d95ae822f548f0"
-            },
-            "require": {
-                "filament/filament": "^5.11.0",
-                "liberusoftware/liberu-executive-insights": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-executive-insights-filament",
-                    "provider": "Liberu\\Platform\\ExecutiveInsights\\Filament\\ExecutiveInsightsFilamentServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\ExecutiveInsights\\Filament\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\ExecutiveInsights\\Filament\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-executive-insights-filament module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-executive-insights-livewire",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-executive-insights-livewire",
-                "reference": "144b26f994b0866784043dafa4c797668c96d8e1"
-            },
-            "require": {
-                "liberusoftware/liberu-executive-insights": "^1.0",
-                "livewire/livewire": "^4.4.8",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-executive-insights-livewire",
-                    "provider": "Liberu\\Platform\\ExecutiveInsights\\Livewire\\ExecutiveInsightsLivewireServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\ExecutiveInsights\\Livewire\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\ExecutiveInsights\\Livewire\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-executive-insights-livewire module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-platform-orchestration",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-platform-orchestration",
-                "reference": "6f283e54c4e110ad1aac61bf5d6adf6001025e91"
-            },
-            "require": {
-                "illuminate/database": "^13.38.0",
-                "illuminate/events": "^13.38.0",
-                "illuminate/support": "^13.38.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-platform-orchestration",
-                    "provider": "Liberu\\Platform\\PlatformOrchestration\\PlatformOrchestrationServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\PlatformOrchestration\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\PlatformOrchestration\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-platform-orchestration module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-platform-orchestration-api",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-platform-orchestration-api",
-                "reference": "32bcf1d7b58db00a37f805f6a964eec654bf0f0b"
-            },
-            "require": {
-                "illuminate/http": "^13.38.0",
-                "illuminate/routing": "^13.38.0",
-                "laravel/sanctum": "^4.3.3",
-                "liberusoftware/liberu-platform-orchestration": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-platform-orchestration-api",
-                    "provider": "Liberu\\Platform\\PlatformOrchestration\\Api\\PlatformOrchestrationApiServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\PlatformOrchestration\\Api\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\PlatformOrchestration\\Api\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-platform-orchestration-api module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-platform-orchestration-filament",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-platform-orchestration-filament",
-                "reference": "8f483f676160946826449a72d72f1876bca3d845"
-            },
-            "require": {
-                "filament/filament": "^5.11.0",
-                "liberusoftware/liberu-platform-orchestration": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-platform-orchestration-filament",
-                    "provider": "Liberu\\Platform\\PlatformOrchestration\\Filament\\PlatformOrchestrationFilamentServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\PlatformOrchestration\\Filament\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\PlatformOrchestration\\Filament\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-platform-orchestration-filament module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-platform-orchestration-livewire",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-platform-orchestration-livewire",
-                "reference": "65450a2ddbf592b2778d909c48d0e5f541373faa"
-            },
-            "require": {
-                "liberusoftware/liberu-platform-orchestration": "^1.0",
-                "livewire/livewire": "^4.4.8",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-platform-orchestration-livewire",
-                    "provider": "Liberu\\Platform\\PlatformOrchestration\\Livewire\\PlatformOrchestrationLivewireServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\PlatformOrchestration\\Livewire\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\PlatformOrchestration\\Livewire\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-platform-orchestration-livewire module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-revenue-and-care-orchestration",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-revenue-and-care-orchestration",
-                "reference": "3d28c9c9a87561e5d4ac87f237172e33cfa5dfb3"
-            },
-            "require": {
-                "illuminate/database": "^13.38.0",
-                "illuminate/events": "^13.38.0",
-                "illuminate/support": "^13.38.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-revenue-and-care-orchestration",
-                    "provider": "Liberu\\Platform\\RevenueAndCareOrchestration\\RevenueAndCareOrchestrationServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\RevenueAndCareOrchestration\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-revenue-and-care-orchestration module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-revenue-and-care-orchestration-api",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-revenue-and-care-orchestration-api",
-                "reference": "51252160451c3ddb29281bd08703b6ec9bee8876"
-            },
-            "require": {
-                "illuminate/http": "^13.38.0",
-                "illuminate/routing": "^13.38.0",
-                "laravel/sanctum": "^4.3.3",
-                "liberusoftware/liberu-revenue-and-care-orchestration": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-revenue-and-care-orchestration-api",
-                    "provider": "Liberu\\Platform\\RevenueAndCareOrchestration\\Api\\RevenueAndCareOrchestrationApiServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Api\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Api\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-revenue-and-care-orchestration-api module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-revenue-and-care-orchestration-filament",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-revenue-and-care-orchestration-filament",
-                "reference": "cc75234a7d3c6be3fa7759316c606b50857a179b"
-            },
-            "require": {
-                "filament/filament": "^5.11.0",
-                "liberusoftware/liberu-revenue-and-care-orchestration": "^1.0",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-revenue-and-care-orchestration-filament",
-                    "provider": "Liberu\\Platform\\RevenueAndCareOrchestration\\Filament\\RevenueAndCareOrchestrationFilamentServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Filament\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Filament\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-revenue-and-care-orchestration-filament module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "liberusoftware/liberu-revenue-and-care-orchestration-livewire",
-            "version": "1.1.2",
-            "dist": {
-                "type": "path",
-                "url": "modules/liberu-revenue-and-care-orchestration-livewire",
-                "reference": "474f22a3c14ec2a43da9336172ded71f94d53e09"
-            },
-            "require": {
-                "liberusoftware/liberu-revenue-and-care-orchestration": "^1.0",
-                "livewire/livewire": "^4.4.8",
-                "php": "^8.5"
-            },
-            "require-dev": {
-                "liberusoftware/package-testbench": "^1.5",
-                "pestphp/pest": "^5.3.3"
-            },
-            "type": "liberu-module",
-            "extra": {
-                "liberu": {
-                    "name": "liberu-revenue-and-care-orchestration-livewire",
-                    "provider": "Liberu\\Platform\\RevenueAndCareOrchestration\\Livewire\\RevenueAndCareOrchestrationLivewireServiceProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Livewire\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Livewire\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "pest"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Liberu liberu-revenue-and-care-orchestration-livewire module.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
             "name": "liberusoftware/localization-contracts",
             "version": "1.0.2",
             "source": {
@@ -8887,7 +8107,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/localization-core",
-                "reference": "5d24cd68dc2abf133e919702ece40e0d6058ada2"
+                "reference": "67b86ca03fad57d732e2d85c1ced0e0be4bde28c"
             },
             "require": {
                 "illuminate/contracts": "^13.38.0",
@@ -8938,7 +8158,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/localization-core-livewire",
-                "reference": "f5462fa6057e2cbe6406d8aac7b9e5f1eb6bd31c"
+                "reference": "5acd68c403559dc2c70ddf0d8555dd59c922ef3c"
             },
             "require": {
                 "liberusoftware/localization-core": "^1.0",
@@ -8986,7 +8206,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/localization-mymemory",
-                "reference": "79b7dbeb5a0aa03ee7852d13d0bad9698152b93c"
+                "reference": "97b5590ded0fe1e33ab0470055548f0a8e05fafa"
             },
             "require": {
                 "illuminate/cache": "^13.38.0",
@@ -9024,6 +8244,786 @@
                 "MIT"
             ],
             "description": "MyMemory machine-translation adapter for Liberu Localization.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation",
+            "version": "1.1.1",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-business-workflow-reconciliation",
+                "reference": "8c870cd584ed13c4d644458e918d04c7444d6edc"
+            },
+            "require": {
+                "illuminate/database": "^13.38.0",
+                "illuminate/events": "^13.38.0",
+                "illuminate/support": "^13.38.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-business-workflow-reconciliation",
+                    "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-business-workflow-reconciliation module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation-api",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-business-workflow-reconciliation-api",
+                "reference": "1cd9f0cb76d026e7557874ba5a8ffa5a33883afb"
+            },
+            "require": {
+                "illuminate/http": "^13.38.0",
+                "illuminate/routing": "^13.38.0",
+                "laravel/sanctum": "^4.3.3",
+                "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-business-workflow-reconciliation-api",
+                    "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\Api\\BusinessWorkflowReconciliationApiServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Api\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Api\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-business-workflow-reconciliation-api module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation-filament",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-business-workflow-reconciliation-filament",
+                "reference": "11e69115e15f2aa8f5488e256ec69117ac74e4ef"
+            },
+            "require": {
+                "filament/filament": "^5.11.0",
+                "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-business-workflow-reconciliation-filament",
+                    "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\Filament\\BusinessWorkflowReconciliationFilamentServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Filament\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Filament\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-business-workflow-reconciliation-filament module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation-livewire",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-business-workflow-reconciliation-livewire",
+                "reference": "f13a78f331cbbe3435afc986620e62a7ae6bc8e4"
+            },
+            "require": {
+                "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
+                "livewire/livewire": "^4.4.8",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-business-workflow-reconciliation-livewire",
+                    "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\Livewire\\BusinessWorkflowReconciliationLivewireServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Livewire\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\BusinessWorkflowReconciliation\\Livewire\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-business-workflow-reconciliation-livewire module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-executive-insights",
+                "reference": "10de4360414fb985cc5c55c3a37f982c7ffd0409"
+            },
+            "require": {
+                "illuminate/database": "^13.38.0",
+                "illuminate/events": "^13.38.0",
+                "illuminate/support": "^13.38.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-executive-insights",
+                    "provider": "Liberu\\Platform\\ExecutiveInsights\\ExecutiveInsightsServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\ExecutiveInsights\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\ExecutiveInsights\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-executive-insights module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights-api",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-executive-insights-api",
+                "reference": "7bccbe3ce3d961151b1b1890a15cb12a10531fd0"
+            },
+            "require": {
+                "illuminate/http": "^13.38.0",
+                "illuminate/routing": "^13.38.0",
+                "laravel/sanctum": "^4.3.3",
+                "liberusoftware/module-liberu-executive-insights": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-executive-insights-api",
+                    "provider": "Liberu\\Platform\\ExecutiveInsights\\Api\\ExecutiveInsightsApiServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\ExecutiveInsights\\Api\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\ExecutiveInsights\\Api\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-executive-insights-api module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights-filament",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-executive-insights-filament",
+                "reference": "1a41124eff170258f9fb11c80522faf800cd3355"
+            },
+            "require": {
+                "filament/filament": "^5.11.0",
+                "liberusoftware/module-liberu-executive-insights": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-executive-insights-filament",
+                    "provider": "Liberu\\Platform\\ExecutiveInsights\\Filament\\ExecutiveInsightsFilamentServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\ExecutiveInsights\\Filament\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\ExecutiveInsights\\Filament\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-executive-insights-filament module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights-livewire",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-executive-insights-livewire",
+                "reference": "c7e24878a046ff6e3ad88c970ca18499718326e9"
+            },
+            "require": {
+                "liberusoftware/module-liberu-executive-insights": "^1.0",
+                "livewire/livewire": "^4.4.8",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-executive-insights-livewire",
+                    "provider": "Liberu\\Platform\\ExecutiveInsights\\Livewire\\ExecutiveInsightsLivewireServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\ExecutiveInsights\\Livewire\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\ExecutiveInsights\\Livewire\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-executive-insights-livewire module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-platform-orchestration",
+                "reference": "a47e018a647d513c8c7b2873a4482ca0aa8497e2"
+            },
+            "require": {
+                "illuminate/database": "^13.38.0",
+                "illuminate/events": "^13.38.0",
+                "illuminate/support": "^13.38.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-platform-orchestration",
+                    "provider": "Liberu\\Platform\\PlatformOrchestration\\PlatformOrchestrationServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\PlatformOrchestration\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\PlatformOrchestration\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-platform-orchestration module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration-api",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-platform-orchestration-api",
+                "reference": "9f87ce93f0f3f57d7d1ee3d9b79cf09bdfd57706"
+            },
+            "require": {
+                "illuminate/http": "^13.38.0",
+                "illuminate/routing": "^13.38.0",
+                "laravel/sanctum": "^4.3.3",
+                "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-platform-orchestration-api",
+                    "provider": "Liberu\\Platform\\PlatformOrchestration\\Api\\PlatformOrchestrationApiServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\PlatformOrchestration\\Api\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\PlatformOrchestration\\Api\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-platform-orchestration-api module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration-filament",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-platform-orchestration-filament",
+                "reference": "d14946cd53816346a13f4d4868fee5544860d2c3"
+            },
+            "require": {
+                "filament/filament": "^5.11.0",
+                "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-platform-orchestration-filament",
+                    "provider": "Liberu\\Platform\\PlatformOrchestration\\Filament\\PlatformOrchestrationFilamentServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\PlatformOrchestration\\Filament\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\PlatformOrchestration\\Filament\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-platform-orchestration-filament module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration-livewire",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-platform-orchestration-livewire",
+                "reference": "ef50e1f3ccd28b8f63c9dbe0e2407ceb4e93bf63"
+            },
+            "require": {
+                "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+                "livewire/livewire": "^4.4.8",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-platform-orchestration-livewire",
+                    "provider": "Liberu\\Platform\\PlatformOrchestration\\Livewire\\PlatformOrchestrationLivewireServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\PlatformOrchestration\\Livewire\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\PlatformOrchestration\\Livewire\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-platform-orchestration-livewire module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-revenue-and-care-orchestration",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-revenue-and-care-orchestration",
+                "reference": "287832bc43e65f53f928604a2dfa1e53e7a9a938"
+            },
+            "require": {
+                "illuminate/database": "^13.38.0",
+                "illuminate/events": "^13.38.0",
+                "illuminate/support": "^13.38.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-revenue-and-care-orchestration",
+                    "provider": "Liberu\\Platform\\RevenueAndCareOrchestration\\RevenueAndCareOrchestrationServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\RevenueAndCareOrchestration\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-revenue-and-care-orchestration module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-revenue-and-care-orchestration-api",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-revenue-and-care-orchestration-api",
+                "reference": "e25a87627013e5c9f895522c3f06e1716a67206b"
+            },
+            "require": {
+                "illuminate/http": "^13.38.0",
+                "illuminate/routing": "^13.38.0",
+                "laravel/sanctum": "^4.3.3",
+                "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-revenue-and-care-orchestration-api",
+                    "provider": "Liberu\\Platform\\RevenueAndCareOrchestration\\Api\\RevenueAndCareOrchestrationApiServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Api\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Api\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-revenue-and-care-orchestration-api module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-revenue-and-care-orchestration-filament",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-revenue-and-care-orchestration-filament",
+                "reference": "fec02b63cd7bd172acde111a1e97180e865b6fca"
+            },
+            "require": {
+                "filament/filament": "^5.11.0",
+                "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-revenue-and-care-orchestration-filament",
+                    "provider": "Liberu\\Platform\\RevenueAndCareOrchestration\\Filament\\RevenueAndCareOrchestrationFilamentServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Filament\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Filament\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-revenue-and-care-orchestration-filament module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-revenue-and-care-orchestration-livewire",
+            "version": "1.1.2",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-revenue-and-care-orchestration-livewire",
+                "reference": "06505d830b8d17ac3fb99f0272bf1fafac9b16d3"
+            },
+            "require": {
+                "liberusoftware/module-liberu-revenue-and-care-orchestration": "^1.0",
+                "livewire/livewire": "^4.4.8",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.3.3"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "liberu-revenue-and-care-orchestration-livewire",
+                    "provider": "Liberu\\Platform\\RevenueAndCareOrchestration\\Livewire\\RevenueAndCareOrchestrationLivewireServiceProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Livewire\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Platform\\RevenueAndCareOrchestration\\Livewire\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Liberu liberu-revenue-and-care-orchestration-livewire module.",
             "transport-options": {
                 "symlink": false,
                 "relative": true
@@ -9083,7 +9083,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/module-manager-filament",
-                "reference": "47bb4047d7845d5f7d42b9ea132d431bb11b18ab"
+                "reference": "eae2a2cd4c6600184dc5c71a12cecc44bef0a313"
             },
             "require": {
                 "filament/filament": "^5.11.0",
@@ -9131,7 +9131,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/notifications",
-                "reference": "30d622379001c33f53d5cf1c52c5a31bd0e5fcac"
+                "reference": "afcc53381d65cc03865e5f121f443a54dff31515"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -9179,7 +9179,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/observability",
-                "reference": "e2983628824d841aab273825c9f35002ccbb2985"
+                "reference": "3787b723f0110b4dff3da4d9c28724f9f9b0138f"
             },
             "require": {
                 "laravel/horizon": "^5.50.1",
@@ -9228,7 +9228,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/organizations-teams",
-                "reference": "6a651b2733c41a19d9d763bf524229bfe1ca7e3c"
+                "reference": "d62850325899d7ae13e3bcfee144b10bbac0028b"
             },
             "require": {
                 "laravel/jetstream": "^5.5.3",
@@ -9277,7 +9277,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/organizations-teams-filament",
-                "reference": "8d1cf4bdc431298540af00b985a1f393bb7bd905"
+                "reference": "f652a89a6d05763c1749c37d0ef705b646421234"
             },
             "require": {
                 "filament/filament": "^5.11.0",
@@ -9324,7 +9324,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/profiles",
-                "reference": "db3c5dd9036e6cea31ad57dfed5b7c3da1941488"
+                "reference": "568a9c031e31bee6561025116c1b718db5d349b6"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -9372,7 +9372,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/roles-permissions",
-                "reference": "471ae3ad02e73d5a650f565e43f94340b8d7c447"
+                "reference": "8354d44d2b44ff1fd406559264b1394073c0ae93"
             },
             "require": {
                 "liberusoftware/module-manager": "^1.0",
@@ -9420,7 +9420,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/roles-permissions-filament",
-                "reference": "40888b6e6269a8da97c7703c177ff78ee8fb3feb"
+                "reference": "40a9454e87e3d0d3af0429925b2fd80bdf0997bc"
             },
             "require": {
                 "bezhansalleh/filament-shield": "^4.3.1",
@@ -9468,7 +9468,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/scheduler-queues",
-                "reference": "d3bf3a0c805f484f4938e50982c9fda982fab25e"
+                "reference": "36d8b84672a3488f38d13b66ac3ebf5f79fc2f81"
             },
             "require": {
                 "illuminate/console": "^13.38.0",
@@ -9516,7 +9516,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/search",
-                "reference": "d5c62b6f120685bcf3c62e065134cf1e4cdcd98d"
+                "reference": "4b3523636a42d92dbc612d7d06c8843270ea4926"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -9565,7 +9565,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/search-api",
-                "reference": "b4c457e594a4c8d6ed96702730516bdbf90d5bf2"
+                "reference": "38fc9427e87b8c7b760637e3999b132a30f2f4f2"
             },
             "require": {
                 "illuminate/http": "^13.38.0",
@@ -9613,7 +9613,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/sessions-devices",
-                "reference": "04923eb4e1f983f666be046d483b64a3b230365a"
+                "reference": "d3af01776fd6ced7f200364921d5f457402374bb"
             },
             "require": {
                 "illuminate/database": "^13.38.0",
@@ -9661,7 +9661,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/sessions-devices-filament",
-                "reference": "438b2606aa68bce3d94f6c3df77c687c925d0867"
+                "reference": "d50b7f0c9d450c7e5b18eec715d244095cf30ee7"
             },
             "require": {
                 "filament/filament": "^5.11.0",
@@ -9708,7 +9708,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/settings",
-                "reference": "590cb05bfa7285eba8d2f088559a8b5b7a01e580"
+                "reference": "c7768fe57c018bde975f8a58efbf06a5fe305967"
             },
             "require": {
                 "liberusoftware/module-manager": "^1.0",
@@ -9755,7 +9755,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/settings-filament",
-                "reference": "732d81dfd3740b2e1f6020f6ac17b088c07f3bd8"
+                "reference": "a86bddf9faa52d998ad0352be5cedb2df1e22375"
             },
             "require": {
                 "filament/filament": "^5.11.0",
@@ -10046,7 +10046,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/theme-support",
-                "reference": "ec677ca0071dbb5c841ff534ff1d858608b8b230"
+                "reference": "8b7bb3b291211a6c9b9c3962f1e71a1bc3bd5ec4"
             },
             "require": {
                 "liberusoftware/module-manager": "^1.0",
@@ -10101,7 +10101,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/theme-support-livewire",
-                "reference": "45aa0fb9329b88e75dd21e17f2c278513439997a"
+                "reference": "cb4327117f33bbc88c14a1acf31d57b5ade837b7"
             },
             "require": {
                 "liberusoftware/theme-support": "^1.0",
@@ -10150,7 +10150,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/two-factor-authentication",
-                "reference": "464fe3506eaa91ec48e58a471343d48ced1d963a"
+                "reference": "d9248b87f22b30249b6d4ae49d7b4e82a2918db6"
             },
             "require": {
                 "illuminate/contracts": "^13.38.0",
@@ -10198,7 +10198,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/users-roles",
-                "reference": "153c5f3f017f29197af1586c5555a10369543b3b"
+                "reference": "f298fec00c4e097cb79cba6cb5d3199de8793a12"
             },
             "require": {
                 "illuminate/auth": "^13.0",
@@ -10248,7 +10248,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/webhooks",
-                "reference": "90ec7df3265dbff292091683e7b28e66893fd146"
+                "reference": "ba54b092fb74bda81707e5692f97d926f4fd6533"
             },
             "require": {
                 "illuminate/database": "^13.38.0",

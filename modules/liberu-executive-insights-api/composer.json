@@ -1,12 +1,12 @@
 {
-  "name": "liberusoftware/liberu-executive-insights-api",
+  "name": "liberusoftware/module-liberu-executive-insights-api",
   "version": "1.1.2",
   "type": "liberu-module",
   "description": "Liberu liberu-executive-insights-api module.",
   "license": "MIT",
   "require": {
     "php": "^8.5",
-    "liberusoftware/liberu-executive-insights": "^1.0",
+    "liberusoftware/module-liberu-executive-insights": "^1.0",
     "illuminate/http": "^13.38.0",
     "illuminate/routing": "^13.38.0",
     "laravel/sanctum": "^4.3.3"
